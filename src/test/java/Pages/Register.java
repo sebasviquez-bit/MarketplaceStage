@@ -12,8 +12,8 @@ public class Register {
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[1]/div[1]/a/span")
     WebElement iconsignin;
 
-    @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[3]/label/a")
-    WebElement signup;
+    @FindBy(css = "#gigya-login-form > div:nth-child(3) > div.gigya-layout-row.gigya-layout-row-login-create-account > a")
+    WebElement CreateAccount;
 
     @FindBy(xpath = "//*[@id='gigya-register-form']/div[1]/div[5]/div[2]/input")
     WebElement password2;
@@ -47,7 +47,7 @@ public class Register {
     // Register user*/
     public void registerUser(User _testUser)  {
         this.iconsignin.click();
-        this.signup.click();
+        this.CreateAccount.click();
         this.userName.sendKeys(_testUser.username);
         this.firstName.sendKeys(_testUser.firstName);
         this.lastName.sendKeys(_testUser.lastName);
@@ -56,7 +56,5 @@ public class Register {
         this.registrarse.click();
         this.iconsignin.isDisplayed();
     }
-
-
 
 }

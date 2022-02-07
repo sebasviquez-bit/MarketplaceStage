@@ -61,7 +61,7 @@ public class Homepage {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[1]")
     WebElement aboutakc;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[2]/div[1]/div[2]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-2dbv9q-0.jmpWJy > div:nth-child(2) > div.image-container > img")
     WebElement puppict;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[2]/div[2]")
@@ -73,7 +73,7 @@ public class Homepage {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[2]/div[2]/small/a")
     WebElement pupcrelist;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[3]/div[1]/div[2]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-2dbv9q-0.jmpWJy > div.Styled__Wrapper-sc-13lpz7m-0.fJSjAr.content-left > div.image-container > img")
     WebElement groompict;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[3]/div[2]")
@@ -88,7 +88,7 @@ public class Homepage {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[4]/div[2]")
     WebElement traintext;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[4]/div[1]/div[2]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-2dbv9q-0.jmpWJy > div:nth-child(4) > div.image-container > img")
     WebElement trainpict;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[4]/div[2]/a")
@@ -103,7 +103,7 @@ public class Homepage {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[5]/div/div/div/div/div[2]/div/div")
     WebElement comments;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[6]/div[1]/div")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-13lpz7m-0.fJSjAr.content-left > div.image-container > img")
     WebElement aboutamerpict;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[2]/div/form")

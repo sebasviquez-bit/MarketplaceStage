@@ -15,7 +15,7 @@ import static java.lang.Thread.sleep;
 
 public class Trainers {
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[4]/div[1]/span[1]")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(4) > div.menu-item-title-container")
     WebElement trainers;
 
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[4]/div[2]/div/ul/li[1]")
@@ -39,6 +39,9 @@ public class Trainers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[1]/div/form/div[1]/div[2]/div/div[1]/div[1]")
     WebElement traintype;
 
+    @FindBy(xpath = "//div[contains(text(),'Training Type')]")
+    WebElement traintypeInput;
+
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[1]/div/form/div[1]/div[3]/div[1]/div/div[1]/div[1]/div[1]")
     WebElement zip;
 
@@ -57,11 +60,11 @@ public class Trainers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[1]/div/div[2]/div/h2")
     WebElement results;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(4) > div.sc-fOICqy.gfdbqF > div > div.search-results-title > div > h2")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(4) > div.Styled__RowResults-sc-10ypou4-3.kTfmWx > div > div.search-results-title > div > h2")
     WebElement allresults;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(4) > div.sc-fOICqy.gfdbqF > div > div.search-results-title > div > h2")
-    WebElement rallyresults;
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(4) > div.Styled__RowResults-sc-10ypou4-3.kTfmWx > div > div:nth-child(3) > div > a:nth-child(1) > div > div.Styled__Image-sc-hcxd8a-5.gkbCuh.card-media-wrapper > div > div")
+    WebElement AKCScentWorkResults;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[2]/div/section/ul/li[2]/span")
     WebElement zipresults;
@@ -70,7 +73,7 @@ public class Trainers {
     WebElement distresults;
 
     @FindBy(id = "react-select-2-option-3")
-    WebElement rally;
+    WebElement AKCScentWork;
 
     @FindBy(id = "#trainer-location__radius")
     WebElement miles;
@@ -78,7 +81,7 @@ public class Trainers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[1]/div/div[3]/div/a[1]/div/div[1]/div/div")
     WebElement trainlistpict;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[1]/div/div[3]/div/a[1]/div/div[2]/div[2]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(4) > div.Styled__RowResults-sc-10ypou4-3.kTfmWx > div > div:nth-child(3) > div > a > div > div.Styled__Details-sc-hcxd8a-1.cTPwBu.trainer-details-wrapper > div.Styled__Name-sc-hcxd8a-2.bInnWc.trainer-result_name")
     WebElement trainlisthead;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[1]/div/div[3]/div/a[1]/div/div[2]/div[3]/p")
@@ -643,9 +646,10 @@ public class Trainers {
         this.trainers.click();
         this.findtrain.click();
         this.traintype.click();
-        this.rally.click();
+        //this.traintypeInput.sendKeys("Rally");
+        this.AKCScentWork.click();
         this.findtrainbut.click();
-        this.rallyresults.isDisplayed();
+        this.AKCScentWorkResults.isDisplayed();
 
     }
 
@@ -655,7 +659,7 @@ public class Trainers {
         this.trainers.click();
         this.findtrain.click();
         this.traintype.click();
-        this.rally.click();
+        this.AKCScentWork.click();
         this.zip.click();
         this.zipform.sendKeys("10001");
         this.findtrainbut.click();
@@ -668,7 +672,7 @@ public class Trainers {
         this.trainers.click();
         this.findtrain.click();
         this.traintype.click();
-        this.rally.click();
+        this.AKCScentWork.click();
         this.zip.click();
         this.zipform.sendKeys("10001");
         this.distance.click();

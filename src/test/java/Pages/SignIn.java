@@ -26,9 +26,8 @@ public class SignIn {
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[1]/div[1]/a/span")
     WebElement iconsignin;
 
-    @FindBy(css = "#react-root > div > div.sc-iwsKbI.fSqOjx > div.sc-VigVT.gTgUxQ > div > div.header-bar > div.header-icon-container.user-menu > div > a")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > a > span")
     WebElement logged;
-
 
     @FindBy(xpath = "//html/body/div[5]/div/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div/ul/li[1]/a")
     WebElement dash;
@@ -57,8 +56,8 @@ public class SignIn {
     @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[1]/div[4]/label/span/a")
     WebElement forgot;
 
-    @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[3]/label/a")
-    WebElement signup;
+    @FindBy(css = "#gigya-login-form > div:nth-child(3) > div.gigya-layout-row.gigya-layout-row-login-create-account > a")
+    WebElement CreateAccount;
 
     @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[1]/h2")
     WebElement signinlogo;
@@ -86,7 +85,7 @@ public class SignIn {
 
         this.iconsignin.click();
         this.gigyabox.isDisplayed();
-        this.signup.isDisplayed();
+        this.CreateAccount.isDisplayed();
         this.forgot.isDisplayed();
         this.signinlogo.isDisplayed();
         this.otheroption.isDisplayed();

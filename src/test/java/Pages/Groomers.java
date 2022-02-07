@@ -66,7 +66,7 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[2]/div/form/div[1]/div[3]/div[1]/div/div[1]/div[1]/div[1]")
     WebElement zipstate;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > section > div.sc-bXGyLb.lbThFm > div > form > div:nth-child(1) > div.search-location > div.search-location__radius > div > div")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > section > div.Styled__Wrapper-sc-12hl6es-0.blZGXr > div > form > div:nth-child(1) > div.search-location > div.search-location__radius > div > div")
     WebElement distance;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[2]/div/form/div[2]/div/button")
@@ -138,7 +138,7 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[8]/h2")
     WebElement howfind;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[8]/div[1]/div[1]/div[2]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > section > div.Styled__Wrapper-sc-ysw841-0.cWfaAR > div.Styled__Wrapper-sc-13lpz7m-0.fJSjAr.content-right > div.image-container > img")
     WebElement safepict;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[8]/div[1]/div[2]/h3")
@@ -150,7 +150,7 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[8]/div[1]/div[2]/p/a")
     WebElement safemore;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[8]/div[2]/div[1]/div[2]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > section > div.Styled__Wrapper-sc-ysw841-0.cWfaAR > div.Styled__Wrapper-sc-13lpz7m-0.fJSjAr.content-left > div.image-container > img")
     WebElement salonsafepict;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[8]/div[2]/div[2]/h3")
@@ -597,7 +597,7 @@ public class Groomers {
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/div/div[2]/div[2]/div/a[4]")
     WebElement accountgroomer;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/div/div[2]/div[2]/div/a[5]")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(3) > a")
     WebElement mypagegroomer;
 
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/section[1]/h4")
@@ -864,7 +864,7 @@ public class Groomers {
     @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[12]/section[1]/button[1]")
     WebElement savebilling;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[2]/form/div/div[2]/button")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > div > div.select-to-bar-nav > div.show-at-medium > div > a:nth-child(6)")
     WebElement mypagepage;
 
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[1]/div[1]/a/span")
@@ -879,6 +879,10 @@ public class Groomers {
     @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[3]/div/input")
     WebElement ingresar;
 
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > a > span")
+    WebElement GroomerUser;
+    //
+
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[1]/div[1]/div/a/span")
     WebElement logged;
 
@@ -888,11 +892,8 @@ public class Groomers {
     @FindBy(xpath = "//Pending fix of page")
     WebElement successgroomer;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.marketplace__top-image > div.sc-kcDeIU.fSDkdX.hero-wrapper > div > h1")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.marketplace__top-image > div.Container-sc-q7fgo0-0.ihhzmc.hero-wrapper > div > h1")
     WebElement AdvertiseLitter;
-    //
-
-
 
 
     DriverHelper driverHelper;
@@ -1042,7 +1043,7 @@ public class Groomers {
         this.bathopt.click();
         this.zipstate.click();
         this.zipfield2.sendKeys("80012");
-        this.searchbut.click();
+        this.searchbut.click();  //This fails because of the Groomers issue on stage
         this.zipresults.isDisplayed();
 
     }
@@ -1059,7 +1060,7 @@ public class Groomers {
         this.distance.click();
         this.distopt.click();
         this.searchbut.click();
-        this.distresults.isDisplayed();
+        this.distresults.isDisplayed(); //This fails on stage because of the Groomers Menu table issue
 
     }
 
@@ -1112,7 +1113,7 @@ public class Groomers {
         this.bathopt.click();
         this.zipstate.click();
         this.zipfield2.sendKeys("80001");
-        this.searchbut.click();
+        this.searchbut.click();  //This fails on stage because of the Groomers Menu table issue.
         this.groompict.isDisplayed();
         this.groomname.isDisplayed();
         this.groomtype.isDisplayed();
@@ -1131,7 +1132,7 @@ public class Groomers {
         this.service.click();
         this.bathopt.click();
         this.searchbut.click();
-        this.groompict.click();
+        this.groompict.click();  //This fails on stage because of the Groomers Menu table issue.
         this.groom2name.isDisplayed();
         this.groom2pict.isDisplayed();
         this.groom2address.isDisplayed();
@@ -1142,8 +1143,8 @@ public class Groomers {
         this.aboutmetext.isDisplayed();
         this.myservices.isDisplayed();
         this.myservicestext.isDisplayed();
-        this.packages.isDisplayed();
-        this.packagestext.isDisplayed();
+        //this.packages.isDisplayed();
+        //this.packagestext.isDisplayed();
         this.operations.isDisplayed();
         this.operationstext.isDisplayed();
         this.payment.isDisplayed();
@@ -1617,15 +1618,12 @@ public class Groomers {
     /*Check My Page Groomer*/
     public void VerifiyMyPage(User _testUser)  {
 
-
         this.iconsignin.click();
         this.userName.sendKeys(_testUser.username);
         this.passwordlog.sendKeys(_testUser.password);
         this.ingresar.click();
-        Actions action = new Actions(this.driver);
-        action.moveToElement(logged).perform();
-        action.moveToElement(logged).click();
-        this.dashbreed.click();
+        this.GroomerUser.click();
+        //this.dashbreed.click();
         this.mypagegroomer.click();
         this.mypagepage.isDisplayed();
 

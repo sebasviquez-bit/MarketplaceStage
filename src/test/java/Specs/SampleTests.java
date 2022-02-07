@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 
 
 public class SampleTests extends SpecsBaseClass {
+
+
     /*Register User*/
     @Test (dataProvider = "RegisterUsers", dataProviderClass = DataHelper.class)
     public void SuccessfulRegister(String sUserName, String sFirstName, String sLastName, String sPassword1, String sPassword2)  {
@@ -43,7 +45,7 @@ public class SampleTests extends SpecsBaseClass {
     }
 
     /*Create Listing*/
-    @Test (dataProvider = "BreederCreateListing", dataProviderClass = DataHelper.class)
+    //@Test (dataProvider = "BreederCreateListing", dataProviderClass = DataHelper.class)
 
     public void BreederCreateList(String sEmail, String sPassword, String sLitNum, String sDamRegNum, String sDamCert, String sCreditCard, String sExpDate, String sCVV, String sFirstName, String sLastName, String sAddress, String sZIP, String sPhone, String sVariety, String sDesc, String sPrice, String sHealthvacc, String sYoutube, String sKenname, String sWeblink, String sDescken, String sBreedsince, String sWebsite) throws InterruptedException {
 
@@ -54,7 +56,7 @@ public class SampleTests extends SpecsBaseClass {
     }
 
     /*Subscription Annual*/
-    @Test (dataProvider = "BreederPurchSubs", dataProviderClass = DataHelper.class)
+    //@Test (dataProvider = "BreederPurchSubs", dataProviderClass = DataHelper.class)
 
     public void BreederPurchSubs(String sEmail, String sPassword, String sCreditCard, String sExpDate, String sCVV, String sFirstName, String sLastName, String sAddress, String sZIP, String sPhone, String sKenname, String sWeblink, String sDescken, String sBreedsince, String sWebsite, String sAddress2, String sZIP2, String sPhone2) throws InterruptedException {
 
@@ -66,7 +68,7 @@ public class SampleTests extends SpecsBaseClass {
     }
 
     /*Subscription Monthly*/
-    @Test (dataProvider = "BreederPurchSubs2", dataProviderClass = DataHelper.class)
+    //@Test (dataProvider = "BreederPurchSubs2", dataProviderClass = DataHelper.class)
 
     public void BreederPurchSubsMonth(String sEmail, String sPassword, String sCreditCard, String sExpDate, String sCVV, String sFirstName, String sLastName, String sAddress, String sZIP, String sPhone, String sKenname, String sWeblink, String sDescken, String sBreedsince, String sWebsite, String sAddress2, String sZIP2, String sPhone2) throws InterruptedException {
 
@@ -100,7 +102,7 @@ public class SampleTests extends SpecsBaseClass {
 
     }
     /*Trainer Class*/
-    @Test (dataProvider = "ClassTrainer", dataProviderClass = DataHelper.class)
+    //@Test (dataProvider = "ClassTrainer", dataProviderClass = DataHelper.class)
 
     public void TrainerClass(String sEmail, String sPassword, String sCreditCard, String sExpDate, String sCVV, String sFirstName, String sLastName, String sStreet, String sZIP, String sBusinessPhone, String sBusinessname, String sWeblink, String sAboutme, String sBusinesssince, String sBusinessEmail, String sPhilosophy, String sOther) throws InterruptedException {
 
@@ -758,7 +760,6 @@ public class SampleTests extends SpecsBaseClass {
         User testUser = new User(sEmail1, sPassword1);
         groomers.VerifiyMyPage(testUser);
 
-        //this has to be fixed on stage to run the test
 
     }
 
@@ -833,8 +834,6 @@ public class SampleTests extends SpecsBaseClass {
         trainers.CheckTrainersHome();
 
     }
-
-
 
     @Test
     public void TrainListPageCheck()  {
