@@ -2,7 +2,6 @@ package Model;
 
 public class Classes {
 
-
     public String Email;
     public String Password;
     public String CreditCard;

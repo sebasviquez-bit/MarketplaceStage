@@ -14,14 +14,11 @@ public class SignIn {
     @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[1]/div[3]/input")
     WebElement userName;
 
-
     @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[1]/div[4]/input")
     WebElement password;
 
-
     @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[3]/div/input")
     WebElement ingresar;
-
 
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[1]/div[1]/a/span")
     WebElement iconsignin;
@@ -66,9 +63,7 @@ public class SignIn {
     WebElement otheroption;
 
 
-
-
-
+    //----------------//
 
     WebDriver driver;
     DataHelper dataHelper;

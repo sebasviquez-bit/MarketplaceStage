@@ -175,20 +175,7 @@ public class Homepage {
     @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[2]/div[2]/div/div/a[5]")
     WebElement pinterest;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //------------//
 
     DriverHelper driverHelper;
 
@@ -279,7 +266,6 @@ public class Homepage {
         wait.until(ExpectedConditions.urlContains("https://www.pinterest.com/americankennelclub/"));
 
     }
-
 
 
     /*Check MarketPlace homepage elements*/
@@ -472,9 +458,6 @@ public class Homepage {
         validpint();
 
     }
-
-
-
 
 
 }

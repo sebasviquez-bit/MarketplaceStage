@@ -900,7 +900,6 @@ public class Groomers {
 
     WebDriver driver;
 
-
     /*Check Safe page*/
     private void validsafe() {
         for (String winHandle : driver.getWindowHandles()) {
@@ -966,6 +965,7 @@ public class Groomers {
         wait.until(ExpectedConditions.visibilityOf(listservicmarkpage));
 
     }
+
     /*Check Groomer Homepage elements*/
     public void CheckGroomHome(){
 
@@ -1104,6 +1104,7 @@ public class Groomers {
 
 
     }
+
     /*Check Groomer SERP page*/
     public void CheckGroomListPage() {
 
@@ -1120,10 +1121,8 @@ public class Groomers {
         this.groomaddress.isDisplayed();
         this.groomcert.isDisplayed();
 
-
-
-
     }
+
     /*Check Groomer page*/
     public void CheckGroomPage() {
 

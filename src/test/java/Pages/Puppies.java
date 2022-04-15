@@ -1221,6 +1221,19 @@ public class Puppies {
 
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(2) > a")
     WebElement createLitterListing;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-wis0mx-2.dakhfk > div.Styled__RowResults-sc-wis0mx-4.botkTX > div > div:nth-child(3) > div:nth-child(1) > a:nth-child(2)")
+    WebElement BreedeSebasViquez1;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div > div.Styled__PuppyLitterHero-sc-1g1ebi4-0.fatWE > div.puppy-litter-hero__details > div > div.puppy-litter-info__wrapper > a > button")
+    WebElement messageBreederButton;
+
+    @FindBy(xpath = "//body[1]/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[6]/div[2]/div[1]/div[2]/div[2]/div[1]/form[1]/div[4]/div[1]/input[1]")
+    WebElement messageBreederUserInput;
+
+    @FindBy(xpath = "//body[1]/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[6]/div[2]/div[1]/div[2]/div[2]/div[1]/form[1]/div[5]/div[1]/input[1]")
+    WebElement messageBreederPasswordInput;
+
     //
 
     DriverHelper driverHelper;
@@ -1597,8 +1610,6 @@ public class Puppies {
     }
 
 
-
-
     public void CheckSearchBreedSmall() {
         this.puppies.click();
         this.findapuppy.click();
@@ -1608,8 +1619,6 @@ public class Puppies {
         this.searchlistpageult.isDisplayed();
 
     }
-
-
 
 
 
@@ -1715,7 +1724,6 @@ public class Puppies {
         wait.until(ExpectedConditions.visibilityOf(choosebreedpage));
 
 
-
     }
 
     public void CheckThingsto() {
@@ -1727,7 +1735,6 @@ public class Puppies {
         wait.until(ExpectedConditions.visibilityOf(readyforpuppage));
 
 
-
     }
 
     public void CheckOwner() {
@@ -1737,7 +1744,6 @@ public class Puppies {
         this.findapuppy.click();
         this.newcheck.click();
         wait.until(ExpectedConditions.visibilityOf(preppuppage));
-
 
 
     }
@@ -1857,7 +1863,6 @@ public class Puppies {
         this.otherbreed1text.isDisplayed();
         this.otherbreed2text.isDisplayed();
         this.otherbreed3text.isDisplayed();
-
 
 
     }
@@ -2140,7 +2145,7 @@ public class Puppies {
         this.continue5.click();
         this.continue6.click();
         this.addfile.click();
-        this.selimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\linkedinimage.jpg");
+        this.selimages.sendKeys("/Users/sebastian.viquez/Documents/NYCATS-QA-branch-A/src/test/java/Resources/image.png");
         this.inputimages2.sendKeys("Breeder picture");
         this.inputbreeder.click();
         this.selbreederimages.click();
@@ -2360,8 +2365,27 @@ public class Puppies {
         this.responsemess.isDisplayed();
         this.sentmess.isDisplayed();
 
-
     }
+
+       //Sends message to breader account from findpuppy's page
+        public void messageBreeder(User _testUser){
+
+        //WebDriverWait wait = new WebDriverWait (driver, 10);
+        this.iconsignin.click();
+        this.userName.sendKeys(_testUser.username);
+        this.passwordlog.sendKeys(_testUser.password);
+        this.ingresar.click();
+        //wait.until(ExpectedConditions.elementToBeClickable(puppies));
+        this.puppies.click();
+        this.findapuppy.click();
+        this.findpupformbut.click();
+        this.BreedeSebasViquez1.click();
+        this.messageBreederButton.click();
+        //
+
+        }
+
+
     /*Check ManageMyPage elements*/
     public void VerifiyManmypage(User _testUser)  {
 

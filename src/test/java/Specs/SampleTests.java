@@ -602,7 +602,16 @@ public class SampleTests extends SpecsBaseClass {
     public void BreederManmyPage(String sEmail1, String sPassword1)   {
 
         User testUser = new User(sEmail1, sPassword1);
-        puppies.VerifiyMyPage(testUser);
+        puppies.    VerifiyMyPage(testUser);
+
+    }
+
+    //
+    @Test(dataProvider = "BreederSignInUsers2", dataProviderClass = DataHelper.class)
+    public void messageBreederFromPuppysPage(String sEmail1, String sPassword1)   {
+
+        User testUser = new User(sEmail1, sPassword1);
+        puppies.messageBreeder(testUser);
 
     }
 
