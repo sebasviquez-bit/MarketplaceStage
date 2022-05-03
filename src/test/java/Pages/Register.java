@@ -1,5 +1,7 @@
 package Pages;
 
+import Helpers.BrowserFactory;
+import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import Model.User;
 import org.openqa.selenium.WebDriver;
@@ -34,13 +36,19 @@ public class Register {
     WebElement registrarse;
 
     DriverHelper driverHelper;
+    DriverFactory driverFactory;
+    BrowserFactory browserFactory;
+
 
     WebDriver driver;
 
     // Initalize WebDriver*/
-    public Register(WebDriver _driver, DriverHelper _driveHelper){
+    public Register(WebDriver _driver){
+
+        //this.driverFactory = new DriverFactory();
+        this.browserFactory = new BrowserFactory();
         this.driver = _driver;
-        this.driverHelper = _driveHelper;
+        //this.driverHelper = _driveHelper;
         PageFactory.initElements(driver,this);
     }
 

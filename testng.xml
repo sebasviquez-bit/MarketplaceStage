@@ -2,9 +2,11 @@
 
 <suite name="Suite" parallel="methods" thread-count="2">
 
-    <test name="RegressionTests-Chrome" parallel="methods" thread-count="2">
+    <test name="RegressionTests">
+        <parameter name="browserName" value="chrome"></parameter>
+        <parameter name="baseUrl" value="https://stage.marketplace.akc.org/"></parameter>
         <classes>
-            <class name="Specs.SampleTests" />
+            <class name="Specs.SampleTests"/>
         </classes>
     </test>
 

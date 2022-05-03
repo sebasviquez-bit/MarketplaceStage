@@ -1,6 +1,8 @@
 package Pages;
 
 
+import Helpers.BrowserFactory;
+import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import Model.Listing;
 import Model.Subscription;
@@ -1237,10 +1239,15 @@ public class Puppies {
     //
 
     DriverHelper driverHelper;
+    DriverFactory driverFactory;
+    BrowserFactory browserFactory;
 
     WebDriver driver;
 
     public Puppies(WebDriver _driver) {
+
+        this.driverFactory = new DriverFactory();
+        this.browserFactory = new BrowserFactory();
         this.driver = _driver;
         PageFactory.initElements(driver, this);
     }

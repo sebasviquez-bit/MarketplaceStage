@@ -1,13 +1,18 @@
 package Specs;
 
+import Helpers.BrowserFactory;
 import Helpers.DataHelper;
+import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 
 public class SuperBaseClass {
     //driver
-    WebDriver driver;
+    public WebDriver driver = null;
+
+
+
 
     //pages
     SignIn signIn;
@@ -21,22 +26,29 @@ public class SuperBaseClass {
     //helpers
     DataHelper dataHelper;
     DriverHelper driverHelper;
+    DriverFactory driverFactory;
+    BrowserFactory browserFactory;
 
 
     protected void InitPages(){
-        signIn = new SignIn(this.driver);
-        register = new Register(this.driver, driverHelper);
-        homepage = new Homepage(this.driver);
-        puppies= new Puppies(this.driver);
-        groomers=new Groomers(this.driver);
-        listMarketplace=new ListMarketplace(this.driver);
-        trainers=new Trainers(this.driver);
+
+        signIn = new SignIn((WebDriver) this.driver);
+        register = new Register((WebDriver) this.driver);
+        homepage = new Homepage((WebDriver) this.driver);
+        puppies= new Puppies((WebDriver) this.driver);
+        groomers=new Groomers((WebDriver) this.driver);
+        listMarketplace=new ListMarketplace((WebDriver) this.driver);
+        trainers=new Trainers((WebDriver) this.driver);
 
 
     }
     /*Constructor*/
     protected void InitHelpers(String baseUrl){
+
         dataHelper = new DataHelper();
-        driverHelper = new DriverHelper(driver, baseUrl);
+        //driverHelper = new DriverHelper(driver, baseUrl);
+        driverFactory = new DriverFactory();
+        browserFactory = new BrowserFactory();
+
     }
 }

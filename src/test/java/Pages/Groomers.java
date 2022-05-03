@@ -1,5 +1,7 @@
 package Pages;
 
+import Helpers.BrowserFactory;
+import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import Model.Service;
 import Model.User;
@@ -897,8 +899,19 @@ public class Groomers {
 
 
     DriverHelper driverHelper;
+    DriverFactory driverFactory;
+    BrowserFactory browserFactory;
 
     WebDriver driver;
+
+    /*Initialize Groomers*/
+    public Groomers(WebDriver _driver) {
+
+        this.driverFactory = new DriverFactory();
+        this.browserFactory = new BrowserFactory();
+        this.driver = _driver;
+        PageFactory.initElements(driver, this);
+    }
 
     /*Check Safe page*/
     private void validsafe() {
@@ -909,11 +922,6 @@ public class Groomers {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.urlContains("https://www.akc.org/products-services/akc-safe-grooming-program/"));
 
-    }
-    /*Initialize Groomers*/
-    public Groomers(WebDriver _driver) {
-        this.driver = _driver;
-        PageFactory.initElements(driver, this);
     }
 
 /*Check Groomers menu*/

@@ -1,6 +1,8 @@
 package Pages;
 
 
+import Helpers.BrowserFactory;
+import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -178,15 +180,22 @@ public class Homepage {
     //------------//
 
     DriverHelper driverHelper;
+    DriverFactory driverFactory;
+    BrowserFactory browserFactory;
 
     WebDriver driver;
 
     /*Initialize WebDriver*/
     public Homepage(WebDriver _driver) {
+        this.driverFactory = new DriverFactory();
+        this.browserFactory = new BrowserFactory();
         this.driver = _driver;
         PageFactory.initElements(driver, this);
     }
+
+
     /*Check Menu redirection pages*/
+
     private void valid1() {
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);

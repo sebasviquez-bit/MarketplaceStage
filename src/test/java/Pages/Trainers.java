@@ -1,5 +1,7 @@
 package Pages;
 
+import Helpers.BrowserFactory;
+import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import Model.Classes;
 import Model.User;
@@ -602,21 +604,17 @@ public class Trainers {
 
 
 
-
-
-
-
-
-
-
-
-
-
+    //Helpers//
     DriverHelper driverHelper;
+    DriverFactory driverFactory;
+    BrowserFactory browserFactory;
 
     WebDriver driver;
     /*Initialize WebDriver*/
     public Trainers(WebDriver _driver) {
+
+        //this.driverFactory = new DriverFactory();
+        this.browserFactory = new BrowserFactory();
         this.driver = _driver;
         PageFactory.initElements(driver, this);
 

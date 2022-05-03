@@ -1,6 +1,8 @@
 package Pages;
 
+import Helpers.BrowserFactory;
 import Helpers.DataHelper;
+import Helpers.DriverFactory;
 import Model.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -66,14 +68,23 @@ public class SignIn {
     //----------------//
 
     WebDriver driver;
+
+    //Helpers//
+
     DataHelper dataHelper;
+    DriverFactory driverFactory;
+    BrowserFactory browserFactory;
 
 
     /*Initialize WebDriver*/
     public SignIn(WebDriver _driver){
+
+        //this.driverFactory = new DriverFactory();
+        this.browserFactory = new BrowserFactory();
         this.driver = _driver;
         PageFactory.initElements(driver,this);
     }
+
 
     /*Check SignIn*/
     public void signInUser(User _testUser) {
