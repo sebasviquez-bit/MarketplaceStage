@@ -1,6 +1,7 @@
 package Helpers;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverFactory {
 
@@ -25,7 +26,7 @@ public class DriverFactory {
 
     public void setDriver(WebDriver driverParam) {  //call this method to set the driver object
 
-        driver.set(driverParam);
+        driver.set(new ChromeDriver());
     }
 
 

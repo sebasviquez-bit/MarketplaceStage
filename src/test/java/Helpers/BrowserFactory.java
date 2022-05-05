@@ -1,5 +1,6 @@
 package Helpers;
 
+import Specs.SuperBaseClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -9,16 +10,15 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
-public class BrowserFactory {
+public class BrowserFactory extends SuperBaseClass {
 
-    public static WebDriver createInstance(String browserName) throws IOException {
+    public static WebDriver createInstance(String browserName)  {
 
         browserName = browserName.toLowerCase();
 
@@ -30,7 +30,6 @@ public class BrowserFactory {
             return getEdgeInstance();
         else
             return getFFInstance();
-
 
     }
 

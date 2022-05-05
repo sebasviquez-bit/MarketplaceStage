@@ -6,13 +6,21 @@ import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SuperBaseClass {
     //driver
-    public WebDriver driver = null;
+    protected ThreadLocal driver = new ThreadLocal();
 
+    public WebDriver getDriver() {
 
+        return (WebDriver) driver.get();
+    }
 
+    public void setDriver(WebDriver driverParam) {  //call this method to set the driver object
+
+        driver.set(new ChromeDriver());
+    }
 
     //pages
     SignIn signIn;
@@ -46,9 +54,9 @@ public class SuperBaseClass {
     protected void InitHelpers(String baseUrl){
 
         dataHelper = new DataHelper();
-        //driverHelper = new DriverHelper(driver, baseUrl);
-        driverFactory = new DriverFactory();
-        browserFactory = new BrowserFactory();
+        driverHelper = new DriverHelper((WebDriver) driver, baseUrl);
+        //driverFactory = new DriverFactory();
+        //browserFactory = new BrowserFactory();
 
     }
 }
