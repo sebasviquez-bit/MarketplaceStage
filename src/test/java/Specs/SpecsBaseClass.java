@@ -19,19 +19,18 @@ public class SpecsBaseClass extends SuperBaseClass {
     void InitializeTests(String browserName, String baseUrl) throws MalformedURLException {
 
         driver.set(BrowserFactory.createInstance("chrome"));
-        DriverFactory.getInstance().setDriver((WebDriver) driver);
-        driver = (ThreadLocal) DriverFactory.getInstance().getDriver();
+        DriverFactory.getInstance().setDriver(driver.get());
 
         //driver = new ChromeDriver();
         //driver = new FirefoxDriver();
         //driver = new InternetExplorerDriver();
         //driver = new SafariDriver();
-        ((WebDriver) driver).manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        (driver.get()).manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        ((WebDriver) driver).navigate().to("https://stage.marketplace.akc.org/");
+        (driver.get()).navigate().to("https://stage.marketplace.akc.org/");
         //InitHelpers(baseUrl);
         InitPages();;
-        ((WebDriver) driver).manage().window().maximize();
+        (driver.get()).manage().window().maximize();
     }
 
     @AfterMethod

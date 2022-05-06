@@ -14,7 +14,7 @@ public class SuperBaseClass {
 
     public WebDriver getDriver() {
 
-        return (WebDriver) driver.get();
+        return driver.get();
     }
 
     public void setDriver(WebDriver driverParam) {  //call this method to set the driver object
@@ -41,12 +41,12 @@ public class SuperBaseClass {
     protected void InitPages(){
 
         signIn = new SignIn(this.driver.get());
-        register = new Register((WebDriver) this.driver);
-        homepage = new Homepage((WebDriver) this.driver);
-        puppies= new Puppies((WebDriver) this.driver);
-        groomers=new Groomers((WebDriver) this.driver);
-        listMarketplace=new ListMarketplace((WebDriver) this.driver);
-        trainers=new Trainers((WebDriver) this.driver);
+        register = new Register(this.driver.get());
+        homepage = new Homepage(this.driver.get());
+        puppies= new Puppies(this.driver.get());
+        groomers=new Groomers(this.driver.get());
+        listMarketplace=new ListMarketplace(this.driver.get());
+        trainers=new Trainers(this.driver.get());
 
 
     }
@@ -54,7 +54,7 @@ public class SuperBaseClass {
     protected void InitHelpers(String baseUrl){
 
         dataHelper = new DataHelper();
-        driverHelper = new DriverHelper((WebDriver) driver, baseUrl);
+        driverHelper = new DriverHelper(driver.get(), baseUrl);
         //driverFactory = new DriverFactory();
         //browserFactory = new BrowserFactory();
 
