@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SuperBaseClass {
     //driver
-    protected ThreadLocal driver = new ThreadLocal();
+    protected ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public WebDriver getDriver() {
 
@@ -40,7 +40,7 @@ public class SuperBaseClass {
 
     protected void InitPages(){
 
-        signIn = new SignIn((WebDriver) this.driver);
+        signIn = new SignIn(this.driver.get());
         register = new Register((WebDriver) this.driver);
         homepage = new Homepage((WebDriver) this.driver);
         puppies= new Puppies((WebDriver) this.driver);
