@@ -1,7 +1,6 @@
 package Pages;
 
 import Helpers.BrowserFactory;
-import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import Model.Service;
 import Model.User;
@@ -899,7 +898,7 @@ public class Groomers {
 
 
     DriverHelper driverHelper;
-    DriverFactory driverFactory;
+    //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
     WebDriver driver;
@@ -907,7 +906,7 @@ public class Groomers {
     /*Initialize Groomers*/
     public Groomers(WebDriver _driver) {
 
-        this.driverFactory = new DriverFactory();
+        //this.driverFactory = new DriverFactory();
         this.browserFactory = new BrowserFactory();
         this.driver = _driver;
         PageFactory.initElements(driver, this);

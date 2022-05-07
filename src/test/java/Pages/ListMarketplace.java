@@ -1,7 +1,6 @@
 package Pages;
 
 import Helpers.BrowserFactory;
-import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,7 +33,7 @@ public class ListMarketplace {
 
 
     DriverHelper driverHelper;
-    DriverFactory driverFactory;
+    //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
     WebDriver driver;

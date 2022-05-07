@@ -14,9 +14,8 @@ import static Helpers.DriverFactory.getInstance;
 
 public class SpecsBaseClass extends SuperBaseClass {
 
-    @Parameters({"browserName", "baseUrl"})
     @BeforeMethod
-    void InitializeTests(String browserName, String baseUrl) throws MalformedURLException {
+    void InitializeTests() throws MalformedURLException {
 
         driver.set(BrowserFactory.createInstance("chrome"));
         DriverFactory.getInstance().setDriver(driver.get());
@@ -42,3 +41,4 @@ public class SpecsBaseClass extends SuperBaseClass {
 
 
 }
+

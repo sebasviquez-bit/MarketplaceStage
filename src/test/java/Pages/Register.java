@@ -1,7 +1,6 @@
 package Pages;
 
 import Helpers.BrowserFactory;
-import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import Model.User;
 import org.openqa.selenium.WebDriver;
@@ -36,7 +35,7 @@ public class Register {
     WebElement registrarse;
 
     DriverHelper driverHelper;
-    DriverFactory driverFactory;
+    //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
 

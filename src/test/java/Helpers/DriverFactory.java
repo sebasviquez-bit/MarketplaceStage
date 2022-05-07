@@ -26,7 +26,7 @@ public class DriverFactory {
 
     public void setDriver(WebDriver driverParam) {  //call this method to set the driver object
 
-        driver.set(new ChromeDriver());
+        driver.set(driverParam);
     }
 
 

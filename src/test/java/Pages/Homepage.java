@@ -2,7 +2,6 @@ package Pages;
 
 
 import Helpers.BrowserFactory;
-import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -180,14 +179,14 @@ public class Homepage {
     //------------//
 
     DriverHelper driverHelper;
-    DriverFactory driverFactory;
+    //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
     WebDriver driver;
 
     /*Initialize WebDriver*/
     public Homepage(WebDriver _driver) {
-        this.driverFactory = new DriverFactory();
+        //this.driverFactory = new DriverFactory();
         this.browserFactory = new BrowserFactory();
         this.driver = _driver;
         PageFactory.initElements(driver, this);

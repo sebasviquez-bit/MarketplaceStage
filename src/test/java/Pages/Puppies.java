@@ -2,15 +2,12 @@ package Pages;
 
 
 import Helpers.BrowserFactory;
-import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import Model.Listing;
 import Model.Subscription;
 import Model.User;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -1239,14 +1236,14 @@ public class Puppies {
     //
 
     DriverHelper driverHelper;
-    DriverFactory driverFactory;
+    //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
     WebDriver driver;
 
     public Puppies(WebDriver _driver) {
 
-        this.driverFactory = new DriverFactory();
+        //this.driverFactory = new DriverFactory();
         this.browserFactory = new BrowserFactory();
         this.driver = _driver;
         PageFactory.initElements(driver, this);

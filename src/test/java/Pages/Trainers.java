@@ -1,7 +1,6 @@
 package Pages;
 
 import Helpers.BrowserFactory;
-import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import Model.Classes;
 import Model.User;
@@ -606,7 +605,7 @@ public class Trainers {
 
     //Helpers//
     DriverHelper driverHelper;
-    DriverFactory driverFactory;
+    //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
     WebDriver driver;

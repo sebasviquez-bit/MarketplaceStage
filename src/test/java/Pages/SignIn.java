@@ -2,7 +2,6 @@ package Pages;
 
 import Helpers.BrowserFactory;
 import Helpers.DataHelper;
-import Helpers.DriverFactory;
 import Model.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -72,7 +71,7 @@ public class SignIn {
     //Helpers//
 
     DataHelper dataHelper;
-    DriverFactory driverFactory;
+    //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
 
