@@ -178,7 +178,7 @@ public class Groomers {
     @FindBy(id = "react-select-2-option-1")
     WebElement bathopt;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.sc-bAeIUo.hLrVvj > div.sc-GMQeP.buojOw > div > div:nth-child(3) > div > a:nth-child(1)")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1eah9gv-2.bnMXnr > div.Styled__RowResults-sc-1eah9gv-4.bxzOCt > div > div:nth-child(3) > div > a")
     WebElement bathresults;
 
     @FindBy(id = "location__zip")
@@ -193,7 +193,7 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[2]/div/section/ul/li[2]/span")
     WebElement distresults;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[1]/div/div[3]/div[1]/a[1]/div/div[1]/div/div")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1eah9gv-2.bnMXnr > div.Styled__RowResults-sc-1eah9gv-4.bxzOCt > div > div:nth-child(3) > div > a > div > div.groomer-salon-card__img > div > img")
     WebElement groompict;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[1]/div/div[3]/div[1]/a[1]/div/div[2]/h4")
@@ -208,16 +208,16 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[1]/div/div[3]/div[1]/a[1]/div/div[2]/div[3]")
     WebElement groomcert;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[3]/div/h1")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__GroomerHero-sc-1ganx6z-0.cOKNao > div.Styled__GroomerDetails-sc-1ganx6z-1.krpSXW > div > h1")
     WebElement groom2name;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[1]/div/div[1]/div/div/div/div[2]/div/div/div[1]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__GroomerHero-sc-1ganx6z-0.cOKNao > div.groomer-hero__slider > div > div > div > div > div > div > div > div > div.image")
     WebElement groom2pict;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[3]/div/div[2]/div")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__GroomerHero-sc-1ganx6z-0.cOKNao > div.Styled__GroomerDetails-sc-1ganx6z-1.krpSXW > div > div.groomer-details__breadcrumbs > div > span > div.icon-breadcrumbs__breadcrumb-icon > svg")
     WebElement groom2type;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[3]/div/div[3]/span")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__GroomerHero-sc-1ganx6z-0.cOKNao > div.Styled__GroomerDetails-sc-1ganx6z-1.krpSXW > div > div.groomer-details__address > span")
     WebElement groom2address;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[3]/div/div[1]")
@@ -226,16 +226,16 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[3]/div/div[5]/a/button")
     WebElement messgroombut;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[1]/div[1]/div/div[1]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__Wrapper-sc-1gmc4jr-0.dUcTfa > div > div.about-me-title")
     WebElement aboutme;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[1]/div[1]/div/div[3]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__Wrapper-sc-1gmc4jr-0.dUcTfa > div > div.about-me-text")
     WebElement aboutmetext;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[1]/div[2]/div/div[1]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.groomer-profile__editable-section > div > div.groomer-profile__service-title")
     WebElement myservices;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[1]/div[2]/div/div[2]/div[1]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.groomer-profile__editable-section > div > div.groomer-profile__services-content > div > div > div > div > div.groomer-service__wrap > div.groomer-service__content > div.groomer-service__title")
     WebElement myservicestext;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[1]/div[2]/div/div[2]/div[2]/div[1]")
@@ -244,22 +244,22 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[1]/div[2]/div/div[2]/div[2]")
     WebElement packagestext;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[1]/div[3]/div/div[1]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.flexible > div.right > div > div.sub-header")
     WebElement operations;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[1]/div[3]/div/div[2]/div/div[1]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.flexible > div.right > div > div.hours-list > div")
     WebElement operationstext;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[1]/div[3]/div/div[2]/div/div[2]/div[1]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.payment > div.sub-header")
     WebElement payment;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[1]/div[3]/div/div[2]/div/div[2]/div[2]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.payment > div.payment-symbols > span > p")
     WebElement paymenttext;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[2]/div/div[2]/div[2]/div/form/button")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div > form > button")
     WebElement createaccbut;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[2]/div/div[2]/div[2]/div/form/div[6]/button")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div > form > div.contact-form__sign-in > button")
     WebElement signinbut;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/form/div/div[1]/div[1]")
@@ -571,7 +571,7 @@ public class Groomers {
     @FindBy(xpath = "//body/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[1]/section[1]/div[1]/form[1]/div[1]/div[12]/div[1]/div[1]/input[1]")
     WebElement billaddress;
 
-   @FindBy(id = "react-select-2-input")
+    @FindBy(id = "react-select-2-input")
     WebElement zip4;
 
     @FindBy(xpath = "//body/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[1]/section[1]/div[1]/form[1]/div[1]/div[14]/div[1]/div[1]/input[1]")
@@ -923,8 +923,8 @@ public class Groomers {
 
     }
 
-/*Check Groomers menu*/
-    public void CheckGroomers(){
+    /*Check Groomers menu*/
+    public void CheckGroomers() {
 
         this.groomers.click();
         this.groomseek.isDisplayed();
@@ -935,6 +935,7 @@ public class Groomers {
         this.listservmark.isDisplayed();
 
     }
+
     /*Check Groomer pages*/
     public void CheckGroomers1() {
 
@@ -974,7 +975,7 @@ public class Groomers {
     }
 
     /*Check Groomer Homepage elements*/
-    public void CheckGroomHome(){
+    public void CheckGroomHome() {
 
         this.groomers.click();
         this.findgroom.click();
@@ -1021,8 +1022,9 @@ public class Groomers {
         this.crealistbelow.isDisplayed();
 
     }
+
     /*Check SERP results*/
-    public void CheckAllResults(){
+    public void CheckAllResults() {
 
         this.groomers.click();
         this.findgroom.click();
@@ -1031,50 +1033,50 @@ public class Groomers {
 
     }
 
-    public void CheckBathResults(){
+    public void CheckBathResults() {
 
         this.groomers.click();
         this.findgroom.click();
         this.service.click();
         this.bathopt.click();
         this.searchbut.click();
-        this.bathresults.isDisplayed();   //This fails on Stage env because of the missing Groomers board
+        this.bathresults.isDisplayed();   //This fails on Stage because there a no results
 
     }
 
-    public void CheckZipResults(){
+    public void CheckZipResults() {
 
         this.groomers.click();
         this.findgroom.click();
         this.service.click();
         this.bathopt.click();
         this.zipstate.click();
-        this.zipfield2.sendKeys("80012");
+        this.zipfield2.sendKeys("10011");
         this.searchbut.click();  //This fails because of the Groomers issue on stage
         this.zipresults.isDisplayed();
 
     }
 
-    public void CheckDistResults(){
+    public void CheckDistResults() {
 
         this.groomers.click();
         this.findgroom.click();
         this.service.click();
         this.bathopt.click();
         this.zipstate.click();
-        this.zipfield2.sendKeys("80001");
+        this.zipfield2.sendKeys("10011");
         //this.distance.click();
         this.distance.click();
         this.distopt.click();
         this.searchbut.click();
-        this.distresults.isDisplayed(); //This fails on stage because of the Groomers Menu table issue
+        this.distresults.isDisplayed(); //This fails on stage because there is no bath Serivces.
 
     }
 
     /*Check other pages*/
-    public void CheckList1(){
+    public void CheckList1() {
 
-        WebDriverWait wait = new WebDriverWait (driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         this.groomers.click();
         this.findgroom.click();
         this.crealist.click();
@@ -1083,7 +1085,7 @@ public class Groomers {
     }
 
 
-    public void CheckSafe1(){
+    public void CheckSafe1() {
 
         this.groomers.click();
         this.findgroom.click();
@@ -1092,7 +1094,7 @@ public class Groomers {
 
     }
 
-    public void CheckSafe2(){
+    public void CheckSafe2() {
 
         this.groomers.click();
         this.findgroom.click();
@@ -1101,9 +1103,9 @@ public class Groomers {
 
     }
 
-    public void CheckList2(){
+    public void CheckList2() {
 
-        WebDriverWait wait = new WebDriverWait (driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         this.groomers.click();
         this.findgroom.click();
         this.crealistbelow.click();
@@ -1120,9 +1122,9 @@ public class Groomers {
         this.service.click();
         this.bathopt.click();
         this.zipstate.click();
-        this.zipfield2.sendKeys("80001");
-        this.searchbut.click();  //This fails on stage because of the Groomers Menu table issue.
-        this.groompict.isDisplayed();
+        this.zipfield2.sendKeys("10011");
+        this.searchbut.click();
+        this.groompict.isDisplayed(); //This fails on stage because of there are no Groomers Bath services
         this.groomname.isDisplayed();
         this.groomtype.isDisplayed();
         this.groomaddress.isDisplayed();
@@ -1136,15 +1138,15 @@ public class Groomers {
         this.groomers.click();
         this.findgroom.click();
         this.service.click();
-        this.bathopt.click();
+        this.haircut.click();
         this.searchbut.click();
-        this.groompict.click();  //This fails on stage because of the Groomers Menu table issue.
+        this.groompict.click();
         this.groom2name.isDisplayed();
         this.groom2pict.isDisplayed();
         this.groom2address.isDisplayed();
         this.groom2type.isDisplayed();
-        this.groom2cert.isDisplayed();
-        this.messgroombut.isDisplayed();
+        //this.groom2cert.isDisplayed();
+        this.createaccbut.isDisplayed();
         this.aboutme.isDisplayed();
         this.aboutmetext.isDisplayed();
         this.myservices.isDisplayed();
@@ -1159,14 +1161,12 @@ public class Groomers {
         this.signinbut.isDisplayed();
 
 
-
-
-
     }
+
     /*Get Annual Groomer*/
     public void AnnualGroomers(Service _testService) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait (driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         this.groomers.click();
         this.listservmark.click();
         this.listservicmarkpage.isDisplayed();
@@ -1298,16 +1298,12 @@ public class Groomers {
         this.successgroomer.isDisplayed();
 
 
-
-
-
-
-
     }
+
     /*Get Quarter Groomer*/
     public void QuatGroomers(Service _testService) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait (driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         this.groomers.click();
         this.listservmark.click();
         this.listservicmarkpage.isDisplayed();
@@ -1451,14 +1447,11 @@ public class Groomers {
         this.save6.click();
         this.successgroomer.isDisplayed();
 
-
-
-
-
-
     }
+
+
     /*Check Groomer Dashboard*/
-    public void VerifiyDashGroom(User _testUser)  {
+    public void VerifiyDashGroom(User _testUser) {
 
 
         this.iconsignin.click();
@@ -1485,8 +1478,9 @@ public class Groomers {
 
 
     }
+
     /*Check Groomer messenger */
-    public void VerifiyMessenger(User _testUser)  {
+    public void VerifiyMessenger(User _testUser) {
 
 
         this.iconsignin.click();
@@ -1510,10 +1504,11 @@ public class Groomers {
         this.blockchannel.isDisplayed();
         this.deleteconvers.isDisplayed();
     }
+
     /*Check ManMyPage Groomer*/
     public void VerifiyManMypage(User _testUser) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait (driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         this.iconsignin.click();
         this.userName.sendKeys(_testUser.username);
         this.passwordlog.sendKeys(_testUser.password);
@@ -1582,13 +1577,10 @@ public class Groomers {
         this.savepackspebut.isDisplayed();
 
 
-
-
-
     }
 
     /*Check Account Groomer*/
-    public void VerifiyMyAccountGroom(User _testUser)  {
+    public void VerifiyMyAccountGroom(User _testUser) {
 
 
         this.iconsignin.click();
@@ -1601,28 +1593,29 @@ public class Groomers {
         this.dashbreed.click();
         this.accountgroomer.click();
         this.security.isDisplayed();
-        this.paymentmethods.isDisplayed();
+        //this.paymentmethods.isDisplayed();
         this.oldpassword.isDisplayed();
         this.newpassword.isDisplayed();
         this.confirmpassword.isDisplayed();
         this.changepasssbut.isDisplayed();
-        this.paymentmethods.click();
-        this.cardnumber.isDisplayed();
-        this.expirationdate.isDisplayed();
-        this.cvvgroom.isDisplayed();
-        this.firstnamegroom.isDisplayed();
-        this.lastnamegroom.isDisplayed();
-        this.billingaddressgroom.isDisplayed();
-        this.zipgroom.isDisplayed();
-        this.citygroomer.isDisplayed();
-        this.stategroomer.isDisplayed();
-        this.phonegroomer.isDisplayed();
-        this.clicktermscond.isDisplayed();
-        this.savebilling.isDisplayed();
+        this.manmypagegroomer.click();
+        //this.cardnumber.isDisplayed();
+        //this.expirationdate.isDisplayed();
+        //this.cvvgroom.isDisplayed();
+        //this.firstnamegroom.isDisplayed();
+        //this.lastnamegroom.isDisplayed();
+        //this.billingaddressgroom.isDisplayed();
+        //this.zipgroom.isDisplayed();
+        //this.citygroomer.isDisplayed();
+        //this.stategroomer.isDisplayed();
+        //this.phonegroomer.isDisplayed();
+        //this.clicktermscond.isDisplayed();
+        //this.savebilling.isDisplayed();
 
     }
+
     /*Check My Page Groomer*/
-    public void VerifiyMyPage(User _testUser)  {
+    public void VerifiyMyPage(User _testUser) {
 
         this.iconsignin.click();
         this.userName.sendKeys(_testUser.username);

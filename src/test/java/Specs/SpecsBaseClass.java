@@ -20,16 +20,13 @@ public class SpecsBaseClass extends SuperBaseClass {
         driver.set(BrowserFactory.createInstance("chrome"));
         DriverFactory.getInstance().setDriver(driver.get());
 
-        //driver = new ChromeDriver();
-        //driver = new FirefoxDriver();
-        //driver = new InternetExplorerDriver();
-        //driver = new SafariDriver();
+        (driver.get()).navigate().to("https://stage.marketplace.akc.org/");
+        //InitHelpers();
+        InitPages();
+        (driver.get()).manage().window().maximize();
         (driver.get()).manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        (driver.get()).navigate().to("https://stage.marketplace.akc.org/");
-        //InitHelpers(baseUrl);
-        InitPages();;
-        (driver.get()).manage().window().maximize();
+
     }
 
     @AfterMethod

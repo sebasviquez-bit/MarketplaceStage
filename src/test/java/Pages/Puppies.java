@@ -6,8 +6,11 @@ import Helpers.DriverHelper;
 import Model.Listing;
 import Model.Subscription;
 import Model.User;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,6 +31,9 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(2) > div.menu-item-dropdown-container > div > ul > li:nth-child(2) > div.title-container > a")
     WebElement findapuppy;
 
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(2) > div.menu-item-dropdown-container > div > ul > li:nth-child(4) > div > a")
+    WebElement resourcesForGettingPup;
+
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/ul/li[3]/div/a")
     WebElement akcmarkforpup;
 
@@ -46,13 +52,13 @@ public class Puppies {
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/ul/li[8]/div/a")
     WebElement viewallbreeds;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/ul/li[10]/div/a")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(2) > div.menu-item-dropdown-container > div > ul > li:nth-child(7) > div > a")
     WebElement listlitmark;
 
-    @FindBy(xpath = "/html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/ul/li[11]/div/a")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(2) > div.menu-item-dropdown-container > div > ul > li:nth-child(8) > div > a")
     WebElement breedersfaq;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/ul/li[12]/div/a")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(2) > div.menu-item-dropdown-container > div > ul > li:nth-child(9) > div > a")
     WebElement findpuprighthome;
 
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/ul/li[1]")
@@ -516,13 +522,13 @@ public class Puppies {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[7]/div/a[3]/h4")
     WebElement otherbreed3text;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[2]/div/h1")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-wis0mx-2.dakhfk > div.Styled__RowResults-sc-wis0mx-4.botkTX > div > div:nth-child(3) > div > a > div > div.breeder-litter-card__details > div:nth-child(1) > h4")
     WebElement listingname;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-wis0mx-2.dakhfk > div.Styled__RowResults-sc-wis0mx-4.botkTX > div > div:nth-child(3) > div > a > div > div.breeder-litter-card__img > div.media-wrap > img")
     WebElement listingpict;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[2]/div/div[1]/span")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-wis0mx-2.dakhfk > div.Styled__RowResults-sc-wis0mx-4.botkTX > div > div:nth-child(3) > div > a > div > div.breeder-litter-card__details > div:nth-child(1) > p.breeder-card__contact-link.text-link")
     WebElement listingtext;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[2]/div/div[3]/a/button")
@@ -536,8 +542,6 @@ public class Puppies {
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[1]/div/div/div[4]")
     WebElement breederprof;
-
-
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[2]/div/div[2]/div[2]/div/form/button")
     WebElement createaccbut;
@@ -623,15 +627,13 @@ public class Puppies {
     @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[1]/div[3]/input")
     WebElement userName;
 
-
     @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[1]/div[4]/input")
     WebElement passwordlog;
-
 
     @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[3]/div/input")
     WebElement ingresar;
 
-    @FindBy(css = "#react-root > div > div.sc-iwsKbI.fSqOjx > div.sc-VigVT.gTgUxQ > div > div.header-bar > div.header-icon-container.user-menu > div > a")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > a")
     WebElement logged;
 
     @FindBy(xpath = "//input[@name='litter_number']")
@@ -787,7 +789,6 @@ public class Puppies {
     @FindBy(xpath = "//*[@id='react-root']/div/div[5]/div/div/main/section/div/section[2]/div/div[1]/div/a")
     WebElement saveimages;
 
-
     @FindBy(id = "onboarding-breeders-listing-media__submit")
     WebElement continue3;
 
@@ -848,7 +849,7 @@ public class Puppies {
     @FindBy(xpath = "//body/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[1]/section[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/input[1]")
     WebElement billaddress2;
 
-    @FindBy(css = "#react-root > div > div.sc-iwsKbI.fSqOjx > div.sc-VigVT.gTgUxQ > div > div.header-bar > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(1) > a")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(1) > a")
     WebElement dashbreed;
 
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/div/div[2]/div[2]/div/a[1]")
@@ -857,10 +858,10 @@ public class Puppies {
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/div/div[2]/div[2]/div/a[2]")
     WebElement dashmessenger;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/div/div[2]/div[2]/div/a[3]")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(4) > a")
     WebElement dashmanmypag;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/div/div[2]/div[2]/div/a[4]")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(3) > a")
     WebElement dashmanmylist;
 
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/div/div[2]/div[2]/div/a[5]")
@@ -905,22 +906,22 @@ public class Puppies {
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/section[3]/div/div[1]/div[2]/div[2]/div[2]/div[2]")
     WebElement yeardash;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section:nth-child(3) > div.listing-table__wrap > div.listing-table__title > div")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section:nth-child(4) > div.listing-table__wrap > div.listing-table > div.show-at-medium > table > tbody > tr > td:nth-child(1)")
     WebElement publishedlist;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div.listing-item > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.euUzqQ.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-hero__edit-options > div > div > div.edit-menu__handle")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section:nth-child(4) > div.listing-table__wrap > div.listing-table > div.show-at-medium > table > tbody > tr > td:nth-child(9) > button")
     WebElement editListingButton;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section:nth-child(3) > div.listing-table__wrap > div.listing-table__title > a")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section:nth-child(4) > div.listing-table__wrap > div.listing-table__title")
     WebElement seealllist;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section:nth-child(3) > div.listing-table__wrap > div.listing-table > div.listing-table__add > a")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section:nth-child(4) > div.listing-table__wrap > div.listing-table > div.listing-table__add > a > span")
     WebElement createanewlisting;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section:nth-child(4) > div > div > h4")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section:nth-child(5) > div > div > h4")
     WebElement usersadmin;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section:nth-child(4) > div > div > p")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section:nth-child(5) > div > div > p")
     WebElement activeadmin;
 
     @FindBy(css = "#breeders-storefront-invite-user > div > div > div > label")
@@ -929,7 +930,7 @@ public class Puppies {
     @FindBy(css = "#breeders-storefront-invite-user > div > div > button")
     WebElement addadmin;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/div/div[2]/div[2]/div/a[2]")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(2) > a")
     WebElement messengertab;
 
     @FindBy(xpath = "//html/body/div[4]/div/div/div[5]/div/div/main/section/div/div/div[1]/div[1]/img")
@@ -971,10 +972,10 @@ public class Puppies {
     @FindBy(xpath = "//html/body/div[4]/div/div/div[5]/div/div/main/section/div/div/div[2]/div/div/div[3]/div[1]/div/form/div[3]/textarea")
     WebElement messtextarea;
 
-    @FindBy(xpath = "//html/body/div[4]/div/div/div[5]/div/div/main/section/div/div/div[2]/div/div/div[2]/div/div[4]/div/div/div[1]/p")
+    @FindBy(css = "#chat-view > div:nth-child(20) > div > div > div.plane-text-message > p")
     WebElement responsemess;
 
-    @FindBy(xpath = "//html/body/div[4]/div/div/div[5]/div/div/main/section/div/div/div[2]/div/div/div[3]/div[1]/div/form/div[4]/input")
+    @FindBy(css = "#chat-view > div:nth-child(22) > div > div > div.plane-text-message > p")
     WebElement sentmess;
 
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[1]/section/ul/li[1]/span")
@@ -1163,7 +1164,6 @@ public class Puppies {
     @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/section[1]/div[4]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]")
     WebElement typequestion;
 
-
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/div[2]/section/div[4]")
     WebElement movequestion;
 
@@ -1221,7 +1221,7 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(2) > a")
     WebElement createLitterListing;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-wis0mx-2.dakhfk > div.Styled__RowResults-sc-wis0mx-4.botkTX > div > div:nth-child(3) > div:nth-child(1) > a:nth-child(2)")
+    @FindBy(xpath = "//*[@id=\"react-root\"]/div/div[4]/div/div[3]/div[2]/div[1]/div/div[3]/div[1]/a[2]")
     WebElement BreedeSebasViquez1;
 
     @FindBy(css = "#react-root > div > div:nth-child(4) > div > div > div.Styled__PuppyLitterHero-sc-1g1ebi4-0.fatWE > div.puppy-litter-hero__details > div > div.puppy-litter-info__wrapper > a > button")
@@ -1233,7 +1233,48 @@ public class Puppies {
     @FindBy(xpath = "//body[1]/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[6]/div[2]/div[1]/div[2]/div[2]/div[1]/form[1]/div[5]/div[1]/input[1]")
     WebElement messageBreederPasswordInput;
 
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1mgo9gi-0.cGhLjQ.static-page > div > div.Styled__Wrapper-sc-go6uf2-0.rCOYJ > div > div.show-at-medium > div > a.anchored-nav__anchor.text-white.px3.toggled")
+    WebElement RFGPAbout;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1mgo9gi-0.cGhLjQ.static-page > div > div.Styled__Wrapper-sc-go6uf2-0.rCOYJ > div > div.show-at-medium > div > a:nth-child(2)")
+    WebElement RFGPReadyForAPup;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1mgo9gi-0.cGhLjQ.static-page > div > div.Styled__Wrapper-sc-go6uf2-0.rCOYJ > div > div.show-at-medium > div > a:nth-child(3)")
+    WebElement RFGPCChossingBreed;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1mgo9gi-0.cGhLjQ.static-page > div > div.Styled__Wrapper-sc-go6uf2-0.rCOYJ > div > div.show-at-medium > div > a:nth-child(4)")
+    WebElement RFGPCQuestionsBreeder;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1mgo9gi-0.cGhLjQ.static-page > div > div.Styled__Wrapper-sc-go6uf2-0.rCOYJ > div > div.show-at-medium > div > a:nth-child(5)")
+    WebElement RFGPCPuppyCheckList;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1mgo9gi-0.cGhLjQ.static-page > div > div.section-1 > div.text-wrap > a")
+    WebElement RFGPCFindPuppyButton;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1mgo9gi-0.cGhLjQ.static-page > div > div.section-2 > div.text-wrap > p:nth-child(3) > a")
+    WebElement RFGPCQuestionsAskBreeder;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1mgo9gi-0.cGhLjQ.static-page > div > div.section-3 > div.img-wrap > div:nth-child(1) > a")
+    WebElement RFGPCAKCBreederOfMerit;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1mgo9gi-0.cGhLjQ.static-page > div > div.section-3 > div.img-wrap > div:nth-child(2) > a")
+    WebElement RFGPCAKCBredWithHEART;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1mgo9gi-0.cGhLjQ.static-page > div > div.section-3 > div.img-wrap > div:nth-child(3) > a")
+    WebElement RFGPCNationalBreedClubMember;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1mgo9gi-0.cGhLjQ.static-page > div > div.section-4 > div.text-wrap > p:nth-child(2) > p > a")
+    WebElement RFGPCCanineCollege;
+
+    @FindBy(xpath = "//*[@id=\"react-root\"]/div/div[4]/div/div[2]/div/div[7]/div[1]/p[2]/a")
+    WebElement RFGPCKennelInspectionsLearnMore;
+
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1mgo9gi-0.cGhLjQ.static-page > div > div.section-6 > div.text-wrap > p:nth-child(3) > a")
+    WebElement RFGPCDNAProfiling;
+
     //
+
+
 
     DriverHelper driverHelper;
     //DriverFactory driverFactory;
@@ -1254,18 +1295,10 @@ public class Puppies {
 
         this.puppies.click();
         this.findapuppy.isDisplayed();
-        this.akcmarkforpup.isDisplayed();
-        this.readyforapup.isDisplayed();
-        this.choosingabreed.isDisplayed();
-        this.questaskbreeder.isDisplayed();
-        this.prepforpup.isDisplayed();
-        this.viewallbreeds.isDisplayed();
+        this.resourcesForGettingPup.isDisplayed();
         this.listlitmark.isDisplayed();
         this.breedersfaq.isDisplayed();
         this.findpuprighthome.isDisplayed();
-        this.pupseek.isDisplayed();
-        this.forbreeders.isDisplayed();
-
 
     }
 
@@ -1373,6 +1406,18 @@ public class Puppies {
         wait.until(ExpectedConditions.visibilityOf(breedfaqpage));
         
     }
+
+    public void CheckPuppies11() {
+
+        WebDriverWait wait = new WebDriverWait (driver, 10);
+        this.puppies.click();
+        wait.until(ExpectedConditions.elementToBeClickable(resourcesForGettingPup));
+        this.resourcesForGettingPup.click();
+        wait.until(ExpectedConditions.urlContains("/about-akc-marketplace"));
+
+    }
+
+
     /*Check Visibility of elements in Puppies Homepage*/
     public void CheckPuppiesHome() {
         this.puppies.click();
@@ -1725,7 +1770,7 @@ public class Puppies {
         this.puppies.click();
         this.findapuppy.click();
         this.howdecide.click();
-        wait.until(ExpectedConditions.visibilityOf(choosebreedpage));
+        wait.until(ExpectedConditions.urlContains("choosing-a-breed"));
 
 
     }
@@ -1885,6 +1930,7 @@ public class Puppies {
         this.listingname.isDisplayed();
         this.listingpict.isDisplayed();
         this.listingtext.isDisplayed();
+        this.listingtext.click();
         this.listingmsgbut.isDisplayed();
         this.aboutbreeder.isDisplayed();
         this.listingcreateacc.isDisplayed();
@@ -1953,6 +1999,9 @@ public class Puppies {
         this.userName.sendKeys(_testUser.username);
         this.passwordlog.sendKeys(_testUser.password);
         this.ingresar.click();
+        Actions action = new Actions(this.driver);
+        action.moveToElement(logged).perform();
+        action.moveToElement(logged).click();
         this.dashmypage.isDisplayed();
         //this.actpaidlit.click();
         //this.litternumber.isDisplayed();
@@ -1974,6 +2023,7 @@ public class Puppies {
         this.passwordlog.sendKeys(_testListing.Password);
         this.ingresar.click();
         this.logged.isDisplayed();
+        //C
         this.actpaidlit.click();
         this.litternumber.sendKeys(_testListing.LitNum);
         this.damnumber.sendKeys(_testListing.DamRegNum);
@@ -2309,10 +2359,6 @@ public class Puppies {
         this.userName.sendKeys(_testUser.username);
         this.passwordlog.sendKeys(_testUser.password);
         this.ingresar.click();
-        //Actions action = new Actions(this.driver);
-        //action.moveToElement(logged).perform();
-        //action.moveToElement(logged).click();
-        //this.dashbreed.click();
         this.dashhome.isDisplayed();
         this.dashmessenger.isDisplayed();
         this.dashmanmypag.isDisplayed();
@@ -2328,9 +2374,9 @@ public class Puppies {
         this.editdash.isDisplayed();
         this.profileviews.isDisplayed();
         this.totalinquiries.isDisplayed();
-        //this.purchmarksub.isDisplayed();
-        //this.monthlydash.isDisplayed();
-        //this.yeardash.isDisplayed();
+        this.purchmarksub.isDisplayed();
+        this.monthlydash.isDisplayed();
+        this.yeardash.isDisplayed();
         this.publishedlist.isDisplayed();
         this.editListingButton.isDisplayed();
         this.seealllist.isDisplayed();
@@ -2350,6 +2396,9 @@ public class Puppies {
         this.userName.sendKeys(_testUser.username);
         this.passwordlog.sendKeys(_testUser.password);
         this.ingresar.click();
+        Actions action = new Actions(this.driver);
+        action.moveToElement(logged).perform();
+        action.moveToElement(logged).click();
         //this.dashbreed.click();
         this.messengertab.click();
         this.imgmess.isDisplayed();
@@ -2374,12 +2423,13 @@ public class Puppies {
        //Sends message to breader account from findpuppy's page
         public void messageBreeder(User _testUser){
 
-        //WebDriverWait wait = new WebDriverWait (driver, 10);
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        //wait.until(ExpectedConditions.elementToBeClickable(puppies));
+            this.iconsignin.click();
+            this.userName.sendKeys(_testUser.username);
+            this.passwordlog.sendKeys(_testUser.password);
+            this.ingresar.click();
+            Actions action = new Actions(this.driver);
+            action.moveToElement(logged).perform();
+            action.moveToElement(logged).click();
         this.puppies.click();
         this.findapuppy.click();
         this.findpupformbut.click();
@@ -2397,6 +2447,9 @@ public class Puppies {
         this.userName.sendKeys(_testUser.username);
         this.passwordlog.sendKeys(_testUser.password);
         this.ingresar.click();
+        Actions action = new Actions(this.driver);
+        action.moveToElement(logged).perform();
+        action.moveToElement(logged).click();
         this.dashmanmypag.click();
         this.profileman.isDisplayed();
         this.contactman.isDisplayed();
@@ -2443,6 +2496,9 @@ public class Puppies {
         this.userName.sendKeys(_testUser.username);
         this.passwordlog.sendKeys(_testUser.password);
         this.ingresar.click();
+        Actions action = new Actions(this.driver);
+        action.moveToElement(logged).perform();
+        action.moveToElement(logged).click();
         this.dashmanmylist.click();
         this.upgrto.isDisplayed();
         this.crealitterbutton.isDisplayed();
@@ -2455,7 +2511,7 @@ public class Puppies {
         this.litterpicture.isDisplayed();
         this.litterheader.isDisplayed();
         this.editlitter.click();
-        //this.viewlisting.isDisplayed();
+        this.viewlisting.isDisplayed();
         this.editListingButton.isDisplayed();
         this.unpublishlisting.isDisplayed();
         this.moreinfolisting.click();
@@ -2481,8 +2537,10 @@ public class Puppies {
         this.userName.sendKeys(_testUser.username);
         this.passwordlog.sendKeys(_testUser.password);
         this.ingresar.click();
-        //this.logged.click();
-        //this.dashbreed.click();
+        Actions action = new Actions(this.driver);
+        action.moveToElement(logged).perform();
+        action.moveToElement(logged).click();
+        this.dashbreed.click();
         this.dashquestion.click();
         this.mybuyerheader.isDisplayed();
         this.mybuyertext.isDisplayed();
@@ -2517,7 +2575,10 @@ public class Puppies {
         this.userName.sendKeys(_testUser.username);
         this.passwordlog.sendKeys(_testUser.password);
         this.ingresar.click();
-        //this.dashbreed.click();
+        Actions action = new Actions(this.driver);
+        action.moveToElement(logged).perform();
+        action.moveToElement(logged).click();
+        this.dashbreed.click();
         this.dashaccount.click();
         this.changepassheader.isDisplayed();
         this.changepasstext.isDisplayed();
@@ -2535,8 +2596,34 @@ public class Puppies {
         this.userName.sendKeys(_testUser.username);
         this.passwordlog.sendKeys(_testUser.password);
         this.ingresar.click();
-        //this.dashbreed.click();
+        Actions action = new Actions(this.driver);
+        action.moveToElement(logged).perform();
+        action.moveToElement(logged).click();
+        this.dashbreed.click();
         this.dashmypage.click();
         validmypage();
     }
+
+    public void ResourcesForGettingPupAboutPage(){  //Fix this test
+
+        this.puppies.click();
+        WebDriverWait wait = new WebDriverWait (driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(resourcesForGettingPup));
+        this.resourcesForGettingPup.click();
+        this.RFGPAbout.isDisplayed();
+        this.RFGPReadyForAPup.isDisplayed();
+        this.RFGPCChossingBreed.isDisplayed();
+        this.RFGPCQuestionsBreeder.isDisplayed();
+        this.RFGPCPuppyCheckList.isDisplayed();
+        this.RFGPCFindPuppyButton.isDisplayed();
+        this.RFGPCQuestionsAskBreeder.isDisplayed();
+        this.RFGPCAKCBreederOfMerit.isDisplayed();
+        this.RFGPCAKCBredWithHEART.isDisplayed();
+        this.RFGPCNationalBreedClubMember.isDisplayed();
+        this.RFGPCCanineCollege.isDisplayed();
+        this.RFGPCKennelInspectionsLearnMore.isDisplayed();
+        this.RFGPCDNAProfiling.isDisplayed();
+
+    }
+
 }

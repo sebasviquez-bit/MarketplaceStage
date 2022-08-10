@@ -17,7 +17,7 @@ public class DriverFactory {
         return instance;
     }
 
-    ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>(); //thread local driver object for Webdriver
+    protected ThreadLocal<WebDriver> driver = new ThreadLocal<>(); //thread local driver object for Webdriver
 
     public WebDriver getDriver() {
 

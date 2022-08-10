@@ -12,15 +12,6 @@ public class SuperBaseClass {
     //driver
     protected ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    public WebDriver getDriver() {
-
-        return driver.get();
-    }
-
-    public void setDriver(WebDriver driverParam) {  //call this method to set the driver object
-
-        driver.set(driverParam);
-    }
 
     //pages
     SignIn signIn;
@@ -51,10 +42,10 @@ public class SuperBaseClass {
 
     }
     /*Constructor*/
-    protected void InitHelpers(String baseUrl){
+    protected void InitHelpers(){
 
         dataHelper = new DataHelper();
-        driverHelper = new DriverHelper(driver.get(), baseUrl);
+        driverHelper = new DriverHelper(this.driver.get());
         //driverFactory = new DriverFactory();
         //browserFactory = new BrowserFactory();
 
