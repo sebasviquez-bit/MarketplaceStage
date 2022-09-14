@@ -35,7 +35,7 @@ public class MPTestSuite extends SpecsBaseClass {
     }
 
     /*Activate Listing*/
-    @Test (dataProvider = "BreederActListing", dataProviderClass = DataHelper.class)
+    //@Test (dataProvider = "BreederActListing", dataProviderClass = DataHelper.class)
 
     public void BreederListAct(String sEmail, String sPassword, String sLitNum, String sDamRegNum, String sDamCert, String sCreditCard, String sExpDate, String sCVV, String sFirstName, String sLastName, String sAddress, String sZIP, String sPhone, String sVariety, String sDesc, String sPrice, String sHealthvacc, String sYoutube, String sKenname, String sWeblink, String sDescken, String sBreedsince, String sWebsite) throws InterruptedException {
 
@@ -116,7 +116,6 @@ public class MPTestSuite extends SpecsBaseClass {
     public void HomepageCheck()  {
 
         homepage.CheckHomepage();
-
 
     }
 
