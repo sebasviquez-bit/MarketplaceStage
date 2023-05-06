@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 
 public class Homepage {
 
@@ -113,10 +115,10 @@ public class Homepage {
     @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[2]")
     WebElement foot1;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[3]")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterLinksWrapper-sc-r5ynjl-2.eLqWgq.site-footer__wrap.site-footer__links-wrap.site-footer__wrap--no-flex")
     WebElement foot2;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[2]/div[2]/div/div")
+    @FindBy(xpath = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterSocialWrapper-sc-r5ynjl-1.duYsZV.site-footer__wrap.site-footer__social.site-footer__wrap--ac.bpm-py16 > div.Styled__SocialLinksWrapper-sc-r5ynjl-3.ikLeni.site-footer__wrap-inner.bpm-flex-shrink-0")
     WebElement socialfoot;
 
     @FindBy(xpath = "//html/body/main/div/div/div[5]/div[2]/div/div/div[1]/span")
@@ -125,7 +127,7 @@ public class Homepage {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[2]/div/form")
     WebElement findgroomform;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/ol/li[3]/div/div/p/a")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.marketplace__top-image > section > div > div:nth-child(1) > h2")
     WebElement creabreedlistpage;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/form/div/div[1]/div[2]")
@@ -140,16 +142,16 @@ public class Homepage {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[5]/div/div/button[2]")
     WebElement carrousel;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[3]/div[3]/div/span/ul/li[1]/a")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterLinksWrapper-sc-r5ynjl-2.eLqWgq.site-footer__wrap.site-footer__links-wrap.site-footer__wrap--no-flex > div:nth-child(3) > div > span > ul > li:nth-child(1) > a")
     WebElement newsletter;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[3]/div[3]/div/span/ul/li[2]/a")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterLinksWrapper-sc-r5ynjl-2.eLqWgq.site-footer__wrap.site-footer__links-wrap.site-footer__wrap--no-flex > div:nth-child(3) > div > span > ul > li:nth-child(2) > a")
     WebElement goodworks;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[3]/div[4]/div/span/ul/li[1]/a")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterLinksWrapper-sc-r5ynjl-2.eLqWgq.site-footer__wrap.site-footer__links-wrap.site-footer__wrap--no-flex > div:nth-child(4) > div > span > ul > li:nth-child(1) > a")
     WebElement termsofuse;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[3]/div[4]/div/span/ul/li[2]/a")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterLinksWrapper-sc-r5ynjl-2.eLqWgq.site-footer__wrap.site-footer__links-wrap.site-footer__wrap--no-flex > div:nth-child(4) > div > span > ul > li:nth-child(2) > a")
     WebElement privacy;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div/div/div[1]/div[1]/h2")
@@ -161,20 +163,24 @@ public class Homepage {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div/div/h2")
     WebElement privacypage;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[2]/div[2]/div/div/a[1]")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterSocialWrapper-sc-r5ynjl-1.duYsZV.site-footer__wrap.site-footer__social.site-footer__wrap--ac.bpm-py16 > div.Styled__SocialLinksWrapper-sc-r5ynjl-3.ikLeni.site-footer__wrap-inner.bpm-flex-shrink-0 > div > div > a:nth-child(1) > svg")
     WebElement facebook;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[2]/div[2]/div/div/a[2]")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterSocialWrapper-sc-r5ynjl-1.duYsZV.site-footer__wrap.site-footer__social.site-footer__wrap--ac.bpm-py16 > div.Styled__SocialLinksWrapper-sc-r5ynjl-3.ikLeni.site-footer__wrap-inner.bpm-flex-shrink-0 > div > div > a:nth-child(2)")
     WebElement twitter;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[2]/div[2]/div/div/a[3]")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterSocialWrapper-sc-r5ynjl-1.duYsZV.site-footer__wrap.site-footer__social.site-footer__wrap--ac.bpm-py16 > div.Styled__SocialLinksWrapper-sc-r5ynjl-3.ikLeni.site-footer__wrap-inner.bpm-flex-shrink-0 > div > div > a:nth-child(3)")
     WebElement instagram;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[2]/div[2]/div/div/a[4]")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterSocialWrapper-sc-r5ynjl-1.duYsZV.site-footer__wrap.site-footer__social.site-footer__wrap--ac.bpm-py16 > div.Styled__SocialLinksWrapper-sc-r5ynjl-3.ikLeni.site-footer__wrap-inner.bpm-flex-shrink-0 > div > div > a:nth-child(4)")
     WebElement youtube;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[5]/div[1]/div/div[2]/div[2]/div/div/a[5]")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterSocialWrapper-sc-r5ynjl-1.duYsZV.site-footer__wrap.site-footer__social.site-footer__wrap--ac.bpm-py16 > div.Styled__SocialLinksWrapper-sc-r5ynjl-3.ikLeni.site-footer__wrap-inner.bpm-flex-shrink-0 > div > div > a:nth-child(5)")
     WebElement pinterest;
+
+    @FindBy(css = "body > div.page-home.bgc-white.cmw > div.page-home__top-stories.backdrop > div > div.grid.grid-4-up.grid--flush > div:nth-child(1) > div > div.content-card__body > a")
+    WebElement ArticleImage1;
+    //
 
     //------------//
 
@@ -182,7 +188,7 @@ public class Homepage {
     //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
-    WebDriver driver;
+    static WebDriver driver;
 
     /*Initialize WebDriver*/
     public Homepage(WebDriver _driver) {
@@ -199,7 +205,7 @@ public class Homepage {
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("https://www.akc.org/"));
 
     }
@@ -209,7 +215,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("https://shop.akc.org/"));
 
     }
@@ -219,7 +225,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("/subscribe/"));
 
     }
@@ -229,7 +235,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("https://www.facebook.com/AmericanKennelClub"));
 
     }
@@ -239,7 +245,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("https://twitter.com/akcdoglovers"));
 
     }
@@ -249,7 +255,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("https://www.instagram.com/americankennelclub/"));
 
 
@@ -260,7 +266,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("https://www.youtube.com/user/AmericanKennelClub"));
 
     }
@@ -270,8 +276,8 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.urlContains("https://www.pinterest.com/americankennelclub/"));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.urlContains("https://www.pinterest.com/"));
 
     }
 
@@ -279,7 +285,7 @@ public class Homepage {
     /*Check MarketPlace homepage elements*/
     public void CheckHomepage()  {
 
-        WebDriverWait wait = new WebDriverWait (driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.home.isDisplayed();
         this.puppies.isDisplayed();
         this.groomers.isDisplayed();

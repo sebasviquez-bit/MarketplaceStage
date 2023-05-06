@@ -18,7 +18,7 @@ public class ListMarketplace {
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[5]/div[2]/div/ul/li[1]/div/a")
     WebElement creabreedlist;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[1]/div[2]")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.marketplace__top-image > section > div > div:nth-child(1) > h2")
     WebElement creabreedlistpage;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div/div[2]")

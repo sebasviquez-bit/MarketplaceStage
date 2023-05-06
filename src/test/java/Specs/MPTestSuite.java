@@ -2,6 +2,11 @@ package Specs;
 
 import Helpers.DataHelper;
 import Model.*;
+import Pages.Homepage;
+import com.applitools.eyes.RectangleSize;
+import com.applitools.eyes.selenium.Eyes;
+import com.applitools.eyes.selenium.fluent.Target;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 
@@ -353,7 +358,7 @@ public class MPTestSuite extends SpecsBaseClass {
     @Test
     public void MarkSubsPageCheck() {
 
-        puppies.CheckBreedeMarkSubPage();
+        puppies.CheckBreederListingPage();
 
     }
 
@@ -548,10 +553,10 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
 
-    @Test
+    //@Test
     public void PuppyVisorPageCheck()  {
 
-        puppies.CheckPuppyvisorPage();
+        puppies.CheckPuppyvisorPage();   //PuppyVisor is available in prod
 
     }
 
@@ -626,7 +631,7 @@ public class MPTestSuite extends SpecsBaseClass {
         puppies.ResourcesForGettingPupAboutPage();
 
     }
-    //
+
 
     /*Check Groomer tests*/
     @Test
@@ -905,6 +910,100 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
 
+    @Test(dataProvider = "BreederSignInUsers4", dataProviderClass = DataHelper.class)
+    public void VerifyTellUsMore(String sEmail1, String sPassword1){
+
+        User testUser = new User(sEmail1, sPassword1);
+        puppies.VerifyTellUsMore(testUser);
+
+    }
+
+    //
+
+    //Visual tests
+
+    //Fix TreadLocal for EYES
+
+    @Test
+    public void MPHomePage () {
+
+        driver.get().navigate().to("https://stage.marketplace.akc.org/");
+        eyes.open(driver.get(), "MP", "MPHomePage");
+        eyes.check("MPHomePage", Target.window());
+        eyes.close();
+
+    }
+
+    @Test
+    public void MPFindPuppyPage () {
+
+        driver.get().navigate().to("https://stage.marketplace.akc.org/search-puppies");
+        eyes.open(driver.get(), "MP", "PuppyPage");
+        eyes.check("PuppyPage", Target.window());
+        eyes.close();
+
+    }
+
+    @Test
+    public void MPPoodleBreedPage () {
+
+        driver.get().navigate().to("https://stage.marketplace.akc.org/puppies/poodle?");
+        eyes.open(driver.get(), "MP", "PoodleBreedPage");
+        eyes.check("PoodleBreedPage", Target.window());
+        eyes.close();
+
+    }
+
+    @Test
+    public void MPResourcesPuppy () {
+
+        driver.get().navigate().to("https://stage.marketplace.akc.org/about-akc-marketplace");
+        eyes.open(driver.get(), "MP", "ResourcesPuppy");
+        eyes.check("ResourcesPuppy", Target.window());
+        eyes.close();
+
+    }
+
+    @Test
+    public void MPAdvertise () {
+
+        driver.get().navigate().to("https://stage.marketplace.akc.org/advertise/breeders");
+        eyes.open(driver.get(), "MP", "AdvertiseLitterPage");
+        eyes.check("Advertise", Target.window());
+        eyes.close();
+
+    }
+
+    @Test
+    public void MPFindGroomersPage () {
+
+        driver.get().navigate().to("https://stage.marketplace.akc.org/search-groomers");
+        eyes.open(driver.get(), "MP", "FindGroomersPage");
+        eyes.check("FindGroomersPage", Target.window());
+        eyes.close();
+
+    }
+
+
+    @Test
+    public void MPGroomersList () {
+
+        driver.get().navigate().to("https://stage.marketplace.akc.org/groomers?");
+        eyes.open(driver.get(), "MP", "GroomersList");
+        eyes.check("GroomersList", Target.window());
+        eyes.close();
+
+    }
+
+    @Test
+    public void MPTrainers () {
+
+        driver.get().navigate().to("https://stage.marketplace.akc.org/trainers");
+        eyes.open(driver.get(), "MP", "trainers");
+        eyes.check("trainers", Target.window());
+        eyes.close();
+
+    }
 
 
 }

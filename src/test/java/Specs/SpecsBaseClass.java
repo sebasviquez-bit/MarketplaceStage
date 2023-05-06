@@ -2,20 +2,22 @@ package Specs;
 
 import Helpers.BrowserFactory;
 import Helpers.DriverFactory;
-import org.openqa.selenium.WebDriver;
+import com.applitools.eyes.MatchLevel;
+import com.applitools.eyes.StdoutLogHandler;
+import com.applitools.eyes.selenium.Eyes;
+import com.applitools.eyes.selenium.StitchMode;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-
 import java.net.MalformedURLException;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-import static Helpers.DriverFactory.getInstance;
 
 public class SpecsBaseClass extends SuperBaseClass {
 
     @BeforeMethod
-    void InitializeTests() throws MalformedURLException {
+    void InitializeTests() {
 
         driver.set(BrowserFactory.createInstance("chrome"));
         DriverFactory.getInstance().setDriver(driver.get());
@@ -24,8 +26,16 @@ public class SpecsBaseClass extends SuperBaseClass {
         //InitHelpers();
         InitPages();
         (driver.get()).manage().window().maximize();
-        (driver.get()).manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        (driver.get()).manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
+        this.eyes = new Eyes();
+        this.eyes.setApiKey("yxgKHBE8Ivs0ofLuixQ8ouFuuDr0chkYR1003A0P1cbbU110");   //MP APY KEY
+        //this.eyes.setConfiguration(VisualGridConfig.getGrid());
+        this.eyes.setLogHandler(new StdoutLogHandler());
+        this.eyes.setForceFullPageScreenshot(true);
+        this.eyes.setStitchMode(StitchMode.CSS);
+        this.eyes.setMatchLevel(MatchLevel.CONTENT);
+        //this.eyes.setSendDom(true); //RCA related
 
     }
 

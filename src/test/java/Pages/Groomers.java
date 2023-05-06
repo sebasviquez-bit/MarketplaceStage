@@ -12,6 +12,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 import static java.lang.Thread.sleep;
 
 public class Groomers {
@@ -244,10 +246,10 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[1]/div[2]/div/div[2]/div[2]")
     WebElement packagestext;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.flexible > div.right > div > div.sub-header")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-title")
     WebElement operations;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.flexible > div.right > div > div.hours-list > div")
+    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.flexible > div > div.sub-header")
     WebElement operationstext;
 
     @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.payment > div.sub-header")
@@ -646,7 +648,7 @@ public class Groomers {
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div/div[2]/div/div/div[3]/div[1]/div/form/div[4]/input")
     WebElement sentbutton;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div/div[2]/div/div/div[1]/div[3]/div[2]/span")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div > div.Styled__Wrapper-sc-1ua1fsq-0.hrLcqJ > div > div > div.Styled__Wrapper-sc-sad8oe-0.dlPvhI.top-bar-wrapper > div.styled__Wrapper-sc-44lfr5-0.eMLIJi > div.styled__MenuHandle-sc-44lfr5-2.crAtxK > button")
     WebElement menumess;
 
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div/div[2]/div/div/div[1]/div[3]/div[1]/ul/div/a[1]/li")
@@ -893,8 +895,8 @@ public class Groomers {
     @FindBy(xpath = "//Pending fix of page")
     WebElement successgroomer;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.marketplace__top-image > div.Container-sc-q7fgo0-0.ihhzmc.hero-wrapper > div > h1")
-    WebElement AdvertiseLitter;
+    @FindBy(css = "#landing-groomers > div.landing-groomers__whats-include > div.landing-groomers__premium-card > div.landing-groomers__card-button.annual > button")
+    WebElement AnnualPlanButtton;
 
 
     DriverHelper driverHelper;
@@ -918,7 +920,7 @@ public class Groomers {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("https://www.akc.org/products-services/akc-safe-grooming-program/"));
 
     }
@@ -939,7 +941,7 @@ public class Groomers {
     /*Check Groomer pages*/
     public void CheckGroomers1() {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.groomers.click();
         this.findgroom.click();
         wait.until(ExpectedConditions.visibilityOf(findgroompage));
@@ -948,7 +950,7 @@ public class Groomers {
 
     public void CheckGroomers2() {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.groomers.click();
         this.akcmarkgroom.click();
         wait.until(ExpectedConditions.visibilityOf(akcmarkforgroompage));
@@ -957,7 +959,7 @@ public class Groomers {
 
     public void CheckGroomers3() {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.groomers.click();
         this.howfindgroom.click();
         wait.until(ExpectedConditions.visibilityOf(howfindgroompage));
@@ -967,7 +969,7 @@ public class Groomers {
 
     public void CheckGroomers4() {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.groomers.click();
         this.listservmark.click();
         wait.until(ExpectedConditions.visibilityOf(listservicmarkpage));
@@ -1076,11 +1078,11 @@ public class Groomers {
     /*Check other pages*/
     public void CheckList1() {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.groomers.click();
         this.findgroom.click();
         this.crealist.click();
-        wait.until(ExpectedConditions.visibilityOf(AdvertiseLitter));
+        wait.until(ExpectedConditions.visibilityOf(AnnualPlanButtton));
 
     }
 
@@ -1105,7 +1107,7 @@ public class Groomers {
 
     public void CheckList2() {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.groomers.click();
         this.findgroom.click();
         this.crealistbelow.click();
@@ -1138,7 +1140,7 @@ public class Groomers {
         this.groomers.click();
         this.findgroom.click();
         this.service.click();
-        this.haircut.click();
+        this.haircut.click(); //We need to fix this, create a haircut account.
         this.searchbut.click();
         this.groompict.click();
         this.groom2name.isDisplayed();
@@ -1166,7 +1168,7 @@ public class Groomers {
     /*Get Annual Groomer*/
     public void AnnualGroomers(Service _testService) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.groomers.click();
         this.listservmark.click();
         this.listservicmarkpage.isDisplayed();
@@ -1303,7 +1305,7 @@ public class Groomers {
     /*Get Quarter Groomer*/
     public void QuatGroomers(Service _testService) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.groomers.click();
         this.listservmark.click();
         this.listservicmarkpage.isDisplayed();
@@ -1495,11 +1497,11 @@ public class Groomers {
         this.messimg.isDisplayed();
         this.messinfo.isDisplayed();
         this.messsenderopen.click();
-        this.sentmessage.isDisplayed();
+        this.sentmessage.isDisplayed(); //This fails because old messages were deleted. We need to change the Groomer account.
         this.receivedmessage.isDisplayed();
         this.textarea.isDisplayed();
         this.sentbutton.isDisplayed();
-        this.menumess.click();
+        this.menumess.click();  //replace with new button PENDING
         this.viewquestrespo.isDisplayed();
         this.blockchannel.isDisplayed();
         this.deleteconvers.isDisplayed();
@@ -1508,7 +1510,7 @@ public class Groomers {
     /*Check ManMyPage Groomer*/
     public void VerifiyManMypage(User _testUser) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.iconsignin.click();
         this.userName.sendKeys(_testUser.username);
         this.passwordlog.sendKeys(_testUser.password);

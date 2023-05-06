@@ -1,26 +1,21 @@
 package Helpers;
 
 import Specs.SuperBaseClass;
+import org.apache.commons.exec.CommandLine;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chromium.ChromiumOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
-
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
-
-import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class BrowserFactory extends SuperBaseClass {
 
     public static WebDriver createInstance(String browserName)  {
 
         browserName = browserName.toLowerCase();
+
 
         if(browserName.equals("chrome"))
             return getChromeInstance();
@@ -33,40 +28,15 @@ public class BrowserFactory extends SuperBaseClass {
 
     }
 
-    public static RemoteWebDriver GetRemoteBrowser(String browserName) throws MalformedURLException {
-
-        DesiredCapabilities capabillities = new DesiredCapabilities();
-        RemoteWebDriver driver = null;
-
-
-        switch (browserName) {
-            case "firefox":
-                capabillities.setBrowserName(BrowserType.FIREFOX);
-                new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabillities);
-                break;
-        }
-
-        switch (browserName) {
-            case "chrome":
-                capabillities.setBrowserName(BrowserType.CHROME);
-                new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabillities);
-                break;
-            default:
-        }
-
-        capabillities.setJavascriptEnabled(true);
-        driver = new RemoteWebDriver(capabillities);
-
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        return driver;
-    }
 
     private static FirefoxDriver getFFInstance() {
         return new FirefoxDriver();
     }
 
     private static ChromeDriver getChromeInstance() {
-        return new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        return new ChromeDriver(options);
     }
 
     private static SafariDriver getSafariInstance() {

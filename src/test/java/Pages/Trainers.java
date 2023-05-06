@@ -12,6 +12,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 import static java.lang.Thread.sleep;
 
 public class Trainers {
@@ -334,34 +336,34 @@ public class Trainers {
     @FindBy(id = "onboarding-trainers-storefront-calendar__submit")
     WebElement save5;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/section/h4")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > h4")
     WebElement profiletrain;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/section/div/div[1]/div/div[2]/p[1]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div > div.styled__PerformanceDetails-sc-iquegx-0.dXyKyN.dashboard__performance-details > div > div:nth-child(2) > p:nth-child(2)")
     WebElement servicetrain;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/section/div/div[1]/div/div[2]/p[2]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div > div.styled__PerformanceDetails-sc-iquegx-0.dXyKyN.dashboard__performance-details > div > div:nth-child(2) > p:nth-child(3)")
     WebElement jointrain;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/section/div/div[1]/div/div[2]/p[3]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div > div.styled__PerformanceDetails-sc-iquegx-0.dXyKyN.dashboard__performance-details > div > div:nth-child(2) > p:nth-child(4)")
     WebElement lastloginttrain;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/section/div/div[1]/div/div[2]/p[4]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div > div.styled__PerformanceDetails-sc-iquegx-0.dXyKyN.dashboard__performance-details > div > div:nth-child(2) > p:nth-child(5)")
     WebElement cgcemailtrain;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/section/div/div[1]/div/div[2]/a[1]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div > div.styled__PerformanceDetails-sc-iquegx-0.dXyKyN.dashboard__performance-details > div > div:nth-child(2) > a:nth-child(6)")
     WebElement updpasstrain;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/section/div/div[1]/div/div[2]/a[2]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div > div.styled__PerformanceDetails-sc-iquegx-0.dXyKyN.dashboard__performance-details > div > div:nth-child(2) > a:nth-child(7)")
     WebElement profpublic;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/section/div/div[1]/div/div[1]/div[2]/img")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div > div.styled__PerformanceDetails-sc-iquegx-0.dXyKyN.dashboard__performance-details > div > div.profile-details__section.breeders > div.profile-details__avatar.bgc-shady > img")
     WebElement imgtraindash;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/section/div/div[3]/div/p[1]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div > div.dashboard__performance-stats > div > p:nth-child(2) > span:nth-child(1)")
     WebElement totprofviews;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/section/div/div[3]/div/p[2]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div > div.dashboard__performance-stats > div > p:nth-child(3) > span")
     WebElement inquiries;
 
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/div/div[2]/div[2]/div/a[1]")
@@ -722,7 +724,7 @@ public class Trainers {
     /*Get Trainer Subscription*/
     public void GetTrainerSubscription (Classes _testClasses) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait (driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.trainers.click();
         this.listtrain.click();
         this.trainerpicture.isDisplayed();
@@ -890,7 +892,7 @@ public class Trainers {
 
     public void CheckTrainersManMypage(User _testUser) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.iconsignin.click();
         this.userName.sendKeys(_testUser.username);
         this.passwordlog.sendKeys(_testUser.password);
@@ -993,7 +995,7 @@ public class Trainers {
         action.moveToElement(logged).click();
         this.dashbreed.click();
         this.mypagetrain.click();
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("/account/trainer"));
         //this.mypagepage.isDisplayed();
 

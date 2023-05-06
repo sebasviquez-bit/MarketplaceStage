@@ -5,6 +5,7 @@ import Helpers.DataHelper;
 import Helpers.DriverFactory;
 import Helpers.DriverHelper;
 import Pages.*;
+import com.applitools.eyes.selenium.Eyes;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -12,6 +13,7 @@ public class SuperBaseClass {
     //driver
     protected ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
+    public Eyes eyes;
 
     //pages
     SignIn signIn;
