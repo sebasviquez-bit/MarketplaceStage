@@ -27,6 +27,7 @@ public class SpecsBaseClass extends SuperBaseClass {
         InitPages();
         (driver.get()).manage().window().maximize();
         (driver.get()).manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        (driver.get()).manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 
         this.eyes = new Eyes();
         this.eyes.setApiKey("yxgKHBE8Ivs0ofLuixQ8ouFuuDr0chkYR1003A0P1cbbU110");   //MP APY KEY

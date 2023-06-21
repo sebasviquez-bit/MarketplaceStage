@@ -93,7 +93,7 @@ public class Trainers {
     @FindBy(css = "#dfp-searchfooter-728-90")
     WebElement trainadvert;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[1]/div/div[3]/div[1]/a[1]/div/div[1]/div/div")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div:nth-child(4) > div.Styled__RowResults-sc-10ypou4-3.kTfmWx > div > div:nth-child(3) > div:nth-child(1) > a:nth-child(3)")
     WebElement trainlist2pict;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[1]/div/div[3]/div[1]/a[1]/div/div[2]/div[1]")
@@ -132,7 +132,7 @@ public class Trainers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[2]/div/div[2]/div[2]/div/form/button")
     WebElement createacc;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[4]/div[2]/div/div[2]/div[2]/div/form/div[6]/button")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.trainer-profile__flexible-content > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div > button")
     WebElement signin;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[1]/div[2]")
@@ -717,7 +717,7 @@ public class Trainers {
         this.whattrain.isDisplayed();
         this.whattrain2.isDisplayed();
         this.acceptedpayment.isDisplayed();
-        this.createacc.isDisplayed();
+        //this.createacc.isDisplayed(); This was removed and replaced by "Login to get in touch!"
         this.signin.isDisplayed();
 
     }
@@ -856,10 +856,6 @@ public class Trainers {
         this.totprofviews.isDisplayed();
         this.inquiries.isDisplayed();
 
-
-
-
-
     }
 
 
@@ -879,7 +875,7 @@ public class Trainers {
         this.headermess.isDisplayed();
         this.channels.isDisplayed();
         this.openconv.click();
-        this.messagessent.isDisplayed();
+        this.messagessent.isDisplayed(); //Need to update the trainers account to check on sent messages
         this.messagesrec.isDisplayed();
         this.textarea.isDisplayed();
         this.sentmessagesbut.isDisplayed();

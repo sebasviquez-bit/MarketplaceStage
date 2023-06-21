@@ -258,10 +258,10 @@ public class Groomers {
     @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.payment > div.payment-symbols > span > p")
     WebElement paymenttext;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div > form > button")
+    //@FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.flexible-content > div:nth-child(2) > div > div.contact-form-desktop > div:nth-child(2) > div > button")
     WebElement createaccbut;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div > form > div.contact-form__sign-in > button")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.groomer-profile__flexible-content > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div > button")
     WebElement signinbut;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/form/div/div[1]/div[1]")
@@ -1140,7 +1140,7 @@ public class Groomers {
         this.groomers.click();
         this.findgroom.click();
         this.service.click();
-        this.haircut.click(); //We need to fix this, create a haircut account.
+        this.haircut.click();
         this.searchbut.click();
         this.groompict.click();
         this.groom2name.isDisplayed();
@@ -1148,18 +1148,18 @@ public class Groomers {
         this.groom2address.isDisplayed();
         this.groom2type.isDisplayed();
         //this.groom2cert.isDisplayed();
-        this.createaccbut.isDisplayed();
+        //this.createaccbut.isDisplayed(); //This changed for "Login to get in touch"
         this.aboutme.isDisplayed();
         this.aboutmetext.isDisplayed();
         this.myservices.isDisplayed();
         this.myservicestext.isDisplayed();
-        //this.packages.isDisplayed();
-        //this.packagestext.isDisplayed();
+        this.packages.isDisplayed();
+        this.packagestext.isDisplayed();
         this.operations.isDisplayed();
         this.operationstext.isDisplayed();
         this.payment.isDisplayed();
         this.paymenttext.isDisplayed();
-        this.createaccbut.isDisplayed();
+        //this.createaccbut.isDisplayed();
         this.signinbut.isDisplayed();
 
 
@@ -1497,8 +1497,8 @@ public class Groomers {
         this.messimg.isDisplayed();
         this.messinfo.isDisplayed();
         this.messsenderopen.click();
-        this.sentmessage.isDisplayed(); //This fails because old messages were deleted. We need to change the Groomer account.
-        this.receivedmessage.isDisplayed();
+        this.sentmessage.isDisplayed();
+        this.receivedmessage.isDisplayed(); //Need to update locators Pending
         this.textarea.isDisplayed();
         this.sentbutton.isDisplayed();
         this.menumess.click();  //replace with new button PENDING

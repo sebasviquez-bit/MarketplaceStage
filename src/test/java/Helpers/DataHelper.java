@@ -139,8 +139,6 @@ public class DataHelper {
 
         return CsvHelper.getCSVArray("RegisterUser.csv");
 
-
-
     }
 
     @DataProvider(name="TrainSignInUsers2")
@@ -171,6 +169,12 @@ public class DataHelper {
     public static Object[][] credentialsExisting19() throws Exception {
 
         return ExcelHelper.getTableArray("SignInTrainer.xlsx","Sheet1", 2);
+    }
+
+    @DataProvider(name="PCTLoginGermanPinscher")
+    public static Object[][] PCT1() throws Exception {
+
+        return ExcelHelper.getTableArray("PCTGermanPinscher.xlsx","Sheet1", 1);
     }
 
 

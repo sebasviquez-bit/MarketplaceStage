@@ -23,6 +23,7 @@ public class SuperBaseClass {
     Groomers groomers;
     ListMarketplace listMarketplace;
     Trainers trainers;
+    PCT pct;
 
     //helpers
     DataHelper dataHelper;
@@ -40,6 +41,7 @@ public class SuperBaseClass {
         groomers=new Groomers(this.driver.get());
         listMarketplace=new ListMarketplace(this.driver.get());
         trainers=new Trainers(this.driver.get());
+        pct=new PCT(this.driver.get());
 
 
     }

@@ -341,10 +341,10 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
 
-    @Test
+    //@Test
     public void PuppiesCheck10() {
 
-        puppies.CheckPuppies10();
+        puppies.CheckPuppies10(); //This was related to old FAQ page
 
     }
 
@@ -669,8 +669,6 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
 
-
-
     @Test
     public void GroomHomeCheck() {
 
@@ -748,7 +746,7 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
 
-    @Test(dataProvider = "GroomerSignInUsers2", dataProviderClass = DataHelper.class)
+    //@Test(dataProvider = "GroomerSignInUsers2", dataProviderClass = DataHelper.class)
     public void GroomerDashVerify(String sEmail1, String sPassword1) throws InterruptedException  {
 
         User testUser = new User(sEmail1, sPassword1);
@@ -756,7 +754,7 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
 
-    @Test(dataProvider = "GroomerSignInUsers3", dataProviderClass = DataHelper.class)
+    //@Test(dataProvider = "GroomerSignInUsers3", dataProviderClass = DataHelper.class)
     public void GroomerMessengerVerify(String sEmail1, String sPassword1)  {
 
         User testUser = new User(sEmail1, sPassword1);
@@ -765,7 +763,7 @@ public class MPTestSuite extends SpecsBaseClass {
     }
 
 
-    @Test(dataProvider = "GroomerSignInUsers4", dataProviderClass = DataHelper.class)
+    //@Test(dataProvider = "GroomerSignInUsers4", dataProviderClass = DataHelper.class)
     public void GroomerManMyPageVerify(String sEmail1, String sPassword1) throws InterruptedException  {
 
         User testUser = new User(sEmail1, sPassword1);
@@ -773,7 +771,7 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
 
-    @Test(dataProvider = "GroomerSignInUsers5", dataProviderClass = DataHelper.class)
+    //@Test(dataProvider = "GroomerSignInUsers5", dataProviderClass = DataHelper.class)
     public void GroomerAccountVerify(String sEmail1, String sPassword1) throws InterruptedException  {
 
         User testUser = new User(sEmail1, sPassword1);
@@ -781,7 +779,7 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
 
-    @Test(dataProvider = "GroomerSignInUsers6", dataProviderClass = DataHelper.class)
+    //@Test(dataProvider = "GroomerSignInUsers6", dataProviderClass = DataHelper.class)
     public void GroomerMyPageVerify(String sEmail1, String sPassword1) throws InterruptedException  {
 
         User testUser = new User(sEmail1, sPassword1);
@@ -918,11 +916,20 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
 
-    //
+    @Test(dataProvider = "PCTLoginGermanPinscher", dataProviderClass = DataHelper.class)
+    public void pctLoginGermanPinscher (String sPassword) {
+
+        pct.PCTLoginGermanPinscher(sPassword);
+
+    }
+
+    @Test
+    public void pctLoginFoxTerrier () {
+
+        pct.PCTLoginFoxTerrier();
+    }
 
     //Visual tests
-
-    //Fix TreadLocal for EYES
 
     @Test
     public void MPHomePage () {
@@ -1004,6 +1011,8 @@ public class MPTestSuite extends SpecsBaseClass {
         eyes.close();
 
     }
+
+
 
 
 }

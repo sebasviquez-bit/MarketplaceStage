@@ -118,7 +118,7 @@ public class Homepage {
     @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterLinksWrapper-sc-r5ynjl-2.eLqWgq.site-footer__wrap.site-footer__links-wrap.site-footer__wrap--no-flex")
     WebElement foot2;
 
-    @FindBy(xpath = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterSocialWrapper-sc-r5ynjl-1.duYsZV.site-footer__wrap.site-footer__social.site-footer__wrap--ac.bpm-py16 > div.Styled__SocialLinksWrapper-sc-r5ynjl-3.ikLeni.site-footer__wrap-inner.bpm-flex-shrink-0")
+    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-r5ynjl-0.kfkVMp > div.Styled__MenuFooter-sc-r5ynjl-4.kkOdzE > div > div.Styled__FooterSocialWrapper-sc-r5ynjl-1.duYsZV.site-footer__wrap.site-footer__social.site-footer__wrap--ac.bpm-py16 > div.Styled__SocialLinksWrapper-sc-r5ynjl-3.ikLeni.site-footer__wrap-inner.bpm-flex-shrink-0")
     WebElement socialfoot;
 
     @FindBy(xpath = "//html/body/main/div/div/div[5]/div[2]/div/div/div[1]/span")
@@ -472,6 +472,8 @@ public class Homepage {
         validpint();
 
     }
+
+
 
 
 }
