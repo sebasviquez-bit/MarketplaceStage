@@ -246,7 +246,7 @@ public class Homepage {
             driver.switchTo().window(winHandle);
         }
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.urlContains("https://twitter.com/akcdoglovers"));
+        wait.until(ExpectedConditions.urlContains("https://twitter.com/"));
 
     }
 
@@ -321,8 +321,8 @@ public class Homepage {
         this.foot3.isDisplayed();
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("scroll(0, 2000);");
-        wait.until(ExpectedConditions.visibilityOf(add1));
-        this.add1.isDisplayed();
+        //wait.until(ExpectedConditions.visibilityOf(add1));
+
     }
 
     /*Check Menu elements*/

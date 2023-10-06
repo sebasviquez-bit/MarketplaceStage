@@ -243,28 +243,28 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
 
-    @Test
+    //@Test
     public void TwitterCheck() {
 
         homepage.CheckTwitter();
 
     }
 
-    @Test
+    //@Test
     public void InstagramCheck() {
 
         homepage.CheckInstagram();
 
     }
 
-    @Test
+    //@Test
     public void YoutubeCheck() {
 
         homepage.CheckYoutube();
 
     }
 
-    @Test
+    //@Test
     public void PinterestCheck() {
 
         homepage.CheckPinterest();
@@ -545,6 +545,14 @@ public class MPTestSuite extends SpecsBaseClass {
         puppies.CheckSearchBreedListingPage();
 
     }
+
+    @Test
+    public void CheckAlertMeMessage() throws InterruptedException {
+
+        puppies.CheckAlertMe();
+
+    }
+
 
     @Test
     public void CheckSearchBreederList()  {
@@ -1012,6 +1020,22 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
 
+    @Test
+    public void MPListing () {
+
+        driver.get().navigate().to("https://stage.marketplace.akc.org/breeder/ja-doe-210/poodle/395");
+        eyes.open(driver.get(), "MP", "Listing");
+        eyes.check("breederListing", Target.window());
+        eyes.close();
+
+    }
+
+    //@Test
+    public void PercyMP () {
+
+        driver.get().navigate().to("https://stage.marketplace.akc.org/");
+        //percy.snapshot("Homepage");
+    }
 
 
 

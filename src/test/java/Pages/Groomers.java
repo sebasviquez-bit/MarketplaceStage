@@ -195,7 +195,7 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[2]/div/section/ul/li[2]/span")
     WebElement distresults;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__Wrapper-sc-1eah9gv-2.bnMXnr > div.Styled__RowResults-sc-1eah9gv-4.bxzOCt > div > div:nth-child(3) > div > a > div > div.groomer-salon-card__img > div > img")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.Styled__Wrapper-sc-1eah9gv-2.bnMXnr > div.Styled__RowResults-sc-1eah9gv-4.bxzOCt > div > div:nth-child(3) > div > a:nth-child(2)")
     WebElement groompict;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[1]/div/div[3]/div[1]/a[1]/div/div[2]/h4")
@@ -255,8 +255,12 @@ public class Groomers {
     @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.payment > div.sub-header")
     WebElement payment;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.payment > div.payment-symbols > span > p")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.payment > div.sub-header")
     WebElement paymenttext;
+
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.payment > div.payment-symbols > svg.icon.icon-mastercard > use")
+    WebElement paymentMethodMC;
+
 
     //@FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.flexible-content > div:nth-child(2) > div > div.contact-form-desktop > div:nth-child(2) > div > button")
     WebElement createaccbut;
@@ -994,7 +998,7 @@ public class Groomers {
         this.whychoose.isDisplayed();
         this.whypicture.isDisplayed();
         this.whytext.isDisplayed();
-        this.whatmakes.isDisplayed();
+        this.whatmakes.isDisplayed(); //fix this locator
         this.trustpict.isDisplayed();
         this.trust.isDisplayed();
         this.trusttext.isDisplayed();
@@ -1091,7 +1095,7 @@ public class Groomers {
 
         this.groomers.click();
         this.findgroom.click();
-        this.safemore.click();
+        this.safemore.click(); //fix this locator
         validsafe();
 
     }
@@ -1100,7 +1104,7 @@ public class Groomers {
 
         this.groomers.click();
         this.findgroom.click();
-        this.salonsafemore.click();
+        this.salonsafemore.click(); //fix this
         validsafe();
 
     }
@@ -1110,7 +1114,7 @@ public class Groomers {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.groomers.click();
         this.findgroom.click();
-        this.crealistbelow.click();
+        this.crealistbelow.click(); //update this one
         wait.until(ExpectedConditions.visibilityOf(listservicmarkpage));
 
 
@@ -1142,7 +1146,7 @@ public class Groomers {
         this.service.click();
         this.haircut.click();
         this.searchbut.click();
-        this.groompict.click();
+        this.groompict.click(); //update this
         this.groom2name.isDisplayed();
         this.groom2pict.isDisplayed();
         this.groom2address.isDisplayed();
@@ -1153,12 +1157,13 @@ public class Groomers {
         this.aboutmetext.isDisplayed();
         this.myservices.isDisplayed();
         this.myservicestext.isDisplayed();
-        this.packages.isDisplayed();
+        this.packages.isDisplayed(); //fix this
         this.packagestext.isDisplayed();
         this.operations.isDisplayed();
         this.operationstext.isDisplayed();
         this.payment.isDisplayed();
         this.paymenttext.isDisplayed();
+        this.paymentMethodMC.isDisplayed();
         //this.createaccbut.isDisplayed();
         this.signinbut.isDisplayed();
 

@@ -12,7 +12,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class SuperBaseClass {
     //driver
     protected ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-
     public Eyes eyes;
 
     //pages

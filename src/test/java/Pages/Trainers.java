@@ -408,14 +408,18 @@ public class Trainers {
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div/div[2]/div/div/div[3]/div[1]/div/form/div[4]/input")
     WebElement sentmessagesbut;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div/div[2]/div/div/div[1]/div[3]/div[2]/span")
-    WebElement messmenu;
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div > div.Styled__Wrapper-sc-1ua1fsq-0.hrLcqJ > div > div > div.Styled__Wrapper-sc-sad8oe-0.kuvYpa.top-bar-wrapper > div.styled__Wrapper-sc-44lfr5-0.jVwmeq > div.styled__MenuHandle-sc-44lfr5-2.kZwlVU > button")
+    WebElement manageButton;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div/div[2]/div/div/div[1]/div[3]/div[1]/ul/div/div/li/span")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div > div.Styled__Wrapper-sc-1ua1fsq-0.hrLcqJ > div > div > div.Styled__Wrapper-sc-sad8oe-0.kuvYpa.top-bar-wrapper > div.styled__Wrapper-sc-44lfr5-0.jVwmeq > div.styled__EditMenu-sc-44lfr5-1.bWHzdK > ul > div > div:nth-child(2) > li > span")
     WebElement blockmess;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div/div[2]/div/div/div[1]/div[3]/div[1]/ul/div/a/li")
-    WebElement deletemess;
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div > div.Styled__Wrapper-sc-1ua1fsq-0.hrLcqJ > div > div > div.Styled__Wrapper-sc-sad8oe-0.kuvYpa.top-bar-wrapper > div.styled__Wrapper-sc-44lfr5-0.jVwmeq > div.styled__EditMenu-sc-44lfr5-1.bWHzdK > ul > div > div:nth-child(1) > li > span")
+    WebElement reportSpam;
+    //
+
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div > div.Styled__Wrapper-sc-1ua1fsq-0.hrLcqJ > div > div > div.Styled__Wrapper-sc-sad8oe-0.kuvYpa.top-bar-wrapper > div.styled__Wrapper-sc-44lfr5-0.jVwmeq > div.styled__EditMenu-sc-44lfr5-1.bWHzdK > ul > div > a > li")
+    WebElement deleteConversation;
 
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[1]/section/ul/li[1]/span")
     WebElement contacttrain;
@@ -839,7 +843,7 @@ public class Trainers {
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
         this.dashbreed.click();
-        this.dashtrain.isDisplayed();
+        this.dashtrain.isDisplayed(); //update this one
         this.messtrain.isDisplayed();
         this.manmypagetrain.isDisplayed();
         this.accounttrain.isDisplayed();
@@ -870,7 +874,7 @@ public class Trainers {
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
         this.dashbreed.click();
-        this.messtrain.click();
+        this.messtrain.click(); //update this one
         this.imgmess.isDisplayed();
         this.headermess.isDisplayed();
         this.channels.isDisplayed();
@@ -879,9 +883,10 @@ public class Trainers {
         this.messagesrec.isDisplayed();
         this.textarea.isDisplayed();
         this.sentmessagesbut.isDisplayed();
-        this.messmenu.click();
+        this.manageButton.click();
+        this.reportSpam.isDisplayed();
         this.blockmess.isDisplayed();
-        this.deletemess.isDisplayed();
+        this.deleteConversation.isDisplayed();
 
 
     }
@@ -897,7 +902,7 @@ public class Trainers {
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
         this.dashbreed.click();
-        this.manmypagetrain.click();
+        this.manmypagetrain.click(); //update this one
         this.contacttrain.isDisplayed();
         this.coverphoto.isDisplayed();
         this.photosvideos.isDisplayed();
@@ -964,7 +969,7 @@ public class Trainers {
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
         this.dashbreed.click();
-        this.accounttrain.click();
+        this.accounttrain.click(); //update this one
         this.security.isDisplayed();
         this.visibility.isDisplayed();
         this.chanpasstext.isDisplayed();
@@ -990,10 +995,12 @@ public class Trainers {
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
         this.dashbreed.click();
-        this.mypagetrain.click();
+        this.mypagetrain.click(); //update this one
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("/account/trainer"));
         //this.mypagepage.isDisplayed();
 
     }
+
+
 }
