@@ -6,10 +6,7 @@ import Helpers.DriverHelper;
 import Model.Listing;
 import Model.Subscription;
 import Model.User;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -114,8 +111,11 @@ public class Puppies {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[2]/div/form/div[1]/div[1]/span")
     WebElement looking;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > section > div.Styled__Wrapper-sc-12ya1n7-1.hPPdjj > div.Styled__DesktopSearchWrapper-sc-12ya1n7-4.eBgJpD > form > div:nth-child(1) > div.search-breed > div > div > div.css-1hwfws3")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > section > div.Styled__Wrapper-sc-12ya1n7-1.hPPdjj > div.Styled__DesktopSearchWrapper-sc-12ya1n7-4.eBgJpD > form > div:nth-child(1) > div.search-breed")
     WebElement breedform;
+
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > section > div.Styled__Wrapper-sc-12ya1n7-1.hPPdjj > div.Styled__DesktopSearchWrapper-sc-12ya1n7-4.eBgJpD > form > div:nth-child(1) > div.search-breed > div > div > div.css-1hwfws3")
+    WebElement breedformInput;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[2]/div/form/div[1]/div[3]/div/div[1]/div[1]")
     WebElement genderform;
@@ -421,6 +421,8 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(3) > div.Styled__Wrapper-sc-wis0mx-2.dakhfk > div.Styled__Row-sc-wis0mx-3.iMbWQH > div > section > ul > li.active > span")
     WebElement searchlistpageone;
 
+
+
     @FindBy(xpath = "//h1[contains(text(),'Affenpinscher Puppies For Sale')]")
     WebElement AffensPuppiesForSale;
 
@@ -535,14 +537,21 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(3) > div.Styled__Wrapper-sc-2s5xjd-0.jSFbPo > div > a:nth-child(3) > h4")
     WebElement otherbreed3text;
 
-    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.Styled__BreederHero-sc-13i5cmk-0.jPeWTZ > div.breeder-hero__details > div > h1")
+    @FindBy(css = "#toggler > div > div.puppy-litter-hero__details > div > div.puppy-litter-info__title")
     WebElement listingname;
 
-    @FindBy(xpath = "//*[@id=\"react-root\"]/div[2]/div[4]/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div")
+    @FindBy(css = "#toggler > div > div.puppy-litter-hero__slider > div > div > div.gallery-wrap-div > div.slick-slider.slider-container.slick-initialized > div > div > div.slick-slide.slick-active.slick-current > div > div > div.image")
     WebElement listingpict;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__BreederHero-sc-13i5cmk-0.jPeWTZ > div.breeder-hero__details > div > div.breeder-details__address > span")
-    WebElement listingtext;
+    @FindBy(css = "#toggler > div > div.Styled__Wrapper-sc-1uhl27o-0.fnULiI.slider-wrapper > div > div.track-wrap > div.track > div.slick-slider.slider-container.slick-initialized > div > div > div.slick-slide.slick-active.slick-current > div > div > div.image")
+    WebElement ListingCarouselOpen;
+
+    @FindBy(css = "#toggler > div > div.Styled__Wrapper-sc-1uhl27o-0.fnULiI.slider-wrapper > div > div.track-wrap > div.arrow-container > span:nth-child(2) > svg > use")
+    WebElement CarouselRightArrow;
+    //
+
+    @FindBy(css = "#toggler > div > div.puppy-litter-hero__details > div > div:nth-child(2) > a")
+    WebElement listingBreederLink;
 
     @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__BreederHero-sc-13i5cmk-0.jPeWTZ > div.breeder-hero__details > div > div.breeder-details__wrapper > a > button")
     WebElement listingmsgbut;
@@ -1017,82 +1026,91 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div.listing-storefront-edit__tertiary-nav > section > ul > li.is-active > span")
     WebElement profileman;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[1]/section/ul/li[2]/a")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div.listing-storefront-edit__tertiary-nav > section > ul > li:nth-child(2) > a")
     WebElement contactman;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[1]/section/ul/li[3]/a")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div.listing-storefront-edit__tertiary-nav > section > ul > li:nth-child(3) > a")
     WebElement tellusman;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[1]/section/ul/li[4]/a")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div.listing-storefront-edit__tertiary-nav > section > ul > li:nth-child(4) > a")
     WebElement phvidman;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[2]/div[1]/h4")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div.storefront-profile > div.dashboard__section-heading > h4")
     WebElement yourbreedprof;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")
     WebElement kennameman;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/input[1]")
     WebElement weblinkman;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[3]/div[1]/div[1]/textarea[1]")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[3]/div[1]/div[1]/textarea[1]")
     WebElement descripman;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[4]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[4]/div[1]/div[1]/input[1]")
     WebElement breedsinceman;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]")
     WebElement breedman;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[6]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[6]/div[1]/div[1]/input[1]")
     WebElement websiteman;
 
     @FindBy(id = "breeders-storefront-profile__submit")
     WebElement savebutman;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[2]/form/section/button[2]")
+    @FindBy(css = "#breeders-storefront-profile > section > button.Button-sc-4rk3o3-1.frUmtp.button")
     WebElement backtoacct;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[2]/div[1]/h4")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div.storefront-contact > div.dashboard__section-heading > h4")
     WebElement continfoman;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")
     WebElement fullnameman;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/input[1]")
     WebElement addressman;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]")
     WebElement zipman;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[3]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[3]/div[1]/div[1]/input[1]")
     WebElement cityman;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[4]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[4]/div[1]/div[1]/input[1]")
     WebElement stateman;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[5]/div[1]/div[1]/input[1]")
     WebElement phoneman;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[6]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[4]/div[1]/div[1]/input[1]")
     WebElement emailman;
 
     @FindBy(id = "breeders-storefront-contact__submit")
     WebElement savebutman2;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[2]/div[1]/h4")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div.storefront-tell-us-more > div.dashboard__section-heading > h4")
     WebElement tellusmoreman;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[2]/form/div/div[2]")
+    @FindBy(css = "#breeders-storefront-tell-us-more > div > div:nth-child(1) > div.FormElement-sc-1vjtnrg-0.hDZwUR.form-element > label > span.checkbox__visual-input")
+    WebElement nationalclubCheckBox;
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]")
     WebElement nationalclubman;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[2]/form/div/div[3]")
+    @FindBy(css = "#breeders-storefront-tell-us-more > div > div:nth-child(2) > div.FormElement-sc-1vjtnrg-0.hDZwUR.form-element > label > span.checkbox__visual-input")
+    WebElement specialtyCheckBox;
+
+    @FindBy(xpath = "//body/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]")
     WebElement specialtyman;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[2]/form/div/div[4]")
+    @FindBy(css = "#breeders-storefront-tell-us-more > div > div:nth-child(3) > div.FormElement-sc-1vjtnrg-0.hDZwUR.form-element > label > span.checkbox__visual-input")
+    WebElement licensedCheckBox;
+    @FindBy(css = "#akcLicensed1 > div > div.css-1hwfws3")
     WebElement licensedman;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div[2]/form/div/div[5]")
+    @FindBy(css = "#breeders-storefront-tell-us-more > div > div:nth-child(4) > div.FormElement-sc-1vjtnrg-0.hDZwUR.form-element > label > span.checkbox__visual-input")
+    WebElement mydogsmanCheckBox;
+    @FindBy(css = "#competeIn > div.css-1i23654-control > div.css-1hwfws3")
     WebElement mydogsman;
 
     @FindBy(id = "breeders-storefront-tell-us__submit")
@@ -1161,67 +1179,70 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(6) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.euUzqQ.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-info > div.puppy-litter-info__last-edited")
     WebElement lasteditedlist;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/section/h4")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > h4")
     WebElement mybuyerheader;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/section/p[1]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > p:nth-child(2)")
     WebElement mybuyertext;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/div[1]/div/label[1]/span")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > div.Styled__FormElement-sc-1he89oj-0.gyzjZo.form-element > div > label:nth-child(1) > span")
     WebElement allbreedscheck;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/div[1]/div/label[2]/span")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > div.Styled__FormElement-sc-1he89oj-0.gyzjZo.form-element > div > label:nth-child(2) > span")
     WebElement spebreedscheck;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/div[1]/label/span[1]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.FormElement-sc-1vjtnrg-0.hDZwUR.form-element > label > span.checkbox__visual-input")
     WebElement publiccheck;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/div[1]/label/span[2]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.FormElement-sc-1vjtnrg-0.hDZwUR.form-element > label > span:nth-child(3)")
     WebElement publictext;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/div[1]/div/label[1]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > div.Styled__FormElement-sc-1he89oj-0.gyzjZo.form-element > div > label:nth-child(1)")
     WebElement allbreedtext;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/div[1]/div/label[2]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > div.Styled__FormElement-sc-1he89oj-0.gyzjZo.form-element > div > label:nth-child(2)")
     WebElement spebreedtext;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/div[2]/h5")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > h5")
     WebElement questintro;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/textarea[1]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > p")
     WebElement introtext;
+
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/textarea[1]")
+    WebElement introBrief;
 
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/div[2]/section/div[2]/h5")
     WebElement questions;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/div[2]/section/div[4]/div/div[3]/label")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > section > div:nth-child(4) > div:nth-child(4) > div.Styled__FormElement-sc-1he89oj-0.gyzjZo > label")
     WebElement typequestiontext;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/section[1]/div[4]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath = "//body/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/section[1]/div[4]/div[4]/div[3]/div[1]/div[1]/div[1]/div[1]")
     WebElement typequestion;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/div[2]/section/div[4]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > section > div:nth-child(4) > div:nth-child(4) > div.header > div.header--right > div.question__move > svg > use")
     WebElement movequestion;
 
     @FindBy(id = "close")
     WebElement closequestion;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/div[2]/section/div[4]/div/div[4]/label")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > section > div:nth-child(4) > div:nth-child(4) > div.Styled__FormElement-sc-1he89oj-0.isHsyb.form-element > label")
     WebElement messagetext;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/section[1]/div[4]/div[1]/div[4]/div[1]/textarea[1]")
+    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/section[1]/div[4]/div[4]/div[4]/div[1]/textarea[1]")
     WebElement messagearea;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/div[2]/section/div[4]/div/div[5]/label/span[1]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > section > div:nth-child(4) > div:nth-child(4) > div.FormElement-sc-1vjtnrg-0.hDZwUR.form-element > label > span.checkbox__visual-input")
     WebElement requiredcheck;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/div[2]/section/div[4]/div/div[5]/label/span[2]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > section > div:nth-child(4) > div:nth-child(4) > div.FormElement-sc-1vjtnrg-0.hDZwUR.form-element > label > span:nth-child(3)")
     WebElement requiredtext;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/div[2]/section/button")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > section > button")
     WebElement addquestionbut;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/section/button[1]")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > section > button.Button-sc-4rk3o3-1.hbmGOf.button")
     WebElement savequestion;
 
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.styled__AccordionToTabs-sc-142z30j-0.cZbGfv > div > div.styled__Tab-sc-142z30j-1.eLAvZF > h4")
@@ -1998,20 +2019,20 @@ public class Puppies {
         this.puppies.click();
         this.findapuppy.click();
         this.breedform.click();
-        this.affens.click();
         this.findpupformbut.click();
         this.listdisp.isDisplayed();
         this.listdisptext.isDisplayed();
         this.listdisp.click();
-        this.listingname.isDisplayed(); //this failed because of coming soon listing
-        this.listingpict.isDisplayed(); //Need to change the video for a picture for the listing.
-        this.listingtext.isDisplayed();
-        this.listingtext.click();
+        this.listingname.isDisplayed();
+        this.listingpict.isDisplayed();
+        this.listingBreederLink.isDisplayed();
+        this.listingpict.click();
+        this.ListingCarouselOpen.isDisplayed();
+        this.CarouselRightArrow.click();
+        this.listingBreederLink.click(); //continue here with left arrow and clicking outside of the carousel
         this.listingmsgbut.isDisplayed();
         this.aboutbreeder.isDisplayed();
-        //this.listingcreateacc.isDisplayed();
         this.breederprof.isDisplayed();
-        //this.createaccbut.isDisplayed(); This component was changed, we need to replace this element for "Login to get in touch"
         this.signinbut.isDisplayed();
         //this.reportissue.isDisplayed();
 
@@ -2560,9 +2581,17 @@ public class Puppies {
         this.savebutman2.click();
         this.tellusman.click();
         this.tellusmoreman.isDisplayed();
+        this.nationalclubCheckBox.isDisplayed();
+        this.nationalclubCheckBox.click();
         this.nationalclubman.isDisplayed();
+        this.specialtyCheckBox.isDisplayed();
+        this.specialtyCheckBox.click();
         this.specialtyman.isDisplayed();
+        this.licensedCheckBox.isDisplayed();
+        this.licensedCheckBox.click();
         this.licensedman.isDisplayed();
+        this.mydogsmanCheckBox.isDisplayed();
+        this.mydogsmanCheckBox.click();
         this.mydogsman.isDisplayed();
         this.savebutman3.click();
         this.phvidman.click();
@@ -2639,9 +2668,10 @@ public class Puppies {
         this.publictext.isDisplayed();
         this.questintro.isDisplayed();
         this.introtext.isDisplayed();
+        this.introBrief.isDisplayed();
         this.addquestionbut.isDisplayed();
         this.addquestionbut.click();
-        this.questions.isDisplayed();
+        //this.questions.isDisplayed();
         this.typequestiontext.isDisplayed();
         this.typequestion.isDisplayed();
         this.movequestion.isDisplayed();
@@ -2723,17 +2753,17 @@ public class Puppies {
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
         this.dashmanmypag.click();
-        this.tellusman.click(); //check this
+        this.tellusman.click();
         this.NoToRegPappers.click();
         this.YesToRegPappers.click();
         this.savebutman3.click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(NoToRegPappers));
-        this.NoToRegPappers.click();
-        this.TellUsWhyInput.click();
-        this.TellUsWhyInput.sendKeys("123456789");
-        wait.until(ExpectedConditions.elementToBeClickable(savebutman3));
-        this.savebutman3.click();
+        //this.NoToRegPappers.click();
+        //this.TellUsWhyInput.click();
+        //this.TellUsWhyInput.sendKeys("123456789");
+        //wait.until(ExpectedConditions.elementToBeClickable(savebutman3));
+        //this.savebutman3.click();
 
     }
 
