@@ -1,7 +1,7 @@
 package Pages;
 
 import Helpers.BrowserFactory;
-import Helpers.DriverHelper;
+
 import Model.Classes;
 import Model.User;
 import org.openqa.selenium.WebDriver;
@@ -375,7 +375,7 @@ public class Trainers {
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/div/div[2]/div[2]/div/a[3]")
     WebElement manmypagetrain;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/div/div[2]/div[2]/div/a[4]")
+    @FindBy(xpath = "//*[@id=\"react-root\"]/div/div[6]/div/div/main/div/div[2]/div[2]/div/a[4]")
     WebElement accounttrain;
 
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/div/div[2]/div[2]/div/a[5]")
@@ -610,7 +610,7 @@ public class Trainers {
 
 
     //Helpers//
-    DriverHelper driverHelper;
+
     //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
@@ -618,9 +618,9 @@ public class Trainers {
     /*Initialize WebDriver*/
     public Trainers(WebDriver _driver) {
 
-        //this.driverFactory = new DriverFactory();
-        this.browserFactory = new BrowserFactory();
-        this.driver = _driver;
+        //driverFactory = new DriverFactory();
+        browserFactory = new BrowserFactory();
+        driver = _driver;
         PageFactory.initElements(driver, this);
 
     }
@@ -628,205 +628,212 @@ public class Trainers {
     /*Check SERP results*/
     public void CheckTrainers(){
 
-        this.trainers.click();
-        this.trainersseek.isDisplayed();
-        this.findtrain.isDisplayed();
-        this.fortrain.isDisplayed();
-        this.listtrain.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(trainers)).click();
+        wait.until(ExpectedConditions.visibilityOf(trainersseek));
+        wait.until(ExpectedConditions.visibilityOf(findtrain));
+        wait.until(ExpectedConditions.visibilityOf(fortrain));
+        wait.until(ExpectedConditions.visibilityOf(listtrain));
     }
 
     public void CheckTrainers1(){
 
-        this.trainers.click();
-        this.findtrain.click();
-        this.findtrainbut.click();
-        this.allresults.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(trainers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findtrain)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findtrainbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(allresults));
 
     }
 
     public void CheckTrainers2(){
 
-        this.trainers.click();
-        this.findtrain.click();
-        this.traintype.click();
-        //this.traintypeInput.sendKeys("Rally");
-        this.AKCScentWork.click();
-        this.findtrainbut.click();
-        this.AKCScentWorkResults.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(trainers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findtrain)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(traintype)).click();
+        //traintypeInput.sendKeys("Rally");
+        wait.until(ExpectedConditions.elementToBeClickable(AKCScentWork)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findtrainbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(AKCScentWorkResults));
 
     }
 
 
     public void CheckTrainers3(){
 
-        this.trainers.click();
-        this.findtrain.click();
-        this.traintype.click();
-        this.AKCScentWork.click();
-        this.zip.click();
-        this.zipform.sendKeys("10001");
-        this.findtrainbut.click();
-        this.zipresults.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(trainers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findtrain)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(traintype)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(AKCScentWork)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(zip)).click();
+        zipform.sendKeys("10001");
+        wait.until(ExpectedConditions.elementToBeClickable(findtrainbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(zipresults));
 
     }
 
     public void CheckTrainers4(){
 
-        this.trainers.click();
-        this.findtrain.click();
-        this.traintype.click();
-        this.AKCScentWork.click();
-        this.zip.click();
-        this.zipform.sendKeys("10001");
-        this.distance.click();
-        this.distance.click();
-        //this.miles.click();
-        this.findtrainbut.click();
-        this.distresults.isDisplayed();
-        this.trainlistpict.isDisplayed();
-        this.trainlisthead.isDisplayed();
-        this.trainlisttext.isDisplayed();
-        this.trainadvert.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(trainers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findtrain)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(traintype)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(AKCScentWork)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(zip)).click();
+        zipform.sendKeys("10001");
+        wait.until(ExpectedConditions.elementToBeClickable(distance)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(distance)).click();
+        //wait.until(ExpectedConditions.elementToBeClickable(miles)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findtrainbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(distresults));
+        wait.until(ExpectedConditions.visibilityOf(trainlistpict));
+        wait.until(ExpectedConditions.visibilityOf(trainlisthead));
+        wait.until(ExpectedConditions.visibilityOf(trainlisttext));
+        wait.until(ExpectedConditions.visibilityOf(trainadvert));
 
     }
 
     /*Check Trainers Homepage*/
     public void CheckTrainersHome(){
 
-        this.trainers.click();
-        this.findtrain.click();
-        this.trainserp.isDisplayed();
-        this.looking.isDisplayed();
-        this.traintype.isDisplayed();
-        this.zip.isDisplayed();
-        this.distance.isDisplayed();
-        this.traintext.isDisplayed();
-        this.results.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(trainers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findtrain)).click();
+        wait.until(ExpectedConditions.visibilityOf(trainserp));
+        wait.until(ExpectedConditions.visibilityOf(looking));
+        wait.until(ExpectedConditions.visibilityOf(traintype));
+        wait.until(ExpectedConditions.visibilityOf(zip));
+        wait.until(ExpectedConditions.visibilityOf(distance));
+        wait.until(ExpectedConditions.visibilityOf(traintext));
+        wait.until(ExpectedConditions.visibilityOf(results));
     }
     /*Check Trainer page*/
     public void CheckTrainersListPage(){
 
-        this.trainers.click();
-        this.findtrain.click();
-        this.trainlist2pict.isDisplayed();
-        this.train2name.isDisplayed();
-        this.train2type.isDisplayed();
-        this.train2address.isDisplayed();
-        this.trainlist2pict.click();
-        this.messtrainbut.isDisplayed();
-        this.aboutme.isDisplayed();
-        this.aboutmetext.isDisplayed();
-        this.howtrain.isDisplayed();
-        this.howtraintext.isDisplayed();
-        this.whattrain.isDisplayed();
-        this.whattrain2.isDisplayed();
-        this.acceptedpayment.isDisplayed();
-        //this.createacc.isDisplayed(); This was removed and replaced by "Login to get in touch!"
-        this.signin.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(trainers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findtrain)).click();
+        wait.until(ExpectedConditions.visibilityOf(trainlist2pict));
+        wait.until(ExpectedConditions.visibilityOf(train2name));
+        wait.until(ExpectedConditions.visibilityOf(train2type));
+        wait.until(ExpectedConditions.visibilityOf(train2address));
+        wait.until(ExpectedConditions.elementToBeClickable(trainlist2pict)).click();
+        wait.until(ExpectedConditions.visibilityOf(messtrainbut));
+        wait.until(ExpectedConditions.visibilityOf(aboutme));
+        wait.until(ExpectedConditions.visibilityOf(aboutmetext));
+        wait.until(ExpectedConditions.visibilityOf(howtrain));
+        wait.until(ExpectedConditions.visibilityOf(howtraintext));
+        wait.until(ExpectedConditions.visibilityOf(whattrain));
+        wait.until(ExpectedConditions.visibilityOf(whattrain2));
+        wait.until(ExpectedConditions.visibilityOf(acceptedpayment));
+        //wait.until(ExpectedConditions.visibilityOf(createacc)); This was removed and replaced by "Login to get in touch!"
+        wait.until(ExpectedConditions.visibilityOf(signin));
 
     }
     /*Get Trainer Subscription*/
     public void GetTrainerSubscription (Classes _testClasses) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.trainers.click();
-        this.listtrain.click();
-        this.trainerpicture.isDisplayed();
-        this.whybecome.isDisplayed();
-        this.whybecometext.isDisplayed();
-        this.trainerpicture2.isDisplayed();
-        this.getstarted.isDisplayed();
-        this.currentcgc.isDisplayed();
-        this.currentcgctext.isDisplayed();
-        this.createprofile.isDisplayed();
-        this.cgcevaluator.isDisplayed();
-        this.cgcevaluatortext.isDisplayed();
-        this.applytoday.isDisplayed();
-        this.createprofile.click();
-        this.usernametrain.sendKeys(_testClasses.BusinessEmail);
-        this.passwordtrain.sendKeys(_testClasses.Password);
-        this.signinbut.click();
-        this.createprofile.click();
-        this.emailcgc.sendKeys(_testClasses.Email);
-        this.bussname.sendKeys(_testClasses.Businessname);
-        this.weblink.isDisplayed();
-        this.aboutme2.sendKeys(_testClasses.Aboutme);
-        this.trainsince.sendKeys(_testClasses.Businesssince);
-        this.philosophy.sendKeys(_testClasses.Philosophy);
-        this.cash.click();
-        this.check.click();
-        this.creditcard.click();
-        this.paypal.click();
-        this.venmo.click();
-        this.square.click();
-        this.other.click();
-        this.othertext.sendKeys(_testClasses.Other);
-        this.bussname2.sendKeys(_testClasses.Businessname);
-        this.street.sendKeys(_testClasses.Street);
-        this.street2.isDisplayed();
-        this.zipcode.sendKeys(_testClasses.ZIP);
-        this.city.isDisplayed();
-        this.state.isDisplayed();
-        this.bussphone.sendKeys(_testClasses.BusinessPhone);
-        this.bussemail.sendKeys(_testClasses.BusinessEmail);
-        this.save1.click();
-        this.uploadphoto.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\linkedinimage.jpg");
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(trainers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(listtrain)).click();
+        wait.until(ExpectedConditions.visibilityOf(trainerpicture));
+        wait.until(ExpectedConditions.visibilityOf(whybecome));
+        wait.until(ExpectedConditions.visibilityOf(whybecometext));
+        wait.until(ExpectedConditions.visibilityOf(trainerpicture2));
+        wait.until(ExpectedConditions.visibilityOf(getstarted));
+        wait.until(ExpectedConditions.visibilityOf(currentcgc));
+        wait.until(ExpectedConditions.visibilityOf(currentcgctext));
+        wait.until(ExpectedConditions.visibilityOf(createprofile));
+        wait.until(ExpectedConditions.visibilityOf(cgcevaluator));
+        wait.until(ExpectedConditions.visibilityOf(cgcevaluatortext));
+        wait.until(ExpectedConditions.visibilityOf(applytoday));
+        wait.until(ExpectedConditions.elementToBeClickable(createprofile)).click();
+        usernametrain.sendKeys(_testClasses.BusinessEmail);
+        passwordtrain.sendKeys(_testClasses.Password);
+        wait.until(ExpectedConditions.elementToBeClickable(signinbut)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(createprofile)).click();
+        emailcgc.sendKeys(_testClasses.Email);
+        bussname.sendKeys(_testClasses.Businessname);
+        wait.until(ExpectedConditions.visibilityOf(weblink));
+        aboutme2.sendKeys(_testClasses.Aboutme);
+        trainsince.sendKeys(_testClasses.Businesssince);
+        philosophy.sendKeys(_testClasses.Philosophy);
+        wait.until(ExpectedConditions.elementToBeClickable(cash)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(check)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(creditcard)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(paypal)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(venmo)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(square)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(other)).click();
+        othertext.sendKeys(_testClasses.Other);
+        bussname2.sendKeys(_testClasses.Businessname);
+        street.sendKeys(_testClasses.Street);
+        wait.until(ExpectedConditions.visibilityOf(street2));
+        zipcode.sendKeys(_testClasses.ZIP);
+        wait.until(ExpectedConditions.visibilityOf(city));
+        wait.until(ExpectedConditions.visibilityOf(state));
+        bussphone.sendKeys(_testClasses.BusinessPhone);
+        bussemail.sendKeys(_testClasses.BusinessEmail);
+        wait.until(ExpectedConditions.elementToBeClickable(save1)).click();
+        uploadphoto.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\linkedinimage.jpg");
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(phcontinue));
-        this.phcontinue.click();
+        wait.until(ExpectedConditions.elementToBeClickable(phcontinue)).click();
         sleep(2000);
-        this.save2.click();
+        wait.until(ExpectedConditions.elementToBeClickable(save2)).click();
         wait.until(ExpectedConditions.elementToBeClickable(addmorefiles));
-        this.addmorefiles.click();
-        this.trainimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\boxer2.jpg");
-        this.caption.sendKeys("Trainer");
+        wait.until(ExpectedConditions.elementToBeClickable(addmorefiles)).click();
+        trainimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\boxer2.jpg");
+        caption.sendKeys("Trainer");
         sleep(2000);
-        this.captioncontinue.click();
+        wait.until(ExpectedConditions.elementToBeClickable(captioncontinue)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(closeimages));
-        this.closeimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(closeimages)).click();
         wait.until(ExpectedConditions.elementToBeClickable(save3));
-        this.save3.click();
+        wait.until(ExpectedConditions.elementToBeClickable(save3)).click();
         wait.until(ExpectedConditions.elementToBeClickable(selectservices));
-        this.selectservices.click();
-        this.akcrally.click();
-        this.selectservices.click();
-        this.akcstarpuppy.click();
-        this.selectservices.click();
-        this.akcscent.click();
-        this.selectservices.click();
-        this.akctrick.click();
-        this.selectservices.click();
-        this.akcagility.click();
-        this.selectservices.click();
-        this.akcbarn.click();
-        this.selectservices.click();
-        this.akcbtcgc.click();
-        this.selectservices.click();
-        this.akcbtucgc.click();
-        this.selectservices.click();
-        this.akcbtacgc.click();
-        this.selectservices.click();
-        this.akcdockdiv.click();
-        this.selectservices.click();
-        this.akcearthdog.click();
-        this.selectservices.click();
-        this.akcfieldevents.click();
-        this.selectservices.click();
-        this.akcflyball.click();
-        this.selectservices.click();
-        this.akcfrisbee.click();
-        this.selectservices.click();
-        this.akcherding.click();
-        this.selectservices.click();
-        this.akclurecours.click();
-        this.selectservices.click();
-        this.akcshowhand.click();
-        this.selectservices.click();
-        this.akctracking.click();
-        this.save4.click();
-        this.save5.click();
-        this.successtrainer.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcrally)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcstarpuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcscent)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akctrick)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcagility)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcbarn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcbtcgc)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcbtucgc)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcbtacgc)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcdockdiv)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcearthdog)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcfieldevents)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcflyball)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcfrisbee)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcherding)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akclurecours)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcshowhand)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectservices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akctracking)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(save4)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(save5)).click();
+        wait.until(ExpectedConditions.visibilityOf(successtrainer));
 
 
     }
@@ -834,124 +841,124 @@ public class Trainers {
 
     public void CheckTrainersDashboard(User _testUser) {
 
-
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.dashtrain.isDisplayed(); //update this one
-        this.messtrain.isDisplayed();
-        this.manmypagetrain.isDisplayed();
-        this.accounttrain.isDisplayed();
-        this.calendartrain.isDisplayed();
-        this.mypagetrain.isDisplayed();
-        this.profiletrain.isDisplayed();
-        this.servicetrain.isDisplayed();
-        this.jointrain.isDisplayed();
-        this.lastloginttrain.isDisplayed();
-        this.cgcemailtrain.isDisplayed();
-        this.updpasstrain.isDisplayed();
-        this.profpublic.isDisplayed();
-        this.imgtraindash.isDisplayed();
-        this.totprofviews.isDisplayed();
-        this.inquiries.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.visibilityOf(dashtrain)); //update this one
+        wait.until(ExpectedConditions.visibilityOf(messtrain));
+        wait.until(ExpectedConditions.visibilityOf(manmypagetrain));
+        wait.until(ExpectedConditions.visibilityOf(accounttrain));
+        wait.until(ExpectedConditions.visibilityOf(calendartrain));
+        wait.until(ExpectedConditions.visibilityOf(mypagetrain));
+        wait.until(ExpectedConditions.visibilityOf(profiletrain));
+        wait.until(ExpectedConditions.visibilityOf(servicetrain));
+        wait.until(ExpectedConditions.visibilityOf(jointrain));
+        wait.until(ExpectedConditions.visibilityOf(lastloginttrain));
+        wait.until(ExpectedConditions.visibilityOf(cgcemailtrain));
+        wait.until(ExpectedConditions.visibilityOf(updpasstrain));
+        wait.until(ExpectedConditions.visibilityOf(profpublic));
+        wait.until(ExpectedConditions.visibilityOf(imgtraindash));
+        wait.until(ExpectedConditions.visibilityOf(totprofviews));
+        wait.until(ExpectedConditions.visibilityOf(inquiries));
 
     }
 
 
     public void CheckTrainersMessenger(User _testUser)  {
 
-
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.messtrain.click(); //update this one
-        this.imgmess.isDisplayed();
-        this.headermess.isDisplayed();
-        this.channels.isDisplayed();
-        this.openconv.click();
-        this.messagessent.isDisplayed(); //Need to update the trainers account to check on sent messages
-        this.messagesrec.isDisplayed();
-        this.textarea.isDisplayed();
-        this.sentmessagesbut.isDisplayed();
-        this.manageButton.click();
-        this.reportSpam.isDisplayed();
-        this.blockmess.isDisplayed();
-        this.deleteConversation.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(messtrain)).click(); //update this one
+        wait.until(ExpectedConditions.visibilityOf(imgmess));
+        wait.until(ExpectedConditions.visibilityOf(headermess));
+        wait.until(ExpectedConditions.visibilityOf(channels));
+        wait.until(ExpectedConditions.elementToBeClickable(openconv)).click();
+        wait.until(ExpectedConditions.visibilityOf(messagessent)); //Need to update the trainers account to check on sent messages
+        wait.until(ExpectedConditions.visibilityOf(messagesrec));
+        wait.until(ExpectedConditions.visibilityOf(textarea));
+        wait.until(ExpectedConditions.visibilityOf(sentmessagesbut));
+        wait.until(ExpectedConditions.elementToBeClickable(manageButton)).click();
+        wait.until(ExpectedConditions.visibilityOf(reportSpam));
+        wait.until(ExpectedConditions.visibilityOf(blockmess));
+        wait.until(ExpectedConditions.visibilityOf(deleteConversation));
 
 
     }
 
     public void CheckTrainersManMypage(User _testUser) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.manmypagetrain.click(); //update this one
-        this.contacttrain.isDisplayed();
-        this.coverphoto.isDisplayed();
-        this.photosvideos.isDisplayed();
-        this.services.isDisplayed();
-        this.calendar.isDisplayed();
-        this.contactinfo.isDisplayed();
-        this.bussname01.isDisplayed();
-        this.weblinktrain.isDisplayed();
-        this.aboutmetrain.isDisplayed();
-        this.ihavetrainsince.isDisplayed();
-        this.philosophytrain.isDisplayed();
-        this.paymentmethods.isDisplayed();
-        this.bussname02.isDisplayed();
-        this.streetline1.isDisplayed();
-        this.zipcodetrain.isDisplayed();
-        this.citytrain.isDisplayed();
-        this.statetrain.isDisplayed();
-        this.bussphonetrain.isDisplayed();
-        this.bussemailtrain.isDisplayed();
-        this.savetrainbut.click();
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(manmypagetrain)).click(); //update this one
+        wait.until(ExpectedConditions.visibilityOf(contacttrain));
+        wait.until(ExpectedConditions.visibilityOf(coverphoto));
+        wait.until(ExpectedConditions.visibilityOf(photosvideos));
+        wait.until(ExpectedConditions.visibilityOf(services));
+        wait.until(ExpectedConditions.visibilityOf(calendar));
+        wait.until(ExpectedConditions.visibilityOf(contactinfo));
+        wait.until(ExpectedConditions.visibilityOf(bussname01));
+        wait.until(ExpectedConditions.visibilityOf(weblinktrain));
+        wait.until(ExpectedConditions.visibilityOf(aboutmetrain));
+        wait.until(ExpectedConditions.visibilityOf(ihavetrainsince));
+        wait.until(ExpectedConditions.visibilityOf(philosophytrain));
+        wait.until(ExpectedConditions.visibilityOf(paymentmethods));
+        wait.until(ExpectedConditions.visibilityOf(bussname02));
+        wait.until(ExpectedConditions.visibilityOf(streetline1));
+        wait.until(ExpectedConditions.visibilityOf(zipcodetrain));
+        wait.until(ExpectedConditions.visibilityOf(citytrain));
+        wait.until(ExpectedConditions.visibilityOf(statetrain));
+        wait.until(ExpectedConditions.visibilityOf(bussphonetrain));
+        wait.until(ExpectedConditions.visibilityOf(bussemailtrain));
+        wait.until(ExpectedConditions.elementToBeClickable(savetrainbut)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(coverphoto));
-        this.coverphoto.click();
-        this.coverphotoheader.isDisplayed();
-        this.coverimg.isDisplayed();
-        this.changephotobut.isDisplayed();
-        this.covphosavebut.isDisplayed();
-        this.photosvideos.click();
-        this.galimgheader.isDisplayed();
-        this.addmorefilestrain.isDisplayed();
-        this.pictsaved.isDisplayed();
-        this.delpictbut.isDisplayed();
-        this.galimgsavebut.isDisplayed();
-        this.backacct.isDisplayed();
-        this.services.click();
-        this.avalservices.isDisplayed();
-        this.service01.isDisplayed();
-        this.service02.isDisplayed();
-        this.service03.isDisplayed();
-        this.service04.isDisplayed();
-        this.service05.isDisplayed();
-        this.avalservsavebut.isDisplayed();
-        this.calendar.click();
-        this.calendarclass.isDisplayed();
-        this.startdate.isDisplayed();
-        this.selectclass.isDisplayed();
-        this.addclass.isDisplayed();
-        this.openclass.isDisplayed();
-        this.saveclassdatebut.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(coverphoto)).click();
+        wait.until(ExpectedConditions.visibilityOf(coverphotoheader));
+        wait.until(ExpectedConditions.visibilityOf(coverimg));
+        wait.until(ExpectedConditions.visibilityOf(changephotobut));
+        wait.until(ExpectedConditions.visibilityOf(covphosavebut));
+        wait.until(ExpectedConditions.elementToBeClickable(photosvideos)).click();
+        wait.until(ExpectedConditions.visibilityOf(galimgheader));
+        wait.until(ExpectedConditions.visibilityOf(addmorefilestrain));
+        wait.until(ExpectedConditions.visibilityOf(pictsaved));
+        wait.until(ExpectedConditions.visibilityOf(delpictbut));
+        wait.until(ExpectedConditions.visibilityOf(galimgsavebut));
+        wait.until(ExpectedConditions.visibilityOf(backacct));
+        wait.until(ExpectedConditions.elementToBeClickable(services)).click();
+        wait.until(ExpectedConditions.visibilityOf(avalservices));
+        wait.until(ExpectedConditions.visibilityOf(service01));
+        wait.until(ExpectedConditions.visibilityOf(service02));
+        wait.until(ExpectedConditions.visibilityOf(service03));
+        wait.until(ExpectedConditions.visibilityOf(service04));
+        wait.until(ExpectedConditions.visibilityOf(service05));
+        wait.until(ExpectedConditions.visibilityOf(avalservsavebut));
+        wait.until(ExpectedConditions.elementToBeClickable(calendar)).click();
+        wait.until(ExpectedConditions.visibilityOf(calendarclass));
+        wait.until(ExpectedConditions.visibilityOf(startdate));
+        wait.until(ExpectedConditions.visibilityOf(selectclass));
+        wait.until(ExpectedConditions.visibilityOf(addclass));
+        wait.until(ExpectedConditions.visibilityOf(openclass));
+        wait.until(ExpectedConditions.visibilityOf(saveclassdatebut));
 
 
 
@@ -960,45 +967,45 @@ public class Trainers {
 
     public void CheckTrainersAccount(User _testUser)  {
 
-
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.accounttrain.click(); //update this one
-        this.security.isDisplayed();
-        this.visibility.isDisplayed();
-        this.chanpasstext.isDisplayed();
-        this.oldpass.isDisplayed();
-        this.newpass.isDisplayed();
-        this.confpass.isDisplayed();
-        this.chanpassbut.isDisplayed();
-        this.visibility.click();
-        this.acctpubhid.isDisplayed();
-        this.publictrain.isDisplayed();
-        this.hiddentrain.isDisplayed();
-        this.savevisib.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(accounttrain)).click(); //update this one
+        wait.until(ExpectedConditions.visibilityOf(security)); //check
+        wait.until(ExpectedConditions.visibilityOf(visibility));
+        wait.until(ExpectedConditions.visibilityOf(chanpasstext));
+        wait.until(ExpectedConditions.visibilityOf(oldpass));
+        wait.until(ExpectedConditions.visibilityOf(newpass));
+        wait.until(ExpectedConditions.visibilityOf(confpass));
+        wait.until(ExpectedConditions.visibilityOf(chanpassbut));
+        wait.until(ExpectedConditions.elementToBeClickable(visibility)).click();
+        wait.until(ExpectedConditions.visibilityOf(acctpubhid));
+        wait.until(ExpectedConditions.visibilityOf(publictrain));
+        wait.until(ExpectedConditions.visibilityOf(hiddentrain));
+        wait.until(ExpectedConditions.visibilityOf(savevisib));
 
     }
 
     public void CheckTrainersMyPage(User _testUser) {
 
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.mypagetrain.click(); //update this one
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(mypagetrain)).click(); //update this one
         wait.until(ExpectedConditions.urlContains("/account/trainer"));
-        //this.mypagepage.isDisplayed();
+        //wait.until(ExpectedConditions.visibilityOf(mypagepage));
 
     }
 

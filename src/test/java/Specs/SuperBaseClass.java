@@ -3,7 +3,7 @@ package Specs;
 import Helpers.BrowserFactory;
 import Helpers.DataHelper;
 import Helpers.DriverFactory;
-import Helpers.DriverHelper;
+
 import Pages.*;
 import com.applitools.eyes.selenium.Eyes;
 import org.openqa.selenium.WebDriver;
@@ -26,31 +26,23 @@ public class SuperBaseClass {
 
     //helpers
     DataHelper dataHelper;
-    DriverHelper driverHelper;
+
     DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
 
-    protected void InitPages(){
+    protected void InitPages() {
 
-        signIn = new SignIn(this.driver.get());
-        register = new Register(this.driver.get());
-        homepage = new Homepage(this.driver.get());
-        puppies= new Puppies(this.driver.get());
-        groomers=new Groomers(this.driver.get());
-        listMarketplace=new ListMarketplace(this.driver.get());
-        trainers=new Trainers(this.driver.get());
-        pct=new PCT(this.driver.get());
+        signIn = new SignIn(driver.get());
+        register = new Register(driver.get());
+        homepage = new Homepage(driver.get());
+        puppies= new Puppies(driver.get());
+        groomers=new Groomers(driver.get());
+        listMarketplace=new ListMarketplace(driver.get());
+        trainers=new Trainers(driver.get());
+        pct=new PCT(driver.get());
 
-
-    }
-    /*Constructor*/
-    protected void InitHelpers(){
-
-        dataHelper = new DataHelper();
-        driverHelper = new DriverHelper(this.driver.get());
-        //driverFactory = new DriverFactory();
-        //browserFactory = new BrowserFactory();
 
     }
+
 }

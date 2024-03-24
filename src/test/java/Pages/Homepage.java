@@ -2,7 +2,7 @@ package Pages;
 
 
 import Helpers.BrowserFactory;
-import Helpers.DriverHelper;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,25 +16,25 @@ import java.time.Duration;
 
 public class Homepage {
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[1]/div/span/a")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div.Styled__Wrapper-sc-rvwmv6-0.gffKrQ > div.Styled__Left-sc-rvwmv6-2.fHuQOa > div > div:nth-child(1) > a")
     WebElement home;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/span[1]")
+    @FindBy(css = "#center-menu > div:nth-child(1) > div.menu-item-title-container")
     WebElement puppies;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[3]/div[1]/span[1]")
+    @FindBy(css = "#center-menu > div:nth-child(2) > div.menu-item-title-container")
     WebElement groomers;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[4]/div[1]/span[1]")
+    @FindBy(css = "#center-menu > div:nth-child(3) > div.menu-item-title-container")
     WebElement trainers;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[1]/div[3]/a/span")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div.Styled__Wrapper-sc-rvwmv6-0.gffKrQ > div.Styled__Left-sc-rvwmv6-2.fHuQOa > div > div:nth-child(2) > a")
     WebElement akcorg;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[1]/div[2]/a/span")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div.Styled__Wrapper-sc-rvwmv6-0.gffKrQ > div.Styled__Left-sc-rvwmv6-2.fHuQOa > div > div:nth-child(3) > a")
     WebElement shop;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[1]/div[1]/a/span")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div.Styled__Wrapper-sc-rvwmv6-0.gffKrQ > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div > div.header-icon-container.user-menu > a > span")
     WebElement signin;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[1]/div[2]/div[1]")
@@ -49,16 +49,16 @@ public class Homepage {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[1]/div[1]")
     WebElement bigphoto;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[1]/div[2]/div[1]/div[3]/a")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.Styled__Wrapper-sc-mgfoe3-0.byCeAh > div.vertical-cards > div.find-a-puppy-wrapper > div.Styled__Wrapper-sc-1o6t5cg-0.gmrUir > div.content > a")
     WebElement findpupbut;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[4]/div[1]/span[1]")
+    @FindBy(css = "#listing-menu > div > div.menu-item-title-container > span.menu-item-title")
     WebElement listmarket;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[1]/div[2]/div[2]/div[3]/a")
     WebElement findgroombut;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[1]/div[2]/div[3]/div[3]/a")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.Styled__Wrapper-sc-mgfoe3-0.byCeAh > div.vertical-cards > div:nth-child(2) > div.content > a")
     WebElement findtrainbut;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[2]/div[1]")
@@ -184,7 +184,6 @@ public class Homepage {
 
     //------------//
 
-    DriverHelper driverHelper;
     //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
@@ -192,9 +191,9 @@ public class Homepage {
 
     /*Initialize WebDriver*/
     public Homepage(WebDriver _driver) {
-        //this.driverFactory = new DriverFactory();
-        this.browserFactory = new BrowserFactory();
-        this.driver = _driver;
+        //driverFactory = new DriverFactory();
+        browserFactory = new BrowserFactory();
+        driver = _driver;
         PageFactory.initElements(driver, this);
     }
 
@@ -205,7 +204,7 @@ public class Homepage {
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://www.akc.org/"));
 
     }
@@ -215,7 +214,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://shop.akc.org/"));
 
     }
@@ -225,7 +224,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("/subscribe/"));
 
     }
@@ -235,7 +234,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://www.facebook.com/AmericanKennelClub"));
 
     }
@@ -245,7 +244,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://twitter.com/"));
 
     }
@@ -255,7 +254,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://www.instagram.com/americankennelclub/"));
 
 
@@ -266,7 +265,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://www.youtube.com/user/AmericanKennelClub"));
 
     }
@@ -276,7 +275,7 @@ public class Homepage {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://www.pinterest.com/"));
 
     }
@@ -285,40 +284,40 @@ public class Homepage {
     /*Check MarketPlace homepage elements*/
     public void CheckHomepage()  {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.home.isDisplayed();
-        this.puppies.isDisplayed();
-        this.groomers.isDisplayed();
-        this.trainers.isDisplayed();
-        this.akcorg.isDisplayed();
-        this.shop.isDisplayed();
-        this.signin.isDisplayed();
-        this.listmarket.isDisplayed();
-        this.bigphoto.isDisplayed();
-        this.toppuppies.isDisplayed();
-        this.topgroomers.isDisplayed();
-        this.toptrainers.isDisplayed();
-        this.findpupbut.isDisplayed();
-        this.findgroombut.isDisplayed();
-        this.aboutakc.isDisplayed();
-        this.puppict.isDisplayed();
-        this.puptext.isDisplayed();
-        this.pupfindpup.isDisplayed();
-        this.pupcrelist.isDisplayed();
-        this.groompict.isDisplayed();
-        this.groomtext.isDisplayed();
-        this.groomfindgroom.isDisplayed();
-        this.groomcrealist.isDisplayed();
-        this.trainpict.isDisplayed();
-        this.traintext.isDisplayed();
-        this.traifindtrain.isDisplayed();
-        this.traincrealist.isDisplayed();
-        this.comments.isDisplayed();
-        this.aboutamerpict.isDisplayed();
-        this.foot1.isDisplayed();
-        this.foot2.isDisplayed();
-        this.socialfoot.isDisplayed();
-        this.foot3.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(home));
+        wait.until(ExpectedConditions.visibilityOf(puppies));
+        wait.until(ExpectedConditions.visibilityOf(groomers));
+        wait.until(ExpectedConditions.visibilityOf(trainers));
+        wait.until(ExpectedConditions.visibilityOf(akcorg));
+        wait.until(ExpectedConditions.visibilityOf(shop));
+        wait.until(ExpectedConditions.visibilityOf(signin));
+        wait.until(ExpectedConditions.visibilityOf(listmarket));
+        wait.until(ExpectedConditions.visibilityOf(bigphoto));
+        wait.until(ExpectedConditions.visibilityOf(toppuppies));
+        wait.until(ExpectedConditions.visibilityOf(topgroomers));
+        wait.until(ExpectedConditions.visibilityOf(toptrainers));
+        wait.until(ExpectedConditions.visibilityOf(findpupbut));
+        wait.until(ExpectedConditions.visibilityOf(findgroombut));
+        wait.until(ExpectedConditions.visibilityOf(aboutakc));
+        wait.until(ExpectedConditions.visibilityOf(puppict));
+        wait.until(ExpectedConditions.visibilityOf(puptext));
+        wait.until(ExpectedConditions.visibilityOf(pupfindpup));
+        wait.until(ExpectedConditions.visibilityOf(pupcrelist));
+        wait.until(ExpectedConditions.visibilityOf(groompict));
+        wait.until(ExpectedConditions.visibilityOf(groomtext));
+        wait.until(ExpectedConditions.visibilityOf(groomfindgroom));
+        wait.until(ExpectedConditions.visibilityOf(groomcrealist));
+        wait.until(ExpectedConditions.visibilityOf(trainpict));
+        wait.until(ExpectedConditions.visibilityOf(traintext));
+        wait.until(ExpectedConditions.visibilityOf(traifindtrain));
+        wait.until(ExpectedConditions.visibilityOf(traincrealist));
+        wait.until(ExpectedConditions.visibilityOf(comments));
+        wait.until(ExpectedConditions.visibilityOf(aboutamerpict));
+        wait.until(ExpectedConditions.visibilityOf(foot1));
+        wait.until(ExpectedConditions.visibilityOf(foot2));
+        wait.until(ExpectedConditions.visibilityOf(socialfoot));
+        wait.until(ExpectedConditions.visibilityOf(foot3));
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("scroll(0, 2000);");
         //wait.until(ExpectedConditions.visibilityOf(add1));
@@ -328,147 +327,166 @@ public class Homepage {
     /*Check Menu elements*/
     public void CheckPupbutt(){
 
-        this.findpupbut.click();
-        this.findpupform.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(findpupbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(findpupform));
 
     }
 
 
-
     public void CheckTrainbutt(){
 
-        this.findtrainbut.click();
-        this.findtrainform.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(findtrainbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(findtrainform));
 
     }
 
     public void CheckAKC(){
 
-        this.akcorg.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(akcorg)).click();
         valid1();
 
     }
 
     public void CheckShop(){
 
-        this.shop.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(shop)).click();
         valid2();
 
     }
 
     public void CheckPupform2(){
 
-        this.pupfindpup.click();
-        this.findpupform.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(pupfindpup)).click();
+        wait.until(ExpectedConditions.visibilityOf(findpupform));
 
     }
 
     public void CheckGroomform2(){
 
-        this.groomfindgroom.click();
-        this.findgroomform.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomfindgroom)).click();
+        wait.until(ExpectedConditions.visibilityOf(findgroomform));
 
     }
 
     public void CheckTrainform2(){
 
-        this.traifindtrain.click();
-        this.findtrainform.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(traifindtrain)).click();
+        wait.until(ExpectedConditions.visibilityOf(findtrainform));
 
     }
 
     public void CheckPupList(){
 
-        this.pupcrelist.click();
-        this.creabreedlistpage.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(pupcrelist)).click();
+        wait.until(ExpectedConditions.visibilityOf(creabreedlistpage));
 
     }
 
     public void CheckGroomList(){
 
-        this.groomcrealist.click();
-        this.creagroomlistpage.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomcrealist)).click();
+        wait.until(ExpectedConditions.visibilityOf(creagroomlistpage));
 
     }
 
     public void CheckTrainList(){
 
-        this.traincrealist.click();
-        this.creatrainlistpage.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(traincrealist)).click();
+        wait.until(ExpectedConditions.visibilityOf(creatrainlistpage));
 
     }
 
     public void CheckCarrousel(){
 
-        this.carrousel.click();
-        this.carrousel.click();
-        this.carrousel.click();
-        this.carrousel.click();
-        this.carrousel.click();
-        this.carrousel.click();
-        this.carrousel.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
 
     }
 
     public void CheckNewsletter(){
 
-        this.newsletter.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(newsletter)).click();
         valid3();
 
     }
 
     public void CheckGoodWorks(){
 
-        this.goodworks.click();
-        this.goodworkpage.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(goodworks)).click();
+        wait.until(ExpectedConditions.visibilityOf(goodworkpage));
 
     }
 
     public void CheckTermsofuse(){
 
-        this.termsofuse.click();
-        this.termsofusepage.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(termsofuse)).click();
+        wait.until(ExpectedConditions.urlContains("/terms-of-use/"));
 
     }
 
     public void CheckPrivacy(){
 
-        this.privacy.click();
-        this.privacypage.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(privacy)).click();
+        wait.until(ExpectedConditions.urlContains("/privacy/"));
 
     }
 
     public void CheckFacebook(){
 
-        this.facebook.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(facebook)).click();
         validface();
 
     }
 
     public void CheckTwitter(){
 
-        this.twitter.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(twitter)).click();
         validtwit();
 
     }
 
     public void CheckInstagram(){
 
-        this.instagram.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(instagram)).click();
         validinsta();
 
     }
 
     public void CheckYoutube(){
 
-        this.youtube.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(youtube)).click();
         validyoutu();
 
     }
 
     public void CheckPinterest(){
 
-        this.pinterest.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(pinterest)).click();
         validpint();
 
     }

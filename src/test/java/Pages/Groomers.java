@@ -1,9 +1,10 @@
 package Pages;
 
 import Helpers.BrowserFactory;
-import Helpers.DriverHelper;
+
 import Model.Service;
 import Model.User;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,13 +19,13 @@ import static java.lang.Thread.sleep;
 
 public class Groomers {
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[3]/div[1]/span[1]")
+    @FindBy(css = "#center-menu > div:nth-child(2) > div.menu-item-title-container")
     WebElement groomers;
 
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[3]/div[2]/div/ul/li[1]")
     WebElement groomseek;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[3]/div[2]/div/ul/li[2]/div[2]/a")
+    @FindBy(css = "#center-menu > div:nth-child(2) > div.menu-item-dropdown-container > div > ul > li:nth-child(2) > div.title-container > a")
     WebElement findgroom;
 
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[3]/div[2]/div/ul/li[3]/div/a")
@@ -90,10 +91,10 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[4]/div[2]/p")
     WebElement whytext;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[5]/h2")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > section > div.Styled__Wrapper-sc-1cb5cbj-0.cYXciP > h2")
     WebElement whatmakes;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[5]/div[1]/div[1]")
+    @FindBy(xpath = "//*[@id=\"react-root\"]/div[2]/div[4]/section/div[6]/div[1]/div[2]/h3")
     WebElement trustpict;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[5]/div[1]/div[2]/h3")
@@ -150,7 +151,7 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[8]/div[1]/div[2]/p")
     WebElement safetext;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[8]/div[1]/div[2]/p/a")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > section > div.Styled__Wrapper-sc-ysw841-0.cWfaAR > div.Styled__Wrapper-sc-13lpz7m-0.fJSjAr.content-right > div.content > p > a")
     WebElement safemore;
 
     @FindBy(css = "#react-root > div > div:nth-child(4) > section > div.Styled__Wrapper-sc-ysw841-0.cWfaAR > div.Styled__Wrapper-sc-13lpz7m-0.fJSjAr.content-left > div.image-container > img")
@@ -162,7 +163,7 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[8]/div[2]/div[2]/p")
     WebElement salonsafetext;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[8]/div[2]/div[2]/p/a")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > section > div.Styled__Wrapper-sc-ysw841-0.cWfaAR > div.Styled__Wrapper-sc-13lpz7m-0.fJSjAr.content-left > div.content > p > a")
     WebElement salonsafemore;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[9]/h2")
@@ -171,7 +172,7 @@ public class Groomers {
     @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[9]/div/p")
     WebElement iamgroomtext;
 
-    @FindBy(xpath = "//html/body/main/div/div/div[4]/section/div[9]/div/a")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > section > div:nth-child(4) > p > a")
     WebElement crealistbelow;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div[3]/div[1]/div/div[2]/div/h2")
@@ -258,8 +259,8 @@ public class Groomers {
     @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.payment > div.sub-header")
     WebElement paymenttext;
 
-    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.payment > div.payment-symbols > svg.icon.icon-mastercard > use")
-    WebElement paymentMethodMC;
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.groomer-profile__flexible-content > div.groomer-profile__main-content > div.Styled__OperationsWrapper-sc-yg6hq3-1.bZsPaK > div > div.groomer-profile__operations-content > div > div.payment > div.payment-symbols > svg > use")
+    WebElement paymentMethodVS;
 
 
     //@FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div.flexible-content > div:nth-child(2) > div > div.contact-form-desktop > div:nth-child(2) > div > button")
@@ -903,8 +904,6 @@ public class Groomers {
     WebElement AnnualPlanButtton;
 
 
-    DriverHelper driverHelper;
-    //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
     WebDriver driver;
@@ -912,9 +911,9 @@ public class Groomers {
     /*Initialize Groomers*/
     public Groomers(WebDriver _driver) {
 
-        //this.driverFactory = new DriverFactory();
-        this.browserFactory = new BrowserFactory();
-        this.driver = _driver;
+        //driverFactory = new DriverFactory();
+        browserFactory = new BrowserFactory();
+        driver = _driver;
         PageFactory.initElements(driver, this);
     }
 
@@ -924,7 +923,7 @@ public class Groomers {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://www.akc.org/products-services/akc-safe-grooming-program/"));
 
     }
@@ -932,40 +931,41 @@ public class Groomers {
     /*Check Groomers menu*/
     public void CheckGroomers() {
 
-        this.groomers.click();
-        this.groomseek.isDisplayed();
-        this.findgroom.isDisplayed();
-        this.akcmarkgroom.isDisplayed();
-        this.howfindgroom.isDisplayed();
-        this.forgroom.isDisplayed();
-        this.listservmark.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.visibilityOf(groomseek));
+        wait.until(ExpectedConditions.visibilityOf(findgroom));
+        wait.until(ExpectedConditions.visibilityOf(akcmarkgroom));
+        wait.until(ExpectedConditions.visibilityOf(howfindgroom));
+        wait.until(ExpectedConditions.visibilityOf(forgroom));
+        wait.until(ExpectedConditions.visibilityOf(listservmark));
 
     }
 
     /*Check Groomer pages*/
     public void CheckGroomers1() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.groomers.click();
-        this.findgroom.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findgroom)).click();
         wait.until(ExpectedConditions.visibilityOf(findgroompage));
 
     }
 
     public void CheckGroomers2() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.groomers.click();
-        this.akcmarkgroom.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcmarkgroom)).click();
         wait.until(ExpectedConditions.visibilityOf(akcmarkforgroompage));
 
     }
 
     public void CheckGroomers3() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.groomers.click();
-        this.howfindgroom.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(howfindgroom)).click();
         wait.until(ExpectedConditions.visibilityOf(howfindgroompage));
 
     }
@@ -973,148 +973,156 @@ public class Groomers {
 
     public void CheckGroomers4() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.groomers.click();
-        this.listservmark.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(listservmark)).click();
         wait.until(ExpectedConditions.visibilityOf(listservicmarkpage));
+
 
     }
 
     /*Check Groomer Homepage elements*/
     public void CheckGroomHome() {
 
-        this.groomers.click();
-        this.findgroom.click();
-        this.groomhead.isDisplayed();
-        this.groomtext.isDisplayed();
-        this.groomserp.isDisplayed();
-        this.looking.isDisplayed();
-        this.service.isDisplayed();
-        this.zipstate.isDisplayed();
-        this.distance.isDisplayed();
-        this.searchbut.isDisplayed();
-        this.areyougroom.isDisplayed();
-        this.crealist.isDisplayed();
-        this.whychoose.isDisplayed();
-        this.whypicture.isDisplayed();
-        this.whytext.isDisplayed();
-        this.whatmakes.isDisplayed(); //fix this locator
-        this.trustpict.isDisplayed();
-        this.trust.isDisplayed();
-        this.trusttext.isDisplayed();
-        this.salonpict.isDisplayed();
-        this.salon.isDisplayed();
-        this.salontext.isDisplayed();
-        this.groomedupict.isDisplayed();
-        this.groomedu.isDisplayed();
-        this.groomedutext.isDisplayed();
-        this.howchoose.isDisplayed();
-        this.howpict1.isDisplayed();
-        this.howpict2.isDisplayed();
-        this.howpict3.isDisplayed();
-        this.howpict4.isDisplayed();
-        this.howchoosetext.isDisplayed();
-        this.howfind.isDisplayed();
-        this.safepict.isDisplayed();
-        this.safe.isDisplayed();
-        this.safetext.isDisplayed();
-        this.safemore.isDisplayed();
-        this.salonsafepict.isDisplayed();
-        this.salonsafe.isDisplayed();
-        this.salonsafetext.isDisplayed();
-        this.salonsafemore.isDisplayed();
-        this.iamgroom.isDisplayed();
-        this.iamgroomtext.isDisplayed();
-        this.crealistbelow.isDisplayed();
-
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findgroom)).click();
+        wait.until(ExpectedConditions.visibilityOf(groomhead));
+        wait.until(ExpectedConditions.visibilityOf(groomtext));
+        wait.until(ExpectedConditions.visibilityOf(groomserp));
+        wait.until(ExpectedConditions.visibilityOf(looking));
+        wait.until(ExpectedConditions.visibilityOf(service));
+        wait.until(ExpectedConditions.visibilityOf(zipstate));
+        wait.until(ExpectedConditions.visibilityOf(distance));
+        wait.until(ExpectedConditions.visibilityOf(searchbut));
+        wait.until(ExpectedConditions.visibilityOf(areyougroom));
+        wait.until(ExpectedConditions.visibilityOf(crealist));
+        wait.until(ExpectedConditions.visibilityOf(whychoose));
+        wait.until(ExpectedConditions.visibilityOf(whypicture));
+        wait.until(ExpectedConditions.visibilityOf(whytext));
+        wait.until(ExpectedConditions.visibilityOf(whatmakes));
+        /*
+        wait.until(ExpectedConditions.visibilityOf(trustpict));
+        wait.until(ExpectedConditions.visibilityOf(trust));
+        wait.until(ExpectedConditions.visibilityOf(trusttext));
+        wait.until(ExpectedConditions.visibilityOf(salonpict));
+        wait.until(ExpectedConditions.visibilityOf(salon));
+        wait.until(ExpectedConditions.visibilityOf(salontext));
+        wait.until(ExpectedConditions.visibilityOf(groomedupict));
+        wait.until(ExpectedConditions.visibilityOf(groomedu));
+        wait.until(ExpectedConditions.visibilityOf(groomedutext)); //All this elements already covered in visual test
+        wait.until(ExpectedConditions.visibilityOf(howchoose));
+        wait.until(ExpectedConditions.visibilityOf(howpict1));
+        wait.until(ExpectedConditions.visibilityOf(howpict2));
+        wait.until(ExpectedConditions.visibilityOf(howpict3));
+        wait.until(ExpectedConditions.visibilityOf(howpict4));
+        wait.until(ExpectedConditions.visibilityOf(howchoosetext));
+        wait.until(ExpectedConditions.visibilityOf(howfind));
+        wait.until(ExpectedConditions.visibilityOf(safepict));
+        wait.until(ExpectedConditions.visibilityOf(safe));
+        wait.until(ExpectedConditions.visibilityOf(safetext));
+        wait.until(ExpectedConditions.visibilityOf(safemore));
+        wait.until(ExpectedConditions.visibilityOf(salonsafepict));
+        wait.until(ExpectedConditions.visibilityOf(salonsafe));
+        wait.until(ExpectedConditions.visibilityOf(salonsafetext));
+        wait.until(ExpectedConditions.visibilityOf(salonsafemore));
+        wait.until(ExpectedConditions.visibilityOf(iamgroom));
+        wait.until(ExpectedConditions.visibilityOf(iamgroomtext));
+        wait.until(ExpectedConditions.visibilityOf(crealistbelow));
+        */
     }
 
     /*Check SERP results*/
     public void CheckAllResults() {
 
-        this.groomers.click();
-        this.findgroom.click();
-        this.searchbut.click();
-        this.allresults.isDisplayed(); //This fails on Stage env because of the missing Groomers board
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findgroom)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(searchbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(allresults)); //This fails on Stage env because of the missing Groomers board
 
     }
 
     public void CheckBathResults() {
 
-        this.groomers.click();
-        this.findgroom.click();
-        this.service.click();
-        this.bathopt.click();
-        this.searchbut.click();
-        this.bathresults.isDisplayed();   //This fails on Stage because there a no results
-
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(groomers)).click();
+        wait.until(ExpectedConditions.visibilityOf(findgroom)).click();
+        wait.until(ExpectedConditions.visibilityOf(service)).click();
+        wait.until(ExpectedConditions.visibilityOf(bathopt)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(searchbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(bathresults)).isDisplayed();
     }
 
     public void CheckZipResults() {
 
-        this.groomers.click();
-        this.findgroom.click();
-        this.service.click();
-        this.bathopt.click();
-        this.zipstate.click();
-        this.zipfield2.sendKeys("10011");
-        this.searchbut.click();  //This fails because of the Groomers issue on stage
-        this.zipresults.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findgroom)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(service)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(bathopt)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(zipstate)).click();
+        zipfield2.sendKeys("10011");
+        wait.until(ExpectedConditions.elementToBeClickable(searchbut)).click();  //This fails because of the Groomers issue on stage
+        wait.until(ExpectedConditions.visibilityOf(zipresults));
 
     }
 
     public void CheckDistResults() {
 
-        this.groomers.click();
-        this.findgroom.click();
-        this.service.click();
-        this.bathopt.click();
-        this.zipstate.click();
-        this.zipfield2.sendKeys("10011");
-        //this.distance.click();
-        this.distance.click();
-        this.distopt.click();
-        this.searchbut.click();
-        this.distresults.isDisplayed(); //This fails on stage because there is no bath Serivces.
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findgroom)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(service)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(bathopt)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(zipstate)).click();
+        zipfield2.sendKeys("10011");
+        //wait.until(ExpectedConditions.elementToBeClickable(distance)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(distance)).click(); //fix this
+        wait.until(ExpectedConditions.elementToBeClickable(distopt)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(searchbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(distresults)); //This fails on stage because there is no bath Serivces.
 
     }
 
     /*Check other pages*/
     public void CheckList1() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.groomers.click();
-        this.findgroom.click();
-        this.crealist.click();
-        wait.until(ExpectedConditions.visibilityOf(AnnualPlanButtton));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findgroom)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(crealist)).click();
+        wait.until(ExpectedConditions.visibilityOf(AnnualPlanButtton)); //fix this
 
     }
 
 
     public void CheckSafe1() {
 
-        this.groomers.click();
-        this.findgroom.click();
-        this.safemore.click(); //fix this locator
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findgroom)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(safemore)).click();
         validsafe();
 
     }
 
     public void CheckSafe2() {
 
-        this.groomers.click();
-        this.findgroom.click();
-        this.salonsafemore.click(); //fix this
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findgroom)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(salonsafemore)).click();
         validsafe();
 
     }
 
     public void CheckList2() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.groomers.click();
-        this.findgroom.click();
-        this.crealistbelow.click(); //update this one
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findgroom)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(crealistbelow)).click(); //update this one
         wait.until(ExpectedConditions.visibilityOf(listservicmarkpage));
 
 
@@ -1123,49 +1131,51 @@ public class Groomers {
     /*Check Groomer SERP page*/
     public void CheckGroomListPage() {
 
-        this.groomers.click();
-        this.findgroom.click();
-        this.service.click();
-        this.bathopt.click();
-        this.zipstate.click();
-        this.zipfield2.sendKeys("10011");
-        this.searchbut.click();
-        this.groompict.isDisplayed(); //This fails on stage because of there are no Groomers Bath services
-        this.groomname.isDisplayed();
-        this.groomtype.isDisplayed();
-        this.groomaddress.isDisplayed();
-        this.groomcert.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findgroom)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(service)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(bathopt)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(zipstate)).click();
+        zipfield2.sendKeys("10011");
+        wait.until(ExpectedConditions.elementToBeClickable(searchbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(groompict)); //This fails on stage because of there are no Groomers Bath services
+        wait.until(ExpectedConditions.visibilityOf(groomname));
+        wait.until(ExpectedConditions.visibilityOf(groomtype));
+        wait.until(ExpectedConditions.visibilityOf(groomaddress));
+        wait.until(ExpectedConditions.visibilityOf(groomcert));
 
     }
 
     /*Check Groomer page*/
     public void CheckGroomPage() {
 
-        this.groomers.click();
-        this.findgroom.click();
-        this.service.click();
-        this.haircut.click();
-        this.searchbut.click();
-        this.groompict.click(); //update this
-        this.groom2name.isDisplayed();
-        this.groom2pict.isDisplayed();
-        this.groom2address.isDisplayed();
-        this.groom2type.isDisplayed();
-        //this.groom2cert.isDisplayed();
-        //this.createaccbut.isDisplayed(); //This changed for "Login to get in touch"
-        this.aboutme.isDisplayed();
-        this.aboutmetext.isDisplayed();
-        this.myservices.isDisplayed();
-        this.myservicestext.isDisplayed();
-        this.packages.isDisplayed(); //fix this
-        this.packagestext.isDisplayed();
-        this.operations.isDisplayed();
-        this.operationstext.isDisplayed();
-        this.payment.isDisplayed();
-        this.paymenttext.isDisplayed();
-        this.paymentMethodMC.isDisplayed();
-        //this.createaccbut.isDisplayed();
-        this.signinbut.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findgroom)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(service)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(haircut)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(searchbut)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(groompict)).click();
+        wait.until(ExpectedConditions.visibilityOf(groom2name));
+        wait.until(ExpectedConditions.visibilityOf(groom2pict));
+        wait.until(ExpectedConditions.visibilityOf(groom2address));
+        wait.until(ExpectedConditions.visibilityOf(groom2type));
+        //wait.until(ExpectedConditions.visibilityOf(groom2cert));
+        //wait.until(ExpectedConditions.visibilityOf(createaccbut)); //This changed for "Login to get in touch"
+        wait.until(ExpectedConditions.visibilityOf(aboutme));
+        wait.until(ExpectedConditions.visibilityOf(aboutmetext));
+        wait.until(ExpectedConditions.visibilityOf(myservices));
+        wait.until(ExpectedConditions.visibilityOf(myservicestext));
+        //wait.until(ExpectedConditions.visibilityOf(packages)); //There are no packages for this groomer
+        //wait.until(ExpectedConditions.visibilityOf(packagestext));
+        wait.until(ExpectedConditions.visibilityOf(operations));
+        wait.until(ExpectedConditions.visibilityOf(operationstext));
+        wait.until(ExpectedConditions.visibilityOf(payment));
+        wait.until(ExpectedConditions.visibilityOf(paymenttext));
+        wait.until(ExpectedConditions.visibilityOf(paymentMethodVS));
+        //wait.until(ExpectedConditions.visibilityOf(createaccbut));
+        wait.until(ExpectedConditions.visibilityOf(signinbut));
 
 
     }
@@ -1173,136 +1183,136 @@ public class Groomers {
     /*Get Annual Groomer*/
     public void AnnualGroomers(Service _testService) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.groomers.click();
-        this.listservmark.click();
-        this.listservicmarkpage.isDisplayed();
-        this.whatsincludetext.isDisplayed();
-        this.whatsinclupict.isDisplayed();
-        this.annualplantext.isDisplayed();
-        this.annualplanbut.isDisplayed();
-        this.quatplantext.isDisplayed();
-        this.quatplanbut.isDisplayed();
-        this.howgroomworkstext.isDisplayed();
-        this.howgroomworkspict.isDisplayed();
-        this.chooseplanbut.isDisplayed();
-        this.annualplanbut.click();
-        this.usernamegroom.sendKeys(_testService.Email);
-        this.passgroom.sendKeys(_testService.Password);
-        this.logingroom.click();
-        this.businessname.sendKeys(_testService.Businessname);
-        this.aboutmegro.sendKeys(_testService.Aboutme);
-        this.businesssince.sendKeys(_testService.Businesssince);
-        this.salonowner.click();
-        this.groomer.click();
-        this.cash.click();
-        this.check.click();
-        this.visa.click();
-        this.mastercard.click();
-        this.amex.click();
-        this.other.click();
-        this.othertext.sendKeys("Insurance");
-        this.street.sendKeys(_testService.Street);
-        this.zip3.sendKeys(_testService.ZIP);
-        this.city.isDisplayed();
-        this.state3.isDisplayed();
-        this.bussphone.sendKeys(_testService.BusinessPhone);
-        this.bussemail.sendKeys(_testService.BusinessEmail);
-        this.sunday.click();
-        this.sunopen.sendKeys("13:00 P");
-        this.sunclose.sendKeys("18:00 P");
-        this.monday.click();
-        this.monopen.sendKeys("13:00 P");
-        this.monclose.sendKeys("18:00 P");
-        this.tuesday.click();
-        this.tuesopen.sendKeys("13:00 P");
-        this.tuesclose.sendKeys("18:00 P");
-        this.wednesday.click();
-        this.wedopen.sendKeys("13:00 P");
-        this.wedclose.sendKeys("18:00 P");
-        this.thursday.click();
-        this.thuropen.sendKeys("13:00 P");
-        this.thurclose.sendKeys("18:00 P");
-        this.friday.click();
-        this.friopen.sendKeys("13:00 P");
-        this.friclose.sendKeys("18:00 P");
-        this.saturday.click();
-        this.satopen.sendKeys("13:00 P");
-        this.satclose.sendKeys("18:00 P");
-        this.save1.click();
-        this.photouploadinput.sendKeys("/Users/sebastian.viquez/Documents/NYCATS-QA-branch-A/src/test/java/Resources/image.png");
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(listservmark)).click();
+        wait.until(ExpectedConditions.visibilityOf(listservicmarkpage));
+        wait.until(ExpectedConditions.visibilityOf(whatsincludetext));
+        wait.until(ExpectedConditions.visibilityOf(whatsinclupict));
+        wait.until(ExpectedConditions.visibilityOf(annualplantext));
+        wait.until(ExpectedConditions.visibilityOf(annualplanbut));
+        wait.until(ExpectedConditions.visibilityOf(quatplantext));
+        wait.until(ExpectedConditions.visibilityOf(quatplanbut));
+        wait.until(ExpectedConditions.visibilityOf(howgroomworkstext));
+        wait.until(ExpectedConditions.visibilityOf(howgroomworkspict));
+        wait.until(ExpectedConditions.visibilityOf(chooseplanbut));
+        wait.until(ExpectedConditions.elementToBeClickable(annualplanbut)).click();
+        usernamegroom.sendKeys(_testService.Email);
+        passgroom.sendKeys(_testService.Password);
+        wait.until(ExpectedConditions.elementToBeClickable(logingroom)).click();
+        businessname.sendKeys(_testService.Businessname);
+        aboutmegro.sendKeys(_testService.Aboutme);
+        businesssince.sendKeys(_testService.Businesssince);
+        wait.until(ExpectedConditions.elementToBeClickable(salonowner)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(groomer)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(cash)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(check)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(visa)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(mastercard)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(amex)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(other)).click();
+        othertext.sendKeys("Insurance");
+        street.sendKeys(_testService.Street);
+        zip3.sendKeys(_testService.ZIP);
+        wait.until(ExpectedConditions.visibilityOf(city));
+        wait.until(ExpectedConditions.visibilityOf(state3));
+        bussphone.sendKeys(_testService.BusinessPhone);
+        bussemail.sendKeys(_testService.BusinessEmail);
+        wait.until(ExpectedConditions.elementToBeClickable(sunday)).click();
+        sunopen.sendKeys("13:00 P");
+        sunclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(monday)).click();
+        monopen.sendKeys("13:00 P");
+        monclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(tuesday)).click();
+        tuesopen.sendKeys("13:00 P");
+        tuesclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(wednesday)).click();
+        wedopen.sendKeys("13:00 P");
+        wedclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(thursday)).click();
+        thuropen.sendKeys("13:00 P");
+        thurclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(friday)).click();
+        friopen.sendKeys("13:00 P");
+        friclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(saturday)).click();
+        satopen.sendKeys("13:00 P");
+        satclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(save1)).click();
+        photouploadinput.sendKeys("/Users/sebastian.viquez/Documents/NYCATS-QA-branch-A/src/test/java/Resources/image.png");
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(continuephoto));
-        this.continuephoto.click();
+        wait.until(ExpectedConditions.elementToBeClickable(continuephoto)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(save2));
-        this.save2.click();
-        this.addmorefiles.click();
-        this.selimages.sendKeys("/Users/sebastian.viquez/Documents/NYCATS-QA-branch-A/src/test/java/Resources/image.png");
+        wait.until(ExpectedConditions.elementToBeClickable(save2)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(addmorefiles)).click();
+        selimages.sendKeys("/Users/sebastian.viquez/Documents/NYCATS-QA-branch-A/src/test/java/Resources/image.png");
         wait.until(ExpectedConditions.visibilityOf(caption));
-        this.caption.sendKeys("Beagle Specialized2");
+        caption.sendKeys("Beagle Specialized2");
         sleep(2000);
-        this.continueimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(continueimages)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(closeimages));
-        this.closeimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(closeimages)).click();
         wait.until(ExpectedConditions.elementToBeClickable(save3));
-        this.save3.click();
+        wait.until(ExpectedConditions.elementToBeClickable(save3)).click();
         wait.until(ExpectedConditions.elementToBeClickable(avabserv));
-        this.avabserv.click();
-        this.haircut.isDisplayed();
-        this.bath.isDisplayed();
-        this.breedcuts.isDisplayed();
-        this.earclean.isDisplayed();
-        this.nailtrim.isDisplayed();
-        this.teethclean.isDisplayed();
-        this.analgland.isDisplayed();
-        this.dematting.isDisplayed();
-        this.deshedding.isDisplayed();
-        this.decorating.isDisplayed();
-        this.handscissor.isDisplayed();
-        this.handstripp.isDisplayed();
-        this.largdoggroom.isDisplayed();
-        this.mobile.isDisplayed();
-        this.showgroom.isDisplayed();
-        this.otherserv.isDisplayed();
-        this.bath.click();
-        this.closeserv.isDisplayed();
-        this.headerserv.isDisplayed();
-        this.checkprice.click();
-        this.pricerange.isDisplayed();
-        this.pricemin.sendKeys(_testService.Pricemin);
-        this.pricemax.sendKeys(_testService.Pricemax);
-        this.descserv.sendKeys(_testService.Descservice);
-        this.save4.click();
+        wait.until(ExpectedConditions.elementToBeClickable(avabserv)).click();
+        wait.until(ExpectedConditions.visibilityOf(haircut));
+        wait.until(ExpectedConditions.visibilityOf(bath));
+        wait.until(ExpectedConditions.visibilityOf(breedcuts));
+        wait.until(ExpectedConditions.visibilityOf(earclean));
+        wait.until(ExpectedConditions.visibilityOf(nailtrim));
+        wait.until(ExpectedConditions.visibilityOf(teethclean));
+        wait.until(ExpectedConditions.visibilityOf(analgland));
+        wait.until(ExpectedConditions.visibilityOf(dematting));
+        wait.until(ExpectedConditions.visibilityOf(deshedding));
+        wait.until(ExpectedConditions.visibilityOf(decorating));
+        wait.until(ExpectedConditions.visibilityOf(handscissor));
+        wait.until(ExpectedConditions.visibilityOf(handstripp));
+        wait.until(ExpectedConditions.visibilityOf(largdoggroom));
+        wait.until(ExpectedConditions.visibilityOf(mobile));
+        wait.until(ExpectedConditions.visibilityOf(showgroom));
+        wait.until(ExpectedConditions.visibilityOf(otherserv));
+        wait.until(ExpectedConditions.elementToBeClickable(bath)).click();
+        wait.until(ExpectedConditions.visibilityOf(closeserv));
+        wait.until(ExpectedConditions.visibilityOf(headerserv));
+        wait.until(ExpectedConditions.elementToBeClickable(checkprice)).click();
+        wait.until(ExpectedConditions.visibilityOf(pricerange));
+        pricemin.sendKeys(_testService.Pricemin);
+        pricemax.sendKeys(_testService.Pricemax);
+        descserv.sendKeys(_testService.Descservice);
+        wait.until(ExpectedConditions.elementToBeClickable(save4)).click();
         wait.until(ExpectedConditions.elementToBeClickable(addnewpack));
-        this.addnewpack.click();
+        wait.until(ExpectedConditions.elementToBeClickable(addnewpack)).click();
         wait.until(ExpectedConditions.visibilityOf(titlepack));
-        this.titlepack.sendKeys(_testService.PackTitle);
-        this.pricerangepack.isDisplayed();
-        this.checkpricepack.click();
-        this.priceminpack.sendKeys(_testService.Priceminpack);
-        this.pricemaxpack.sendKeys(_testService.Pricemaxpack);
-        this.descpack.sendKeys(_testService.Descpack);
-        this.showpackcheck.click();
-        this.showpackcheck.click();
-        this.showpacktext.isDisplayed();
-        this.save5.click();
+        titlepack.sendKeys(_testService.PackTitle);
+        wait.until(ExpectedConditions.visibilityOf(pricerangepack));
+        wait.until(ExpectedConditions.elementToBeClickable(checkpricepack)).click();
+        priceminpack.sendKeys(_testService.Priceminpack);
+        pricemaxpack.sendKeys(_testService.Pricemaxpack);
+        descpack.sendKeys(_testService.Descpack);
+        wait.until(ExpectedConditions.elementToBeClickable(showpackcheck)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(showpackcheck)).click();
+        wait.until(ExpectedConditions.visibilityOf(showpacktext));
+        wait.until(ExpectedConditions.elementToBeClickable(save5)).click();
         wait.until(ExpectedConditions.visibilityOf(creditcard));
-        this.creditcard.sendKeys("4111111111111111");
-        this.expdate.sendKeys(_testService.ExpDate);
-        this.cvv.sendKeys(_testService.CVV);
-        this.couponcode.isDisplayed();
-        this.firstnamebill.sendKeys(_testService.FirstName);
-        this.lastnamebill.sendKeys(_testService.LastName);
-        this.billaddress.sendKeys(_testService.Street);
-        this.zip4.sendKeys(_testService.ZIP);
-        this.citybill.isDisplayed();
-        this.statebill.isDisplayed();
-        this.phonebill.sendKeys(_testService.BusinessPhone);
+        creditcard.sendKeys("4111111111111111");
+        expdate.sendKeys(_testService.ExpDate);
+        cvv.sendKeys(_testService.CVV);
+        wait.until(ExpectedConditions.visibilityOf(couponcode));
+        firstnamebill.sendKeys(_testService.FirstName);
+        lastnamebill.sendKeys(_testService.LastName);
+        billaddress.sendKeys(_testService.Street);
+        zip4.sendKeys(_testService.ZIP);
+        wait.until(ExpectedConditions.visibilityOf(citybill));
+        wait.until(ExpectedConditions.visibilityOf(statebill));
+        phonebill.sendKeys(_testService.BusinessPhone);
         wait.until(ExpectedConditions.elementToBeClickable(save6));
-        this.save6.click();
-        this.successgroomer.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(save6)).click();
+        wait.until(ExpectedConditions.visibilityOf(successgroomer));
 
 
     }
@@ -1310,149 +1320,149 @@ public class Groomers {
     /*Get Quarter Groomer*/
     public void QuatGroomers(Service _testService) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.groomers.click();
-        this.listservmark.click();
-        this.listservicmarkpage.isDisplayed();
-        this.whatsincludetext.isDisplayed();
-        this.whatsinclupict.isDisplayed();
-        this.annualplantext.isDisplayed();
-        this.annualplanbut.isDisplayed();
-        this.quatplantext.isDisplayed();
-        this.quatplanbut.isDisplayed();
-        this.howgroomworkstext.isDisplayed();
-        this.howgroomworkspict.isDisplayed();
-        this.chooseplanbut.isDisplayed();
-        this.quatplanbut.click();
-        this.usernamegroom.sendKeys(_testService.Email);
-        this.passgroom.sendKeys(_testService.Password);
-        this.logingroom.click();
-        this.businessname.sendKeys(_testService.Businessname);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(groomers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(listservmark)).click();
+        wait.until(ExpectedConditions.visibilityOf(listservicmarkpage));
+        wait.until(ExpectedConditions.visibilityOf(whatsincludetext));
+        wait.until(ExpectedConditions.visibilityOf(whatsinclupict));
+        wait.until(ExpectedConditions.visibilityOf(annualplantext));
+        wait.until(ExpectedConditions.visibilityOf(annualplanbut));
+        wait.until(ExpectedConditions.visibilityOf(quatplantext));
+        wait.until(ExpectedConditions.visibilityOf(quatplanbut));
+        wait.until(ExpectedConditions.visibilityOf(howgroomworkstext));
+        wait.until(ExpectedConditions.visibilityOf(howgroomworkspict));
+        wait.until(ExpectedConditions.visibilityOf(chooseplanbut));
+        wait.until(ExpectedConditions.elementToBeClickable(quatplanbut)).click();
+        usernamegroom.sendKeys(_testService.Email);
+        passgroom.sendKeys(_testService.Password);
+        wait.until(ExpectedConditions.elementToBeClickable(logingroom)).click();
+        businessname.sendKeys(_testService.Businessname);
         wait.until(ExpectedConditions.visibilityOf(aboutmegro));
-        this.aboutmegro.sendKeys(_testService.Aboutme);
+        aboutmegro.sendKeys(_testService.Aboutme);
         wait.until(ExpectedConditions.visibilityOf(businesssince));
-        this.businesssince.sendKeys(_testService.Businesssince);
+        businesssince.sendKeys(_testService.Businesssince);
         wait.until(ExpectedConditions.visibilityOf(salonowner));
-        this.salonowner.click();
+        wait.until(ExpectedConditions.elementToBeClickable(salonowner)).click();
         wait.until(ExpectedConditions.elementToBeClickable(groomer));
-        this.groomer.click();
-        this.cash.click();
-        this.check.click();
-        this.visa.click();
-        this.mastercard.click();
-        this.amex.click();
-        this.other.click();
-        this.othertext.sendKeys("Insurance");
-        this.street.sendKeys(_testService.Street);
-        this.zip3.sendKeys(_testService.ZIP);
-        this.city.isDisplayed();
-        this.state3.isDisplayed();
-        this.bussphone.sendKeys(_testService.BusinessPhone);
-        this.bussemail.sendKeys(_testService.BusinessEmail);
-        this.sunday.click();
-        this.sunopen.sendKeys("13:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(groomer)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(cash)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(check)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(visa)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(mastercard)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(amex)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(other)).click();
+        othertext.sendKeys("Insurance");
+        street.sendKeys(_testService.Street);
+        zip3.sendKeys(_testService.ZIP);
+        wait.until(ExpectedConditions.visibilityOf(city));
+        wait.until(ExpectedConditions.visibilityOf(state3));
+        bussphone.sendKeys(_testService.BusinessPhone);
+        bussemail.sendKeys(_testService.BusinessEmail);
+        wait.until(ExpectedConditions.elementToBeClickable(sunday)).click();
+        sunopen.sendKeys("13:00 P");
         wait.until(ExpectedConditions.visibilityOf(sunclose));
-        this.sunclose.sendKeys("18:00 P");
-        this.monday.click();
-        this.monopen.sendKeys("13:00 P");
+        sunclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(monday)).click();
+        monopen.sendKeys("13:00 P");
         wait.until(ExpectedConditions.visibilityOf(monclose));
-        this.monclose.sendKeys("18:00 P");
-        this.tuesday.click();
-        this.tuesopen.sendKeys("13:00 P");
+        monclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(tuesday)).click();
+        tuesopen.sendKeys("13:00 P");
         wait.until(ExpectedConditions.visibilityOf(tuesclose));
-        this.tuesclose.sendKeys("18:00 P");
-        this.wednesday.click();
-        this.wedopen.sendKeys("13:00 P");
+        tuesclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(wednesday)).click();
+        wedopen.sendKeys("13:00 P");
         wait.until(ExpectedConditions.visibilityOf(wedclose));
-        this.wedclose.sendKeys("18:00 P");
-        this.thursday.click();
-        this.thuropen.sendKeys("13:00 P");
+        wedclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(thursday)).click();
+        thuropen.sendKeys("13:00 P");
         wait.until(ExpectedConditions.visibilityOf(thurclose));
-        this.thurclose.sendKeys("18:00 P");
-        this.friday.click();
-        this.friopen.sendKeys("13:00 P");
+        thurclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(friday)).click();
+        friopen.sendKeys("13:00 P");
         wait.until(ExpectedConditions.visibilityOf(friclose));
-        this.friclose.sendKeys("18:00 P");
-        this.saturday.click();
-        this.satopen.sendKeys("13:00 P");
+        friclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(saturday)).click();
+        satopen.sendKeys("13:00 P");
         wait.until(ExpectedConditions.visibilityOf(satclose));
-        this.satclose.sendKeys("18:00 P");
-        this.save1.click();
+        satclose.sendKeys("18:00 P");
+        wait.until(ExpectedConditions.elementToBeClickable(save1)).click();
         wait.until(ExpectedConditions.visibilityOf(photouploadinput));
-        this.photouploadinput.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\linkedinimage.jpg");
+        photouploadinput.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\linkedinimage.jpg");
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(continuephoto));
-        this.continuephoto.click();
+        wait.until(ExpectedConditions.elementToBeClickable(continuephoto)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(save2));
-        this.save2.click();
+        wait.until(ExpectedConditions.elementToBeClickable(save2)).click();
         wait.until(ExpectedConditions.elementToBeClickable(addmorefiles));
-        this.addmorefiles.click();
-        this.selimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\boxer1.jpg");
+        wait.until(ExpectedConditions.elementToBeClickable(addmorefiles)).click();
+        selimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\boxer1.jpg");
         wait.until(ExpectedConditions.visibilityOf(caption));
-        this.caption.sendKeys("Beagle Specialized2");
+        caption.sendKeys("Beagle Specialized2");
         sleep(2000);
-        this.continueimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(continueimages)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(closeimages));
-        this.closeimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(closeimages)).click();
         wait.until(ExpectedConditions.elementToBeClickable(save3));
-        this.save3.click();
+        wait.until(ExpectedConditions.elementToBeClickable(save3)).click();
         wait.until(ExpectedConditions.elementToBeClickable(avabserv));
-        this.avabserv.click();
-        this.haircut.isDisplayed();
-        this.bath.isDisplayed();
-        this.breedcuts.isDisplayed();
-        this.earclean.isDisplayed();
-        this.nailtrim.isDisplayed();
-        this.teethclean.isDisplayed();
-        this.analgland.isDisplayed();
-        this.dematting.isDisplayed();
-        this.deshedding.isDisplayed();
-        this.decorating.isDisplayed();
-        this.handscissor.isDisplayed();
-        this.handstripp.isDisplayed();
-        this.largdoggroom.isDisplayed();
-        this.mobile.isDisplayed();
-        this.showgroom.isDisplayed();
-        this.otherserv.isDisplayed();
-        this.bath.click();
-        this.closeserv.isDisplayed();
-        this.headerserv.isDisplayed();
-        this.checkprice.click();
-        this.pricerange.isDisplayed();
-        this.pricemin.sendKeys(_testService.Pricemin);
-        this.pricemax.sendKeys(_testService.Pricemax);
-        this.descserv.sendKeys(_testService.Descservice);
-        this.save4.click();
+        wait.until(ExpectedConditions.elementToBeClickable(avabserv)).click();
+        wait.until(ExpectedConditions.visibilityOf(haircut));
+        wait.until(ExpectedConditions.visibilityOf(bath));
+        wait.until(ExpectedConditions.visibilityOf(breedcuts));
+        wait.until(ExpectedConditions.visibilityOf(earclean));
+        wait.until(ExpectedConditions.visibilityOf(nailtrim));
+        wait.until(ExpectedConditions.visibilityOf(teethclean));
+        wait.until(ExpectedConditions.visibilityOf(analgland));
+        wait.until(ExpectedConditions.visibilityOf(dematting));
+        wait.until(ExpectedConditions.visibilityOf(deshedding));
+        wait.until(ExpectedConditions.visibilityOf(decorating));
+        wait.until(ExpectedConditions.visibilityOf(handscissor));
+        wait.until(ExpectedConditions.visibilityOf(handstripp));
+        wait.until(ExpectedConditions.visibilityOf(largdoggroom));
+        wait.until(ExpectedConditions.visibilityOf(mobile));
+        wait.until(ExpectedConditions.visibilityOf(showgroom));
+        wait.until(ExpectedConditions.visibilityOf(otherserv));
+        wait.until(ExpectedConditions.elementToBeClickable(bath)).click();
+        wait.until(ExpectedConditions.visibilityOf(closeserv));
+        wait.until(ExpectedConditions.visibilityOf(headerserv));
+        wait.until(ExpectedConditions.elementToBeClickable(checkprice)).click();
+        wait.until(ExpectedConditions.visibilityOf(pricerange));
+        pricemin.sendKeys(_testService.Pricemin);
+        pricemax.sendKeys(_testService.Pricemax);
+        descserv.sendKeys(_testService.Descservice);
+        wait.until(ExpectedConditions.elementToBeClickable(save4)).click();
         wait.until(ExpectedConditions.elementToBeClickable(addnewpack));
-        this.addnewpack.click();
+        wait.until(ExpectedConditions.elementToBeClickable(addnewpack)).click();
         wait.until(ExpectedConditions.visibilityOf(titlepack));
-        this.titlepack.sendKeys(_testService.PackTitle);
-        this.pricerangepack.isDisplayed();
-        this.checkpricepack.click();
-        this.priceminpack.sendKeys(_testService.Priceminpack);
-        this.pricemaxpack.sendKeys(_testService.Pricemaxpack);
-        this.descpack.sendKeys(_testService.Descpack);
-        this.showpackcheck.click();
-        this.showpackcheck.click();
-        this.showpacktext.isDisplayed();
-        this.save5.click();
+        titlepack.sendKeys(_testService.PackTitle);
+        wait.until(ExpectedConditions.visibilityOf(pricerangepack));
+        wait.until(ExpectedConditions.elementToBeClickable(checkpricepack)).click();
+        priceminpack.sendKeys(_testService.Priceminpack);
+        pricemaxpack.sendKeys(_testService.Pricemaxpack);
+        descpack.sendKeys(_testService.Descpack);
+        wait.until(ExpectedConditions.elementToBeClickable(showpackcheck)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(showpackcheck)).click();
+        wait.until(ExpectedConditions.visibilityOf(showpacktext));
+        wait.until(ExpectedConditions.elementToBeClickable(save5)).click();
         wait.until(ExpectedConditions.visibilityOf(creditcard));
-        this.creditcard.sendKeys("4111111111111111");
-        this.expdate.sendKeys(_testService.ExpDate);
-        this.cvv.sendKeys(_testService.CVV);
-        this.couponcode.isDisplayed();
-        this.firstnamebill.sendKeys(_testService.FirstName);
-        this.lastnamebill.sendKeys(_testService.LastName);
-        this.billaddress.sendKeys(_testService.Street);
-        this.zip4.sendKeys(_testService.ZIP);
-        this.citybill.isDisplayed();
-        this.statebill.isDisplayed();
-        this.phonebill.sendKeys(_testService.BusinessPhone);
+        creditcard.sendKeys("4111111111111111");
+        expdate.sendKeys(_testService.ExpDate);
+        cvv.sendKeys(_testService.CVV);
+        wait.until(ExpectedConditions.visibilityOf(couponcode));
+        firstnamebill.sendKeys(_testService.FirstName);
+        lastnamebill.sendKeys(_testService.LastName);
+        billaddress.sendKeys(_testService.Street);
+        zip4.sendKeys(_testService.ZIP);
+        wait.until(ExpectedConditions.visibilityOf(citybill));
+        wait.until(ExpectedConditions.visibilityOf(statebill));
+        phonebill.sendKeys(_testService.BusinessPhone);
         wait.until(ExpectedConditions.elementToBeClickable(save6));
-        this.save6.click();
-        this.successgroomer.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(save6)).click();
+        wait.until(ExpectedConditions.visibilityOf(successgroomer));
 
     }
 
@@ -1460,28 +1470,28 @@ public class Groomers {
     /*Check Groomer Dashboard*/
     public void VerifiyDashGroom(User _testUser) {
 
-
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.dashgroomer.isDisplayed();
-        this.messengergroomer.isDisplayed();
-        this.manmypagegroomer.isDisplayed();
-        this.accountgroomer.isDisplayed();
-        this.mypagegroomer.isDisplayed();
-        this.profperfor.isDisplayed();
-        this.headergroomer.isDisplayed();
-        this.totviewsgroom.isDisplayed();
-        this.inquiriesgroom.isDisplayed();
-        this.jointexthead.isDisplayed();
-        this.jointext.isDisplayed();
-        this.forsalons.isDisplayed();
-        this.forgroomers.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.visibilityOf(dashgroomer));
+        wait.until(ExpectedConditions.visibilityOf(messengergroomer));
+        wait.until(ExpectedConditions.visibilityOf(manmypagegroomer));
+        wait.until(ExpectedConditions.visibilityOf(accountgroomer));
+        wait.until(ExpectedConditions.visibilityOf(mypagegroomer));
+        wait.until(ExpectedConditions.visibilityOf(profperfor));
+        wait.until(ExpectedConditions.visibilityOf(headergroomer));
+        wait.until(ExpectedConditions.visibilityOf(totviewsgroom));
+        wait.until(ExpectedConditions.visibilityOf(inquiriesgroom));
+        wait.until(ExpectedConditions.visibilityOf(jointexthead));
+        wait.until(ExpectedConditions.visibilityOf(jointext));
+        wait.until(ExpectedConditions.visibilityOf(forsalons));
+        wait.until(ExpectedConditions.visibilityOf(forgroomers));
 
 
     }
@@ -1489,99 +1499,99 @@ public class Groomers {
     /*Check Groomer messenger */
     public void VerifiyMessenger(User _testUser) {
 
-
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.messengergroomer.click();
-        this.messimg.isDisplayed();
-        this.messinfo.isDisplayed();
-        this.messsenderopen.click();
-        this.sentmessage.isDisplayed();
-        this.receivedmessage.isDisplayed(); //Need to update locators Pending
-        this.textarea.isDisplayed();
-        this.sentbutton.isDisplayed();
-        this.menumess.click();  //replace with new button PENDING
-        this.viewquestrespo.isDisplayed();
-        this.blockchannel.isDisplayed();
-        this.deleteconvers.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(messengergroomer)).click();
+        wait.until(ExpectedConditions.visibilityOf(messimg));
+        wait.until(ExpectedConditions.visibilityOf(messinfo));
+        wait.until(ExpectedConditions.elementToBeClickable(messsenderopen)).click();
+        wait.until(ExpectedConditions.visibilityOf(sentmessage));
+        wait.until(ExpectedConditions.visibilityOf(receivedmessage)); //Need to update locators Pending
+        wait.until(ExpectedConditions.visibilityOf(textarea));
+        wait.until(ExpectedConditions.visibilityOf(sentbutton));
+        wait.until(ExpectedConditions.elementToBeClickable(menumess)).click();  //replace with new button PENDING
+        wait.until(ExpectedConditions.visibilityOf(viewquestrespo));
+        wait.until(ExpectedConditions.visibilityOf(blockchannel));
+        wait.until(ExpectedConditions.visibilityOf(deleteconvers));
     }
 
     /*Check ManMyPage Groomer*/
     public void VerifiyManMypage(User _testUser) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.manmypagegroomer.click();
-        this.contactinfo.isDisplayed();
-        this.coverphoto.isDisplayed();
-        this.photosandvideos.isDisplayed();
-        this.services.isDisplayed();
-        this.packsepecials.isDisplayed();
-        this.contactinfohead.isDisplayed();
-        this.bussname.isDisplayed();
-        this.weblink.isDisplayed();
-        this.aboutmetext2.isDisplayed();
-        this.busssince.isDisplayed();
-        this.iamgroomer.isDisplayed();
-        this.paymethods.isDisplayed();
-        this.strretline.isDisplayed();
-        this.zipcode.isDisplayed();
-        this.citygroom.isDisplayed();
-        this.stategroom.isDisplayed();
-        this.bussphonegroom.isDisplayed();
-        this.bussemailgroom.isDisplayed();
-        this.hoursofoperation.isDisplayed();
-        this.backmyacct.isDisplayed();
-        this.savegroombut.click();
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(manmypagegroomer)).click();
+        wait.until(ExpectedConditions.visibilityOf(contactinfo));
+        wait.until(ExpectedConditions.visibilityOf(coverphoto));
+        wait.until(ExpectedConditions.visibilityOf(photosandvideos));
+        wait.until(ExpectedConditions.visibilityOf(services));
+        wait.until(ExpectedConditions.visibilityOf(packsepecials));
+        wait.until(ExpectedConditions.visibilityOf(contactinfohead));
+        wait.until(ExpectedConditions.visibilityOf(bussname));
+        wait.until(ExpectedConditions.visibilityOf(weblink));
+        wait.until(ExpectedConditions.visibilityOf(aboutmetext2));
+        wait.until(ExpectedConditions.visibilityOf(busssince));
+        wait.until(ExpectedConditions.visibilityOf(iamgroomer));
+        wait.until(ExpectedConditions.visibilityOf(paymethods));
+        wait.until(ExpectedConditions.visibilityOf(strretline));
+        wait.until(ExpectedConditions.visibilityOf(zipcode));
+        wait.until(ExpectedConditions.visibilityOf(citygroom));
+        wait.until(ExpectedConditions.visibilityOf(stategroom));
+        wait.until(ExpectedConditions.visibilityOf(bussphonegroom));
+        wait.until(ExpectedConditions.visibilityOf(bussemailgroom));
+        wait.until(ExpectedConditions.visibilityOf(hoursofoperation));
+        wait.until(ExpectedConditions.visibilityOf(backmyacct));
+        wait.until(ExpectedConditions.elementToBeClickable(savegroombut)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(coverphoto));
-        this.coverphoto.click();
-        this.imgprofile.isDisplayed();
-        this.changephbut.isDisplayed();
-        this.savephbut.isDisplayed();
-        this.photosandvideos.click();
-        this.addmorefilesgroom.isDisplayed();
-        this.photodispl.isDisplayed();
-        this.delphbut.isDisplayed();
-        this.saveimgbut.isDisplayed();
-        this.services.click();
-        this.selgroomserv.isDisplayed();
-        this.delservices.isDisplayed();
-        this.servicename.isDisplayed();
-        this.pricerangeserv.isDisplayed();
-        this.pricing.isDisplayed();
-        this.pricing2.isDisplayed();
-        this.descservices.isDisplayed();
-        this.saveservbut.isDisplayed();
-        this.packsepecials.click();
-        this.pricerangepackgroom.isDisplayed();
-        this.showpackpack.isDisplayed();
-        this.pricerangespegroom.isDisplayed();
-        this.showpackspe.isDisplayed();
-        this.titlepackgroom.isDisplayed();
-        this.pricepackgroom.isDisplayed();
-        this.pricepackgroom2.isDisplayed();
-        this.descpackgroom.isDisplayed();
-        this.addnewpackbut.isDisplayed();
-        this.titlespegroom.isDisplayed();
-        this.pricespegroom.isDisplayed();
-        this.pricespegroom2.isDisplayed();
-        this.descspegroom.isDisplayed();
-        this.addnewspebut.isDisplayed();
-        this.savepackspebut.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(coverphoto)).click();
+        wait.until(ExpectedConditions.visibilityOf(imgprofile));
+        wait.until(ExpectedConditions.visibilityOf(changephbut));
+        wait.until(ExpectedConditions.visibilityOf(savephbut));
+        wait.until(ExpectedConditions.elementToBeClickable(photosandvideos)).click();
+        wait.until(ExpectedConditions.visibilityOf(addmorefilesgroom));
+        wait.until(ExpectedConditions.visibilityOf(photodispl));
+        wait.until(ExpectedConditions.visibilityOf(delphbut));
+        wait.until(ExpectedConditions.visibilityOf(saveimgbut));
+        wait.until(ExpectedConditions.elementToBeClickable(services)).click();
+        wait.until(ExpectedConditions.visibilityOf(selgroomserv));
+        wait.until(ExpectedConditions.visibilityOf(delservices));
+        wait.until(ExpectedConditions.visibilityOf(servicename));
+        wait.until(ExpectedConditions.visibilityOf(pricerangeserv));
+        wait.until(ExpectedConditions.visibilityOf(pricing));
+        wait.until(ExpectedConditions.visibilityOf(pricing2));
+        wait.until(ExpectedConditions.visibilityOf(descservices));
+        wait.until(ExpectedConditions.visibilityOf(saveservbut));
+        wait.until(ExpectedConditions.elementToBeClickable(packsepecials)).click();
+        wait.until(ExpectedConditions.visibilityOf(pricerangepackgroom));
+        wait.until(ExpectedConditions.visibilityOf(showpackpack));
+        wait.until(ExpectedConditions.visibilityOf(pricerangespegroom));
+        wait.until(ExpectedConditions.visibilityOf(showpackspe));
+        wait.until(ExpectedConditions.visibilityOf(titlepackgroom));
+        wait.until(ExpectedConditions.visibilityOf(pricepackgroom));
+        wait.until(ExpectedConditions.visibilityOf(pricepackgroom2));
+        wait.until(ExpectedConditions.visibilityOf(descpackgroom));
+        wait.until(ExpectedConditions.visibilityOf(addnewpackbut));
+        wait.until(ExpectedConditions.visibilityOf(titlespegroom));
+        wait.until(ExpectedConditions.visibilityOf(pricespegroom));
+        wait.until(ExpectedConditions.visibilityOf(pricespegroom2));
+        wait.until(ExpectedConditions.visibilityOf(descspegroom));
+        wait.until(ExpectedConditions.visibilityOf(addnewspebut));
+        wait.until(ExpectedConditions.visibilityOf(savepackspebut));
 
 
     }
@@ -1589,49 +1599,50 @@ public class Groomers {
     /*Check Account Groomer*/
     public void VerifiyMyAccountGroom(User _testUser) {
 
-
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.accountgroomer.click();
-        this.security.isDisplayed();
-        //this.paymentmethods.isDisplayed();
-        this.oldpassword.isDisplayed();
-        this.newpassword.isDisplayed();
-        this.confirmpassword.isDisplayed();
-        this.changepasssbut.isDisplayed();
-        this.manmypagegroomer.click();
-        //this.cardnumber.isDisplayed();
-        //this.expirationdate.isDisplayed();
-        //this.cvvgroom.isDisplayed();
-        //this.firstnamegroom.isDisplayed();
-        //this.lastnamegroom.isDisplayed();
-        //this.billingaddressgroom.isDisplayed();
-        //this.zipgroom.isDisplayed();
-        //this.citygroomer.isDisplayed();
-        //this.stategroomer.isDisplayed();
-        //this.phonegroomer.isDisplayed();
-        //this.clicktermscond.isDisplayed();
-        //this.savebilling.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(accountgroomer)).click();
+        wait.until(ExpectedConditions.visibilityOf(security));
+        //wait.until(ExpectedConditions.visibilityOf(paymentmethods));
+        wait.until(ExpectedConditions.visibilityOf(oldpassword));
+        wait.until(ExpectedConditions.visibilityOf(newpassword));
+        wait.until(ExpectedConditions.visibilityOf(confirmpassword));
+        wait.until(ExpectedConditions.visibilityOf(changepasssbut));
+        wait.until(ExpectedConditions.elementToBeClickable(manmypagegroomer)).click();
+        //wait.until(ExpectedConditions.visibilityOf(cardnumber));
+        //wait.until(ExpectedConditions.visibilityOf(expirationdate));
+        //wait.until(ExpectedConditions.visibilityOf(cvvgroom));
+        //wait.until(ExpectedConditions.visibilityOf(firstnamegroom));
+        //wait.until(ExpectedConditions.visibilityOf(lastnamegroom));
+        //wait.until(ExpectedConditions.visibilityOf(billingaddressgroom));
+        //wait.until(ExpectedConditions.visibilityOf(zipgroom));
+        //wait.until(ExpectedConditions.visibilityOf(citygroomer));
+        //wait.until(ExpectedConditions.visibilityOf(stategroomer));
+        //wait.until(ExpectedConditions.visibilityOf(phonegroomer));
+        //wait.until(ExpectedConditions.visibilityOf(clicktermscond));
+        //wait.until(ExpectedConditions.visibilityOf(savebilling));
 
     }
 
     /*Check My Page Groomer*/
     public void VerifiyMyPage(User _testUser) {
 
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        this.GroomerUser.click();
-        //this.dashbreed.click();
-        this.mypagegroomer.click();
-        this.mypagepage.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(GroomerUser)).click();
+        //wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(mypagegroomer)).click();
+        wait.until(ExpectedConditions.visibilityOf(mypagepage));
 
     }
 

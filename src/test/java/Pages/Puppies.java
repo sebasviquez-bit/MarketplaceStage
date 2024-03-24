@@ -2,7 +2,6 @@ package Pages;
 
 
 import Helpers.BrowserFactory;
-import Helpers.DriverHelper;
 import Model.Listing;
 import Model.Subscription;
 import Model.User;
@@ -14,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import static java.lang.Thread.sleep;
 import static org.openqa.selenium.Keys.ENTER;
@@ -21,19 +21,19 @@ import static org.openqa.selenium.Keys.ENTER;
 public class Puppies {
 
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[1]/div[1]/a/span")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div.Styled__Wrapper-sc-rvwmv6-0.gffKrQ > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div > div.header-icon-container.user-menu > a > span")
     WebElement iconsignin;
 
     @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > a > span")
     WebElement afterSignInUser;
 
-    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(2) > div.menu-item-title-container > span.menu-item-title")
+    @FindBy(css = "#center-menu > div:nth-child(1) > div.menu-item-title-container > span.menu-item-title")
     WebElement puppies;
 
-    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(2) > div.menu-item-dropdown-container > div > ul > li:nth-child(2) > div.title-container > a")
+    @FindBy(css = "#center-menu > div:nth-child(1) > div.menu-item-dropdown-container > div > ul > li:nth-child(2) > div > a")
     WebElement findapuppy;
 
-    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(2) > div.menu-item-dropdown-container > div > ul > li:nth-child(4) > div > a")
+    @FindBy(css = "#center-menu > div:nth-child(1) > div.menu-item-dropdown-container > div > ul > li:nth-child(4) > div > a")
     WebElement resourcesForGettingPup;
 
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/ul/li[3]/div/a")
@@ -54,13 +54,13 @@ public class Puppies {
     @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(2) > div.menu-item-dropdown-container > div > ul > li:nth-child(3) > div > a")
     WebElement viewallbreeds;
 
-    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(2) > div.menu-item-dropdown-container > div > ul > li:nth-child(7) > div > a")
+    @FindBy(css = "#center-menu > div:nth-child(1) > div.menu-item-dropdown-container > div > ul > li:nth-child(7) > div > a")
     WebElement listlitmark;
 
     @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(2) > div.menu-item-dropdown-container > div > ul > li:nth-child(8) > div > a")
     WebElement breedersfaq;
 
-    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.Styled__Wrapper-sc-7bo7op-0.llObZX > div > div:nth-child(2) > div.menu-item-dropdown-container > div > ul > li:nth-child(8) > div > a")
+    @FindBy(css = "#center-menu > div:nth-child(1) > div.menu-item-dropdown-container > div > ul > li:nth-child(8) > div > a")
     WebElement findpuprighthome;
 
     @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/ul/li[1]")
@@ -456,7 +456,7 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(3) > div.Styled__Wrapper-sc-10glndu-0.cqXIeS > div:nth-child(1) > a")
     WebElement breedinfo1;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(3) > div.Styled__Wrapper-sc-10glndu-0.cqXIeS > div:nth-child(2) > div > div > ul > li.tabs__single-tab.is-active > a")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div:nth-child(2) > div.Styled__Wrapper-sc-10glndu-0.cqXIeS > div:nth-child(2) > div > div > ul > li.tabs__single-tab.is-active > a")
     WebElement breedtrait;
 
     @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(3) > div.Styled__Wrapper-sc-10glndu-0.cqXIeS > div:nth-child(2) > div > div > ul > li:nth-child(6) > a")
@@ -480,7 +480,7 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(3) > div.Styled__Wrapper-sc-10glndu-0.cqXIeS > div:nth-child(2) > div > div > div > div > div > div.panel-flex__main > figure > div")
     WebElement breedVideo;
 
-    @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(3) > div.Styled__Wrapper-sc-10glndu-0.cqXIeS > div:nth-child(2) > div > div > div > div > div > div.panel-flex__aside.panel-contain > div > div > ul > li:nth-child(1) > strong")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div:nth-child(4) > div > div:nth-child(2) > div.Styled__Wrapper-sc-10glndu-0.cqXIeS > div:nth-child(2) > div > div > div > div > div > div.panel-flex__aside.panel-contain > div > div > ul")
     WebElement breedtraittext;
 
     @FindBy(css = "#react-root > div > div:nth-child(4) > div > div:nth-child(3) > div.Styled__Wrapper-sc-10glndu-0.cqXIeS > div:nth-child(2) > div > div > div > div > div > div.panel-flex__aside.panel-contain > div > div > div > div:nth-child(1) > ul > li:nth-child(2) > a")
@@ -548,9 +548,14 @@ public class Puppies {
 
     @FindBy(css = "#toggler > div > div.Styled__Wrapper-sc-1uhl27o-0.fnULiI.slider-wrapper > div > div.track-wrap > div.arrow-container > span:nth-child(2) > svg > use")
     WebElement CarouselRightArrow;
-    //
 
-    @FindBy(css = "#toggler > div > div.puppy-litter-hero__details > div > div:nth-child(2) > a")
+    @FindBy(css = "#toggler > div > div.Styled__Wrapper-sc-1uhl27o-0.fnULiI.slider-wrapper > div > div.track-wrap > div.arrow-container > span:nth-child(1) > svg > use")
+    WebElement CarouselLeftArrow;
+
+    @FindBy(css = "#toggler > div > div.Styled__Wrapper-sc-1uhl27o-0.fnULiI.slider-wrapper")
+    WebElement closeCarousel;
+
+    @FindBy(xpath = "//a[contains(text(),'GMAIL161 >')]")
     WebElement listingBreederLink;
 
     @FindBy(css = "#react-root > div > div:nth-child(4) > div > div.Styled__BreederHero-sc-13i5cmk-0.jPeWTZ > div.breeder-hero__details > div > div.breeder-details__wrapper > a > button")
@@ -675,7 +680,7 @@ public class Puppies {
     @FindBy(css = "#gigya-login-form > div:nth-child(3) > div.gigya-composite-control.gigya-composite-control-submit > input")
     WebElement ingresar;
 
-    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > a")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div.Styled__Wrapper-sc-rvwmv6-0.gffKrQ > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div > div.header-icon-container.user-menu > div > a > div > img")
     WebElement logged;
 
     @FindBy(xpath = "//input[@name='litter_number']")
@@ -891,23 +896,26 @@ public class Puppies {
     @FindBy(xpath = "//body/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[1]/section[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/input[1]")
     WebElement billaddress2;
 
-    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(1) > a")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div.Styled__Wrapper-sc-rvwmv6-0.gffKrQ > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(1) > a")
     WebElement dashbreed;
 
     @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(1) > a")
     WebElement dashhomeDropdown;
 
-    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(1) > a")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > div > div.select-to-bar-nav > div.show-at-medium > div > a:nth-child(1)")
     WebElement dashhome;
 
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > div > div.select-to-bar-nav > div.show-at-medium > div > a:nth-child(2)")
     WebElement dashmessenger;
 
-    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(4) > a")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > div > div.select-to-bar-nav > div.show-at-medium > div > a:nth-child(3)")
     WebElement dashmanmypag;
 
-    @FindBy(css = "#react-root > div > div.Styled__Wrapper-sc-rvwmv6-0.gtRBZE > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div.header-bar > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(3) > a")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > div > div.select-to-bar-nav > div.show-at-medium > div > a:nth-child(4)")
     WebElement dashmanmylist;
+
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div.Styled__Wrapper-sc-rvwmv6-0.gffKrQ > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div > div.header-icon-container.user-menu > div > div > div > ul > li:nth-child(3) > a")
+    WebElement dashmanmylistFromUserDropdown;
 
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > div > div.select-to-bar-nav > div.show-at-medium > div > a:nth-child(5)")
     WebElement dashquestion;
@@ -1038,22 +1046,22 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div.storefront-profile > div.dashboard__section-heading > h4")
     WebElement yourbreedprof;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[1]/div[1]/label[1]")
     WebElement kennameman;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[1]/div[1]/label[1]")
     WebElement weblinkman;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[3]/div[1]/div[1]/textarea[1]")
+    @FindBy(xpath = "//body[1]/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[3]/div[1]/div[1]/textarea[1]")
     WebElement descripman;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[4]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[4]/div[1]/div[1]/input[1]")
     WebElement breedsinceman;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath = "//body/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]")
     WebElement breedman;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[6]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[6]/div[1]/div[1]/input[1]")
     WebElement websiteman;
 
     @FindBy(id = "breeders-storefront-profile__submit")
@@ -1065,25 +1073,25 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div.storefront-contact > div.dashboard__section-heading > h4")
     WebElement continfoman;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")
     WebElement fullnameman;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/input[1]")
     WebElement addressman;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath = "//body/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]")
     WebElement zipman;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[3]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[3]/div[1]/div[1]/input[1]")
     WebElement cityman;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[4]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[4]/div[1]/div[1]/input[1]")
     WebElement stateman;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[5]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[5]/div[1]/div[1]/input[1]")
     WebElement phoneman;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[4]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//body[1]/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[6]/div[1]/div[1]/input[1]")
     WebElement emailman;
 
     @FindBy(id = "breeders-storefront-contact__submit")
@@ -1094,7 +1102,7 @@ public class Puppies {
 
     @FindBy(css = "#breeders-storefront-tell-us-more > div > div:nth-child(1) > div.FormElement-sc-1vjtnrg-0.hDZwUR.form-element > label > span.checkbox__visual-input")
     WebElement nationalclubCheckBox;
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(css = "#parentClubBreed1 > div > div.css-1hwfws3 > div.css-pyq77v-singleValue")
     WebElement nationalclubman;
 
     @FindBy(css = "#breeders-storefront-tell-us-more > div > div:nth-child(2) > div.FormElement-sc-1vjtnrg-0.hDZwUR.form-element > label > span.checkbox__visual-input")
@@ -1152,31 +1160,31 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div.listing-item > div.tabbed-litter-display > div.tabbed-litter-display__tabs.show-at-small > div > ul > li.mp-tabs__single-tab.is-active > a")
     WebElement dayslitter;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div.listing-item > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.euUzqQ.puppy-litter-hero > div.puppy-litter-hero__slider > div > div > div > div")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(4) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.bVIWDN.puppy-litter-hero > div.puppy-litter-hero__slider > div > div > div > div")
     WebElement litterpicture;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div.listing-item > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.euUzqQ.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-info > div.puppy-litter-info__title")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(4) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.bVIWDN.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-info > div.puppy-litter-info__title")
     WebElement litterheader;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(6) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.euUzqQ.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-hero__edit-options > div > div > div.edit-menu__handle > a")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(4) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.bVIWDN.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-hero__edit-options > div > div > div.edit-menu__handle")
     WebElement editlitter;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(6) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.euUzqQ.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-hero__edit-options > div > div > div.edit-menu > ul > div > li:nth-child(1) > a")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(4) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.bVIWDN.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-hero__edit-options > div > div > div.edit-menu > ul > div > li:nth-child(1) > a")
     WebElement viewlisting;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(6) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.euUzqQ.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-hero__edit-options > div > div > div.edit-menu > ul > div > li:nth-child(2) > a")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(4) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.bVIWDN.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-hero__edit-options > div > div > div.edit-menu > ul > div > li:nth-child(2) > a")
     WebElement editlisting;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(6) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.euUzqQ.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-hero__edit-options > div > div > div.edit-menu > ul > div > li:nth-child(3) > a")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(4) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.bVIWDN.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-hero__edit-options > div > div > div.edit-menu > ul > div > li:nth-child(3) > a")
     WebElement unpublishlisting;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(6) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.euUzqQ.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-info")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(4) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.bVIWDN.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-info > div.puppy-litter-info__field.puppy-litter-info__description > span.puppy-litter-info__more")
     WebElement moreinfolisting;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(6) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.euUzqQ.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-info > div:nth-child(9)")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(4) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.bVIWDN.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-info")
     WebElement infolisting;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(6) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.euUzqQ.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-info > div.puppy-litter-info__last-edited")
+    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > div:nth-child(4) > div.tabbed-litter-display > div.Wrapper-sc-1oztcci-0.bVIWDN.puppy-litter-hero > div.puppy-litter-hero__details > div.puppy-litter-info > div.puppy-litter-info__last-edited")
     WebElement lasteditedlist;
 
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > section > h4")
@@ -1209,7 +1217,7 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > p")
     WebElement introtext;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/textarea[1]")
+    @FindBy(xpath = "//body[1]/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/textarea[1]")
     WebElement introBrief;
 
     @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/form/div[2]/section/div[2]/h5")
@@ -1218,7 +1226,7 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > section > div:nth-child(4) > div:nth-child(4) > div.Styled__FormElement-sc-1he89oj-0.gyzjZo > label")
     WebElement typequestiontext;
 
-    @FindBy(xpath = "//body/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/section[1]/div[4]/div[4]/div[3]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath = "//body/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/section[1]/div[4]/div[5]/div[3]/div[1]/div[1]/div[1]/div[1]")
     WebElement typequestion;
 
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > section > div:nth-child(4) > div:nth-child(4) > div.header > div.header--right > div.question__move > svg > use")
@@ -1227,10 +1235,10 @@ public class Puppies {
     @FindBy(id = "close")
     WebElement closequestion;
 
-    @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > section > div:nth-child(4) > div:nth-child(4) > div.Styled__FormElement-sc-1he89oj-0.isHsyb.form-element > label")
+    @FindBy(xpath = "//body/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/section[1]/div[4]/div[5]/div[4]/label[1]")
     WebElement messagetext;
 
-    @FindBy(xpath = "//body[1]/div[12]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/section[1]/div[4]/div[4]/div[4]/div[1]/textarea[1]")
+    @FindBy(xpath = "//body[1]/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/form[1]/div[2]/section[1]/div[4]/div[5]/div[4]/div[1]/textarea[1]")
     WebElement messagearea;
 
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.mask-wrapper > form > div.buyer-survey__information > section > div:nth-child(4) > div:nth-child(4) > div.FormElement-sc-1vjtnrg-0.hDZwUR.form-element > label > span.checkbox__visual-input")
@@ -1251,19 +1259,19 @@ public class Puppies {
     @FindBy(css = "#react-root > div > div.dashboard.account-index > div > div > main > section > div > div.styled__AccordionToTabs-sc-142z30j-0.cZbGfv > div > div.styled__Tab-sc-142z30j-1.eLAvZF > h4")
     WebElement changepasstext;
 
-    @FindBy(css = "#_8b90 > div:nth-child(2) > label")
+    @FindBy(xpath = "//body/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]/label[1]")
     WebElement oldpassword;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[3]/div[1]/input[1]")
+    @FindBy(xpath = "//body/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[3]/label[1]")
     WebElement newpassword;
 
-    @FindBy(xpath = "//body[1]/div[5]/div[1]/div[1]/div[5]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[4]/div[1]/input[1]")
+    @FindBy(xpath = "//body/div[11]/div[1]/div[1]/div[6]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[4]/label[1]")
     WebElement confirmpassword;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/div/div[1]/div/form/section/button[1]")
+    @FindBy(xpath = "//button[contains(text(),'Change Password')]")
     WebElement changepassbut;
 
-    @FindBy(xpath = "//html/body/div[5]/div/div/div[5]/div/div/main/section/div/div[1]/section/ul/li[2]/a")
+    @FindBy(xpath = "//a[contains(text(),'Payment methods')]")
     WebElement paymethods;
 
     @FindBy(xpath = "//html/body/main/div/div/div[4]/div/div/div[1]/div/div[2]")
@@ -1355,7 +1363,6 @@ public class Puppies {
 
 
 
-    DriverHelper driverHelper;
     //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
@@ -1363,31 +1370,31 @@ public class Puppies {
 
     public Puppies(WebDriver _driver) {
 
-        //this.driverFactory = new DriverFactory();
-        this.browserFactory = new BrowserFactory();
-        this.driver = _driver;
+        //driverFactory = new DriverFactory();
+        browserFactory = new BrowserFactory();
+        driver = _driver;
         PageFactory.initElements(driver, this);
     }
 
     /*Check Puppies Menu*/
     public void CheckPuppies() {
 
-        this.puppies.click();
-        this.findapuppy.isDisplayed();
-        this.resourcesForGettingPup.isDisplayed();
-        this.listlitmark.isDisplayed();
-        this.breedersfaq.isDisplayed();
-        this.findpuprighthome.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.visibilityOf(findapuppy));
+        wait.until(ExpectedConditions.visibilityOf(resourcesForGettingPup));
+        wait.until(ExpectedConditions.visibilityOf(listlitmark));
+        wait.until(ExpectedConditions.visibilityOf(findpuprighthome));
 
     }
 
 /*Check Menu redirection after click*/
     public void CheckPuppies1() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(findapuppy));
-        this.findapuppy.click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
         wait.until(ExpectedConditions.visibilityOf(searchpuppage));
 
 
@@ -1395,10 +1402,10 @@ public class Puppies {
 
     public void CheckPuppies2() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(akcmarkforpup));
-        this.akcmarkforpup.click();
+        wait.until(ExpectedConditions.elementToBeClickable(akcmarkforpup)).click();
         wait.until(ExpectedConditions.visibilityOf(akcmarkforpuppage));
 
 
@@ -1406,10 +1413,10 @@ public class Puppies {
 
     public void CheckPuppies3() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(readyforapup));
-        this.readyforapup.click();
+        wait.until(ExpectedConditions.elementToBeClickable(readyforapup)).click();
         wait.until(ExpectedConditions.visibilityOf(readyforpuppage));
 
 
@@ -1417,10 +1424,10 @@ public class Puppies {
 
     public void CheckPuppies4() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(choosingabreed));
-        this.choosingabreed.click();
+        wait.until(ExpectedConditions.elementToBeClickable(choosingabreed)).click();
         wait.until(ExpectedConditions.visibilityOf(choosebreedpage));
 
 
@@ -1428,70 +1435,70 @@ public class Puppies {
 
     public void CheckPuppies5() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(questaskbreeder));
-        this.questaskbreeder.click();
+        wait.until(ExpectedConditions.elementToBeClickable(questaskbreeder)).click();
         wait.until(ExpectedConditions.visibilityOf(qaskbreedpage));
 
     }
 
     public void CheckPuppies6() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(viewallbreeds)); //Replace locator
-        this.viewallbreeds.click();
+        wait.until(ExpectedConditions.elementToBeClickable(viewallbreeds)).click();
         wait.until(ExpectedConditions.urlContains("/dog-breeds/"));
 
     }
 
     public void CheckPuppies7() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(listlitmark));
-        this.listlitmark.click();
+        wait.until(ExpectedConditions.elementToBeClickable(listlitmark)).click();
         wait.until(ExpectedConditions.visibilityOf(listlitmarkpage));
 
     }
 
     public void CheckPuppies8() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(findpuprighthome));
-        this.findpuprighthome.click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpuprighthome)).click();
         wait.until(ExpectedConditions.visibilityOf(findpuprighthomepage));
 
     }
 
     public void CheckPuppies9() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(prepforpup));
-        this.prepforpup.click();
+        wait.until(ExpectedConditions.elementToBeClickable(prepforpup)).click();
         wait.until(ExpectedConditions.visibilityOf(preppuppage));
 
     }
 
     public void CheckPuppies10() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(breedersfaq));
-        this.breedersfaq.click();
+        wait.until(ExpectedConditions.elementToBeClickable(breedersfaq)).click();
         wait.until(ExpectedConditions.visibilityOf(breedfaqpage));
         
     }
 
     public void CheckPuppies11() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(resourcesForGettingPup));
-        this.resourcesForGettingPup.click();
+        wait.until(ExpectedConditions.elementToBeClickable(resourcesForGettingPup)).click();
         wait.until(ExpectedConditions.urlContains("/about-akc-marketplace"));
 
     }
@@ -1500,114 +1507,115 @@ public class Puppies {
     /*Check Visibility of elements in Puppies Homepage*/
     public void CheckPuppiesHome() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.topheader.isDisplayed();
-        this.topsubheader.isDisplayed();
-        this.findpupform.isDisplayed();
-        this.looking.isDisplayed();
-        this.breedform.isDisplayed();
-        this.genderform.isDisplayed();
-        this.zipform.isDisplayed();
-        this.distanceform.isDisplayed();
-        this.distancearrow.isDisplayed();
-        this.options.isDisplayed();
-        this.options.click();
-        this.availability.isDisplayed();
-        this.nowtext.isDisplayed();
-        this.now.isDisplayed();
-        this.comingtext.isDisplayed();
-        this.coming.isDisplayed();
-        this.dogsize.isDisplayed();
-        this.smalltext.isDisplayed();
-        this.small.isDisplayed();
-        this.mediumtext.isDisplayed();
-        this.medium.isDisplayed();
-        this.largetext.isDisplayed();
-        this.large.isDisplayed();
-        this.images.isDisplayed();
-        this.inlisttext.isDisplayed();
-        this.inlist.isDisplayed();
-        this.bod.isDisplayed();
-        this.bomtext.isDisplayed();
-        this.bom.isDisplayed();
-        this.bwhtext.isDisplayed();
-        this.bwh.isDisplayed();
-        this.champion.isDisplayed();
-        this.yestext.isDisplayed();
-        this.yes.isDisplayed();
-        this.club.isDisplayed();
-        this.nationaltext.isDisplayed();
-        this.national.isDisplayed();
-        this.specialtext.isDisplayed(); //change this locator
-        this.special.isDisplayed();
-        this.licensetext.isDisplayed();
-        this.license.isDisplayed();
-        this.findpupformbut.isDisplayed();
-        this.listcreateform.isDisplayed();
-        this.purebreed.isDisplayed();
-        this.purebreedtext.isDisplayed();
-        this.purebreedimage.isDisplayed();
-        this.recomenda.isDisplayed();
-        this.carrousel.isDisplayed();
-        this.howfind.isDisplayed();
-        this.bulldog.isDisplayed();
-        this.cavalier.isDisplayed();
-        this.yorkshire.isDisplayed();
-        this.registered.isDisplayed();
-        this.registeredtext.isDisplayed();
-        this.kennel.isDisplayed();
-        this.kenneltext.isDisplayed();
-        this.breededu.isDisplayed();
-        this.breededutext.isDisplayed();
-        this.getready.isDisplayed();
-        this.siberian.isDisplayed();
-        this.howdecide.isDisplayed();
-        this.beagle.isDisplayed();
-        this.thingsconsi.isDisplayed();
-        this.dachshund.isDisplayed();
-        this.newcheck.isDisplayed();
-        this.pug.isDisplayed();
-        this.questask.isDisplayed();
-        this.howfindright.isDisplayed();
-        this.akcbom.isDisplayed();
-        this.akcbomtext.isDisplayed();
-        this.pembroke.isDisplayed();
-        this.akcbwh.isDisplayed();
-        this.morebom.isDisplayed();
-        this.akcbwhtext.isDisplayed();
-        this.husky.isDisplayed();
-        this.akcclub.isDisplayed();
-        this.morebwh.isDisplayed();
-        this.akcclubtext.isDisplayed();
-        this.beagle2.isDisplayed();
-        this.moreclub.isDisplayed();
-        this.akcchampion.isDisplayed();
-        this.akcchampiontext.isDisplayed();
-        this.shepherd.isDisplayed();
-        this.morechampion.isDisplayed();
-        this.howregister.isDisplayed();
-        this.howregistertext.isDisplayed();
-        this.regpuppy.isDisplayed();
-        this.mostpop.isDisplayed();
-        //this.carrousel2.isDisplayed();
-        //this.labrador.isDisplayed();
-        //this.golden.isDisplayed();
-        //this.french.isDisplayed();
-        //this.carrousel2.click();
-        //this.german.isDisplayed();
-        //this.poodle.isDisplayed();  * Elements not displayed on stage.
-        //this.bull.isDisplayed();
-        //this.carrousel2.click();
-        //this.york.isDisplayed();
-        //this.australian.isDisplayed();
-        //this.welsh.isDisplayed();
-        //this.carrousel2.click();
-        //this.sibe.isDisplayed();
-        //this.listbreeds.isDisplayed();
-        this.howcan.isDisplayed();
-        this.howcantext.isDisplayed();
-        this.crealist.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.visibilityOf(topheader));
+        wait.until(ExpectedConditions.visibilityOf(topsubheader));
+        wait.until(ExpectedConditions.visibilityOf(findpupform));
+        wait.until(ExpectedConditions.visibilityOf(looking));
+        wait.until(ExpectedConditions.visibilityOf(breedform));
+        wait.until(ExpectedConditions.visibilityOf(genderform));
+        wait.until(ExpectedConditions.visibilityOf(zipform));
+        wait.until(ExpectedConditions.visibilityOf(distanceform));
+        wait.until(ExpectedConditions.visibilityOf(distancearrow));
+        wait.until(ExpectedConditions.visibilityOf(options));
+        wait.until(ExpectedConditions.elementToBeClickable(options)).click();
+        wait.until(ExpectedConditions.visibilityOf(availability));
+        wait.until(ExpectedConditions.visibilityOf(nowtext));
+        wait.until(ExpectedConditions.visibilityOf(now));
+        wait.until(ExpectedConditions.visibilityOf(comingtext));
+        wait.until(ExpectedConditions.visibilityOf(coming));
+        wait.until(ExpectedConditions.visibilityOf(dogsize));
+        wait.until(ExpectedConditions.visibilityOf(smalltext));
+        wait.until(ExpectedConditions.visibilityOf(small));
+        wait.until(ExpectedConditions.visibilityOf(mediumtext));
+        wait.until(ExpectedConditions.visibilityOf(medium));
+        wait.until(ExpectedConditions.visibilityOf(largetext));
+        wait.until(ExpectedConditions.visibilityOf(large));
+        wait.until(ExpectedConditions.visibilityOf(images));
+        wait.until(ExpectedConditions.visibilityOf(inlisttext));
+        wait.until(ExpectedConditions.visibilityOf(inlist));
+        wait.until(ExpectedConditions.visibilityOf(bod));
+        wait.until(ExpectedConditions.visibilityOf(bomtext));
+        wait.until(ExpectedConditions.visibilityOf(bom));
+        wait.until(ExpectedConditions.visibilityOf(bwhtext));
+        wait.until(ExpectedConditions.visibilityOf(bwh));
+        wait.until(ExpectedConditions.visibilityOf(champion));
+        wait.until(ExpectedConditions.visibilityOf(yestext));
+        wait.until(ExpectedConditions.visibilityOf(yes));
+        wait.until(ExpectedConditions.visibilityOf(club));
+        wait.until(ExpectedConditions.visibilityOf(nationaltext));
+        wait.until(ExpectedConditions.visibilityOf(national));
+        wait.until(ExpectedConditions.visibilityOf(specialtext)); //change this locator
+        wait.until(ExpectedConditions.visibilityOf(special));
+        wait.until(ExpectedConditions.visibilityOf(licensetext));
+        wait.until(ExpectedConditions.visibilityOf(license));
+        wait.until(ExpectedConditions.visibilityOf(findpupformbut));
+        wait.until(ExpectedConditions.visibilityOf(listcreateform));
+        wait.until(ExpectedConditions.visibilityOf(purebreed));
+        wait.until(ExpectedConditions.visibilityOf(purebreedtext));
+        wait.until(ExpectedConditions.visibilityOf(purebreedimage));
+        wait.until(ExpectedConditions.visibilityOf(recomenda));
+        wait.until(ExpectedConditions.visibilityOf(carrousel));
+        wait.until(ExpectedConditions.visibilityOf(howfind));
+        wait.until(ExpectedConditions.visibilityOf(bulldog));
+        wait.until(ExpectedConditions.visibilityOf(cavalier));
+        wait.until(ExpectedConditions.visibilityOf(yorkshire));
+        wait.until(ExpectedConditions.visibilityOf(registered));
+        wait.until(ExpectedConditions.visibilityOf(registeredtext));
+        wait.until(ExpectedConditions.visibilityOf(kennel));
+        wait.until(ExpectedConditions.visibilityOf(kenneltext));
+        wait.until(ExpectedConditions.visibilityOf(breededu));
+        wait.until(ExpectedConditions.visibilityOf(breededutext));
+        wait.until(ExpectedConditions.visibilityOf(getready));
+        wait.until(ExpectedConditions.visibilityOf(siberian));
+        wait.until(ExpectedConditions.visibilityOf(howdecide));
+        wait.until(ExpectedConditions.visibilityOf(beagle));
+        wait.until(ExpectedConditions.visibilityOf(thingsconsi));
+        wait.until(ExpectedConditions.visibilityOf(dachshund));
+        wait.until(ExpectedConditions.visibilityOf(newcheck));
+        wait.until(ExpectedConditions.visibilityOf(pug));
+        wait.until(ExpectedConditions.visibilityOf(questask));
+        wait.until(ExpectedConditions.visibilityOf(howfindright));
+        wait.until(ExpectedConditions.visibilityOf(akcbom));
+        wait.until(ExpectedConditions.visibilityOf(akcbomtext));
+        wait.until(ExpectedConditions.visibilityOf(pembroke));
+        wait.until(ExpectedConditions.visibilityOf(akcbwh));
+        wait.until(ExpectedConditions.visibilityOf(morebom));
+        wait.until(ExpectedConditions.visibilityOf(akcbwhtext));
+        wait.until(ExpectedConditions.visibilityOf(husky));
+        wait.until(ExpectedConditions.visibilityOf(akcclub));
+        wait.until(ExpectedConditions.visibilityOf(morebwh));
+        wait.until(ExpectedConditions.visibilityOf(akcclubtext));
+        wait.until(ExpectedConditions.visibilityOf(beagle2));
+        wait.until(ExpectedConditions.visibilityOf(moreclub));
+        wait.until(ExpectedConditions.visibilityOf(akcchampion));
+        wait.until(ExpectedConditions.visibilityOf(akcchampiontext));
+        wait.until(ExpectedConditions.visibilityOf(shepherd));
+        wait.until(ExpectedConditions.visibilityOf(morechampion));
+        wait.until(ExpectedConditions.visibilityOf(howregister));
+        wait.until(ExpectedConditions.visibilityOf(howregistertext));
+        wait.until(ExpectedConditions.visibilityOf(regpuppy));
+        wait.until(ExpectedConditions.visibilityOf(mostpop));
+        //wait.until(ExpectedConditions.visibilityOf(carrousel2));
+        //wait.until(ExpectedConditions.visibilityOf(labrador));
+        //wait.until(ExpectedConditions.visibilityOf(golden));
+        //wait.until(ExpectedConditions.visibilityOf(french));
+        //wait.until(ExpectedConditions.elementToBeClickable(carrousel2)).click();
+        //wait.until(ExpectedConditions.visibilityOf(german));
+        //wait.until(ExpectedConditions.visibilityOf(poodle));  * Elements not displayed on stage.
+        //wait.until(ExpectedConditions.visibilityOf(bull));
+        //wait.until(ExpectedConditions.elementToBeClickable(carrousel2)).click();
+        //wait.until(ExpectedConditions.visibilityOf(york));
+        //wait.until(ExpectedConditions.visibilityOf(australian));
+        //wait.until(ExpectedConditions.visibilityOf(welsh));
+        //wait.until(ExpectedConditions.elementToBeClickable(carrousel2)).click();
+        //wait.until(ExpectedConditions.visibilityOf(sibe));
+        //wait.until(ExpectedConditions.visibilityOf(listbreeds));
+        wait.until(ExpectedConditions.visibilityOf(howcan));
+        wait.until(ExpectedConditions.visibilityOf(howcantext));
+        wait.until(ExpectedConditions.visibilityOf(crealist));
 
 
     }
@@ -1618,7 +1626,7 @@ public class Puppies {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://www.akc.org/breeder-programs/akc-breeder-of-merit-program/"));
 
     }
@@ -1628,7 +1636,7 @@ public class Puppies {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("/akc-bred-with-heart-program/"));
 
     }
@@ -1638,7 +1646,7 @@ public class Puppies {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://www.akc.org/clubs-delegates/clubs/about-clubs/"));
 
     }
@@ -1648,7 +1656,7 @@ public class Puppies {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://www.akc.org/sports/conformation/"));
 
     }
@@ -1658,7 +1666,7 @@ public class Puppies {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://www.akc.org/register/dog/"));
 
     }
@@ -1668,7 +1676,7 @@ public class Puppies {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://stage.marketplace.akc.org/puppyvisor"));
 
     }
@@ -1678,7 +1686,7 @@ public class Puppies {
 
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://stage.marketplace.akc.org/breeders-faq#before-you-purchase"));
 
     }
@@ -1686,76 +1694,82 @@ public class Puppies {
     /*Check SERP results*/
     public void CheckSearchBreed() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.findpupformbut.click();
-        this.searchlistpageult.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(searchlistpageult));
 
     }
 
     public void CheckSearchBreed1() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.breedform.click();
-        this.affens.click();
-        this.findpupformbut.click();
-        this.searchlistpageone.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(breedform)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(affens)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(searchlistpageone));
 
     }
 
     public void CheckSearchBreed2() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.breedform.click();
-        this.affens.click();
-        this.genderform.click();
-        this.female.click();
-        this.findpupformbut.click();
-        this.AffensPuppiesForSale.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(breedform)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(affens)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(genderform)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(female)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(AffensPuppiesForSale));
 
     }
 
     public void CheckSearchBreed3() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.breedform.click();
-        this.germanspitz.click();
-        this.genderform.click();
-        this.female.click();
-        this.zipform.click();
-        this.zipfield.sendKeys("80012");
-        this.findpupformbut.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(breedform)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(germanspitz)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(genderform)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(female)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(zipform)).click();
+        zipfield.sendKeys("80012");
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
         wait.until(ExpectedConditions.visibilityOf(searchlistnopage));
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("scroll(0, 3000);");
 
-        //this.searchlistnopage.isDisplayed();
+        //wait.until(ExpectedConditions.visibilityOf(searchlistnopage));
 
     }
 
     public void CheckSearchBreedNow() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.options.click();
-        this.now.click();
-        this.findpupformbut.click();
-        this.searchlistpageult.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(options)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(now)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(searchlistpageult));
 
     }
 
 
     public void CheckSearchBreedSmall() {
-        this.puppies.click();
-        this.findapuppy.click();
-        this.options.click();
-        this.small.click();
-        this.findpupformbut.click();
-        this.searchlistpageult.isDisplayed();
+
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(options)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(small)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(searchlistpageult));
 
     }
 
@@ -1763,82 +1777,90 @@ public class Puppies {
 
     public void CheckSearchBreedLarge() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.options.click();
-        this.large.click();
-        this.findpupformbut.click();
-        this.searchlistpageult.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(options)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(large)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(searchlistpageult));
 
     }
 
 
     public void CheckSearchBreedInList() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.options.click();
-        this.inlist.click();
-        this.findpupformbut.click();
-        this.searchlistpageult.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(options)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(inlist)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(searchlistpageult));
 
     }
 
     public void CheckSearchBreedBom() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.options.click();
-        this.bom.click();
-        this.findpupformbut.click();
-        this.searchlistPageTitle.isDisplayed(); //Set Breed of Merit breeders before running the test.
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(options)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(bom)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(searchlistPageTitle)); //Set Breed of Merit breeders before running the test.
 
     }
 
 
     public void CheckSearchBreedBwh() {
-        this.puppies.click();
-        this.findapuppy.click();
-        this.options.click();
-        this.bwh.click();
-        this.findpupformbut.click();
-        this.searchlistPageTitle.isDisplayed();
+
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(options)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(bwh)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(searchlistPageTitle));
 
     }
 
 
     public void CheckSearchBreedYes() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.options.click();
-        this.yes.click();
-        this.findpupformbut.click();
-        this.searchlistPageTitle.isDisplayed(); //There are no Champion bloodlines listed in stage
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(options)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(yes)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(searchlistPageTitle)); //There are no Champion bloodlines listed in stage
 
     }
 
 
     public void CheckSearchBreedNational() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.options.click();
-        this.national.click();
-        this.findpupformbut.click();
-        this.searchlistPageTitle.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(options)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(national)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(searchlistPageTitle));
 
     }
 
 
     public void CheckSearchBreedSpecial() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.options.click();
-        this.special.click();
-        this.findpupformbut.click();
-        this.searchlistPageTitle.isDisplayed(); //Fails in stage, there are no AKC Speciality clubs listed
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(options)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(special)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(searchlistPageTitle)); //Fails in stage, there are no AKC Speciality clubs listed
 
     }
 
@@ -1846,25 +1868,26 @@ public class Puppies {
     /*Check picture display in carrousel*/
     public void CheckCarrousel() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.carrousel.click();
-        this.carrousel.click();
-        this.carrousel.click();
-        this.carrousel.click();
-        this.carrousel.click();
-        this.carrousel.click();
-        this.carrousel.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(carrousel)).click();
 
 
     }
     /*Check Additional Pages*/
     public void CheckHowDecide() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
-        this.findapuppy.click();
-        this.howdecide.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(howdecide)).click();
         wait.until(ExpectedConditions.urlContains("choosing-a-breed"));
 
 
@@ -1872,10 +1895,10 @@ public class Puppies {
 
     public void CheckThingsto() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
-        this.findapuppy.click();
-        this.thingsconsi.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(thingsconsi)).click();
         wait.until(ExpectedConditions.visibilityOf(readyforpuppage));
 
 
@@ -1883,10 +1906,10 @@ public class Puppies {
 
     public void CheckOwner() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
-        this.findapuppy.click();
-        this.newcheck.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(newcheck)).click();
         wait.until(ExpectedConditions.urlContains("preparing-for-puppy"));
 
 
@@ -1894,10 +1917,10 @@ public class Puppies {
 
     public void CheckQuestionAsk() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
-        this.findapuppy.click();
-        this.questask.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(questask)).click();
         wait.until(ExpectedConditions.visibilityOf(qaskbreedpage));
 
 
@@ -1905,18 +1928,20 @@ public class Puppies {
 
     public void CheckBOM() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.morebom.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(morebom)).click();
         validbom();
 
     }
 
     public void CheckBwh() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.morebwh.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(morebwh)).click();
         validbwh();
 
 
@@ -1924,9 +1949,10 @@ public class Puppies {
 
     public void CheckClub() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.moreclub.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(moreclub)).click();
         validclubs();
 
 
@@ -1934,9 +1960,10 @@ public class Puppies {
 
     public void CheckChamp() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.morechampion.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(morechampion)).click();
         validchamp();
 
 
@@ -1945,9 +1972,10 @@ public class Puppies {
 
     public void CheckRegister() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.registered.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(registered)).click();
         validreg();
 
 
@@ -1955,10 +1983,10 @@ public class Puppies {
 
     public void CheckCreateaList() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
-        this.findapuppy.click();
-        this.crealist.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(crealist)).click();
         wait.until(ExpectedConditions.urlContains("/advertise/breeders"));
 
 
@@ -1967,48 +1995,49 @@ public class Puppies {
     /*Check SERP page results*/
     public void CheckSearchBreedListingPage()  {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.breedform.click();
-        this.affens.click();
-        this.findpupformbut.click();
-        this.topbanner.isDisplayed();
-        this.topbannersigin.isDisplayed();
-        this.topbannealert.isDisplayed();
-        this.breedinfo1.isDisplayed();
-        this.breedtrait.isDisplayed();
-        this.natiobreed.isDisplayed();
-        this.descrip.isDisplayed();
-        this.histjob.isDisplayed();
-        this.health.isDisplayed();
-        this.rescue.isDisplayed();
-        this.breedVideo.isDisplayed();
-        this.breedPhotoTab.isDisplayed();
-        this.breedtrait.click();
-        this.breedtraittext.isDisplayed();
-        this.natiobreed.click();
-        this.natiobreedtext.isDisplayed();
-        this.descrip.click();
-        this.descriptext.isDisplayed();
-        this.histjob.click();
-        this.histjobtext.isDisplayed();
-        this.health.click();
-        this.healthtext.isDisplayed();
-        this.rescue.click();
-        this.rescuetext.isDisplayed();
-        this.listdisp.isDisplayed();
-        this.listdisptext.isDisplayed();
-        //this.puppyvisor.isDisplayed(); CMS Settings. This is not being displayed on stage for this breed,
-        //this.puppyvisorbut.isDisplayed();
-        this.bottombanner.isDisplayed();
-        this.bottombannersigin.isDisplayed();
-        this.expotherbreeds.isDisplayed();
-        this.otherbreed1.isDisplayed();
-        this.otherbreed2.isDisplayed();
-        this.otherbreed3.isDisplayed();
-        this.otherbreed1text.isDisplayed();
-        this.otherbreed2text.isDisplayed();
-        this.otherbreed3text.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(breedform)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(affens)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(topbanner));
+        wait.until(ExpectedConditions.visibilityOf(topbannersigin));
+        wait.until(ExpectedConditions.visibilityOf(topbannealert));
+        wait.until(ExpectedConditions.visibilityOf(breedinfo1));
+        wait.until(ExpectedConditions.visibilityOf(breedtrait)); //check this
+        wait.until(ExpectedConditions.visibilityOf(natiobreed));
+        wait.until(ExpectedConditions.visibilityOf(descrip));
+        wait.until(ExpectedConditions.visibilityOf(histjob));
+        wait.until(ExpectedConditions.visibilityOf(health));
+        wait.until(ExpectedConditions.visibilityOf(rescue));
+        wait.until(ExpectedConditions.visibilityOf(breedVideo));
+        wait.until(ExpectedConditions.visibilityOf(breedPhotoTab));
+        wait.until(ExpectedConditions.elementToBeClickable(breedtrait)).click();
+        wait.until(ExpectedConditions.visibilityOf(breedtraittext));
+        wait.until(ExpectedConditions.elementToBeClickable(natiobreed)).click();
+        wait.until(ExpectedConditions.visibilityOf(natiobreedtext));
+        wait.until(ExpectedConditions.elementToBeClickable(descrip)).click();
+        wait.until(ExpectedConditions.visibilityOf(descriptext));
+        wait.until(ExpectedConditions.elementToBeClickable(histjob)).click();
+        wait.until(ExpectedConditions.visibilityOf(histjobtext));
+        wait.until(ExpectedConditions.elementToBeClickable(health)).click();
+        wait.until(ExpectedConditions.visibilityOf(healthtext));
+        wait.until(ExpectedConditions.elementToBeClickable(rescue)).click();
+        wait.until(ExpectedConditions.visibilityOf(rescuetext));
+        wait.until(ExpectedConditions.visibilityOf(listdisp));
+        wait.until(ExpectedConditions.visibilityOf(listdisptext));
+        //wait.until(ExpectedConditions.visibilityOf(puppyvisor)); CMS Settings. This is not being displayed on stage for this breed,
+        //wait.until(ExpectedConditions.visibilityOf(puppyvisorbut));
+        wait.until(ExpectedConditions.visibilityOf(bottombanner));
+        wait.until(ExpectedConditions.visibilityOf(bottombannersigin));
+        wait.until(ExpectedConditions.visibilityOf(expotherbreeds));
+        wait.until(ExpectedConditions.visibilityOf(otherbreed1));
+        wait.until(ExpectedConditions.visibilityOf(otherbreed2));
+        wait.until(ExpectedConditions.visibilityOf(otherbreed3));
+        wait.until(ExpectedConditions.visibilityOf(otherbreed1text));
+        wait.until(ExpectedConditions.visibilityOf(otherbreed2text));
+        wait.until(ExpectedConditions.visibilityOf(otherbreed3text));
 
 
     }
@@ -2016,76 +2045,82 @@ public class Puppies {
     /*Check Breeder page*/
     public void CheckSearchBreedList()  {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.breedform.click();
-        this.findpupformbut.click();
-        this.listdisp.isDisplayed();
-        this.listdisptext.isDisplayed();
-        this.listdisp.click();
-        this.listingname.isDisplayed();
-        this.listingpict.isDisplayed();
-        this.listingBreederLink.isDisplayed();
-        this.listingpict.click();
-        this.ListingCarouselOpen.isDisplayed();
-        this.CarouselRightArrow.click();
-        this.listingBreederLink.click(); //continue here with left arrow and clicking outside of the carousel
-        this.listingmsgbut.isDisplayed();
-        this.aboutbreeder.isDisplayed();
-        this.breederprof.isDisplayed();
-        this.signinbut.isDisplayed();
-        //this.reportissue.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(breedform)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(listdisp));
+        wait.until(ExpectedConditions.visibilityOf(listdisptext));
+        wait.until(ExpectedConditions.elementToBeClickable(listdisp)).click();
+        wait.until(ExpectedConditions.visibilityOf(listingname));
+        wait.until(ExpectedConditions.visibilityOf(listingpict));
+        wait.until(ExpectedConditions.visibilityOf(listingBreederLink)); //fix this
+        wait.until(ExpectedConditions.elementToBeClickable(listingpict)).click();
+        wait.until(ExpectedConditions.visibilityOf(ListingCarouselOpen));
+        //wait.until(ExpectedConditions.elementToBeClickable(CarouselRightArrow)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(CarouselLeftArrow)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(closeCarousel));
+        wait.until(ExpectedConditions.elementToBeClickable(closeCarousel)).click();
+        //wait.until(ExpectedConditions.elementToBeClickable(listingBreederLink)).click(); //Fix the click out
+        //wait.until(ExpectedConditions.visibilityOf(listingmsgbut));
+        //wait.until(ExpectedConditions.visibilityOf(aboutbreeder));
+        //wait.until(ExpectedConditions.visibilityOf(breederprof));
+        //wait.until(ExpectedConditions.visibilityOf(signinbut));
+        //wait.until(ExpectedConditions.visibilityOf(reportissue));
 
     }
 
     /*Check Puppyvisor page elements*/
     public void CheckPuppyvisorPage() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.breedform.click();
-        this.affens.click();
-        this.findpupformbut.click();
-        this.puppyvisor.isDisplayed();
-        this.puppyvisorbut.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(breedform)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(affens)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.visibilityOf(puppyvisor));
+        wait.until(ExpectedConditions.elementToBeClickable(puppyvisorbut)).click();
         validpupvisor();
-        this.pupfindetext.isDisplayed();
-        this.pupfindpict.isDisplayed();
-        this.pufindtm.isDisplayed();
-        this.pupcounselor.isDisplayed();
-        this.pupcounselortext.isDisplayed();
-        this.pupcounspict.isDisplayed();
-        this.whatsinclu.isDisplayed();
-        this.whatsinclutext.isDisplayed();
-        this.onetimefee.isDisplayed();
-        this.onetimefeebut.isDisplayed();
-        this.howakcpupvis.isDisplayed();
-        this.pupvisorworks.isDisplayed();
-        this.whysignup.isDisplayed();
-        this.whysignuptext.isDisplayed();
-        this.whysignupbut.isDisplayed();
-        this.pupvistermscond.isDisplayed();
+        wait.until(ExpectedConditions.visibilityOf(pupfindetext));
+        wait.until(ExpectedConditions.visibilityOf(pupfindpict));
+        wait.until(ExpectedConditions.visibilityOf(pufindtm));
+        wait.until(ExpectedConditions.visibilityOf(pupcounselor));
+        wait.until(ExpectedConditions.visibilityOf(pupcounselortext));
+        wait.until(ExpectedConditions.visibilityOf(pupcounspict));
+        wait.until(ExpectedConditions.visibilityOf(whatsinclu));
+        wait.until(ExpectedConditions.visibilityOf(whatsinclutext));
+        wait.until(ExpectedConditions.visibilityOf(onetimefee));
+        wait.until(ExpectedConditions.visibilityOf(onetimefeebut));
+        wait.until(ExpectedConditions.visibilityOf(howakcpupvis));
+        wait.until(ExpectedConditions.visibilityOf(pupvisorworks));
+        wait.until(ExpectedConditions.visibilityOf(whysignup));
+        wait.until(ExpectedConditions.visibilityOf(whysignuptext));
+        wait.until(ExpectedConditions.visibilityOf(whysignupbut));
+        wait.until(ExpectedConditions.visibilityOf(pupvistermscond));
 
 
     }
     /*Check advertise breeders page*/
     public void CheckBreederListingPage() {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.crealist.click();
-        this.advertlitters.isDisplayed();
-        this.advertlitterspict.isDisplayed();
-        this.StartHere.isDisplayed();
-        this.creanewlit.isDisplayed();
-        this.GoToMyAccountPage.isDisplayed();
-        this.monthlyPlanTitle.isDisplayed();
-        this.annualPlanTitle.isDisplayed();
-        this.getAnnualplanbut.isDisplayed();
-        this.singleLitterListing.isDisplayed();
-        this.FAQsBreederListingTitle.isDisplayed();
-        //this.purchsubs.isDisplayed();
-        //this.marksubs.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(crealist)).click();
+        wait.until(ExpectedConditions.visibilityOf(advertlitters));
+        wait.until(ExpectedConditions.visibilityOf(advertlitterspict));
+        wait.until(ExpectedConditions.visibilityOf(StartHere));
+        wait.until(ExpectedConditions.visibilityOf(creanewlit));
+        wait.until(ExpectedConditions.visibilityOf(GoToMyAccountPage));
+        wait.until(ExpectedConditions.visibilityOf(monthlyPlanTitle));
+        wait.until(ExpectedConditions.visibilityOf(annualPlanTitle));
+        wait.until(ExpectedConditions.visibilityOf(getAnnualplanbut));
+        wait.until(ExpectedConditions.visibilityOf(singleLitterListing));
+        wait.until(ExpectedConditions.visibilityOf(FAQsBreederListingTitle));
+        //wait.until(ExpectedConditions.visibilityOf(purchsubs));
+        //wait.until(ExpectedConditions.elementToBeClickable(marksubs)).click();
         //validmarksub();
 
     }
@@ -2093,21 +2128,22 @@ public class Puppies {
     /*SignIn User*/
     public void signInBreeder(User _testUser) {
 
-        this.puppies.click();
-        this.findapuppy.click();
-        this.crealist.click();
-        this.actpaidlit.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(crealist)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(actpaidlit)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashhome.isDisplayed();
-        //this.actpaidlit.click();
-        //this.litternumber.isDisplayed();
-        //this.damnumber.isDisplayed();
-        //this.damdate.isDisplayed();
+        wait.until(ExpectedConditions.visibilityOf(dashhome));
+        //wait.until(ExpectedConditions.elementToBeClickable(actpaidlit)).click();
+        //wait.until(ExpectedConditions.visibilityOf(litternumber));
+        //wait.until(ExpectedConditions.visibilityOf(damnumber));
+        //wait.until(ExpectedConditions.visibilityOf(damdate));
 
 
     }
@@ -2115,270 +2151,270 @@ public class Puppies {
     /*ActivateListing*/
     public void ActListing(Listing _testListing) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
-        this.findapuppy.click();
-        this.crealist.click();
-        this.actpaidlit.click();
-        this.userName.sendKeys(_testListing.Email);
-        this.passwordlog.sendKeys(_testListing.Password);
-        this.ingresar.click();
-        this.logged.isDisplayed();
-        this.actpaidlit.click();
-        this.litternumber.sendKeys(_testListing.LitNum);
-        this.damnumber.sendKeys(_testListing.DamRegNum);
-        this.damdate.sendKeys(_testListing.DamCertDate);
-        this.creabutton.click();
-        this.creditcard.sendKeys("4111111111111111");
-        this.expdate.sendKeys(_testListing.ExpDate);
-        this.cvv.sendKeys(_testListing.CVV);
-        this.firstname2.sendKeys(_testListing.FirstName);
-        this.lastname2.sendKeys(_testListing.LastName);
-        this.billaddress.sendKeys(_testListing.Address);
-        this.billzip.click();
-        this.billzip2.sendKeys(_testListing.ZIP);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(crealist)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(actpaidlit)).click();
+        userName.sendKeys(_testListing.Email);
+        passwordlog.sendKeys(_testListing.Password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        wait.until(ExpectedConditions.visibilityOf(logged));
+        wait.until(ExpectedConditions.elementToBeClickable(actpaidlit)).click();
+        litternumber.sendKeys(_testListing.LitNum);
+        damnumber.sendKeys(_testListing.DamRegNum);
+        damdate.sendKeys(_testListing.DamCertDate);
+        wait.until(ExpectedConditions.elementToBeClickable(creabutton)).click();
+        creditcard.sendKeys("4111111111111111");
+        expdate.sendKeys(_testListing.ExpDate);
+        cvv.sendKeys(_testListing.CVV);
+        firstname2.sendKeys(_testListing.FirstName);
+        lastname2.sendKeys(_testListing.LastName);
+        billaddress.sendKeys(_testListing.Address);
+        wait.until(ExpectedConditions.elementToBeClickable(billzip)).click();
+        billzip2.sendKeys(_testListing.ZIP);
         wait.until(ExpectedConditions.visibilityOf(city));
-        this.coupon.isDisplayed();
-        this.state.isDisplayed();
-        this.phone.sendKeys(_testListing.Phone);
-        this.summary.isDisplayed();
+        wait.until(ExpectedConditions.visibilityOf(coupon));
+        wait.until(ExpectedConditions.visibilityOf(state));
+        phone.sendKeys(_testListing.Phone);
+        wait.until(ExpectedConditions.visibilityOf(summary));
         wait.until(ExpectedConditions.elementToBeClickable(purchnow));
-        this.purchnow.click();
-        this.variety.click();
-        this.variety2.click();
-        this.listdesc.sendKeys(_testListing.Desc);
-        this.litternum.isDisplayed();
-        this.litterdob.isDisplayed();
-        this.males.isDisplayed();
-        this.females.isDisplayed();
-        this.price.sendKeys(_testListing.Price);
-        this.healthvacc.sendKeys(_testListing.Healthvac);
-        this.textimportant.isDisplayed();
-        this.firstcheck.click();
-        this.firstchecktext.isDisplayed();
-        this.secondcheck.click();
-        this.secondchecktext.isDisplayed();
-        this.thirdcheck.click();
-        this.thirdchecktext.isDisplayed();
-        this.fourcheck.click();
-        this.fourcheck2.isDisplayed();
-        this.fivecheck.click();
-        this.fivecheck2.isDisplayed();
-        this.continue2.click();
-        this.addfile.isDisplayed();
-        this.addfile.click();
+        wait.until(ExpectedConditions.elementToBeClickable(purchnow)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(variety)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(variety2)).click();
+        listdesc.sendKeys(_testListing.Desc);
+        wait.until(ExpectedConditions.visibilityOf(litternum));
+        wait.until(ExpectedConditions.visibilityOf(litterdob));
+        wait.until(ExpectedConditions.visibilityOf(males));
+        wait.until(ExpectedConditions.visibilityOf(females));
+        price.sendKeys(_testListing.Price);
+        healthvacc.sendKeys(_testListing.Healthvac);
+        wait.until(ExpectedConditions.visibilityOf(textimportant));
+        wait.until(ExpectedConditions.elementToBeClickable(firstcheck)).click();
+        wait.until(ExpectedConditions.visibilityOf(firstchecktext));
+        wait.until(ExpectedConditions.elementToBeClickable(secondcheck)).click();
+        wait.until(ExpectedConditions.visibilityOf(secondchecktext));
+        wait.until(ExpectedConditions.elementToBeClickable(thirdcheck)).click();
+        wait.until(ExpectedConditions.visibilityOf(thirdchecktext));
+        wait.until(ExpectedConditions.elementToBeClickable(fourcheck)).click();
+        wait.until(ExpectedConditions.visibilityOf(fourcheck2));
+        wait.until(ExpectedConditions.elementToBeClickable(fivecheck)).click();
+        wait.until(ExpectedConditions.visibilityOf(fivecheck2));
+        wait.until(ExpectedConditions.elementToBeClickable(continue2)).click();
+        wait.until(ExpectedConditions.visibilityOf(addfile));
+        wait.until(ExpectedConditions.elementToBeClickable(addfile)).click();
         wait.until(ExpectedConditions.visibilityOf(addphovid));
-        this.uploadmess.isDisplayed();
-        this.youtu2.isDisplayed();
-        this.youtu2.sendKeys(_testListing.Youtube);
-        this.youtu2.sendKeys(ENTER);
-        this.contyou.click();
+        wait.until(ExpectedConditions.visibilityOf(uploadmess));
+        wait.until(ExpectedConditions.visibilityOf(youtu2));
+        youtu2.sendKeys(_testListing.Youtube);
+        youtu2.sendKeys(ENTER);
+        wait.until(ExpectedConditions.elementToBeClickable(contyou)).click();
         wait.until(ExpectedConditions.elementToBeClickable(closediag));
-        this.closediag.click();
+        wait.until(ExpectedConditions.elementToBeClickable(closediag)).click();
         wait.until(ExpectedConditions.elementToBeClickable(addfile));
-        this.addfile.click();
-        this.selimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\boxer2.jpg");
-        this.inputimages.sendKeys("Breed picture");
-        this.saveimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(addfile)).click();
+        selimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\boxer2.jpg");
+        inputimages.sendKeys("Breed picture");
+        wait.until(ExpectedConditions.elementToBeClickable(saveimages)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(closediag));
-        this.closediag.click();
+        wait.until(ExpectedConditions.elementToBeClickable(closediag)).click();
         wait.until(ExpectedConditions.elementToBeClickable(continue3));
-        this.continue3.click();
-        this.kenname.sendKeys(_testListing.Kenname);
-        this.weblink.sendKeys(_testListing.Weblink);
-        this.descken.sendKeys(_testListing.Descken);
-        this.breedsince.sendKeys(_testListing.Breedsince);
-        this.ibreed.click();
-        this.optaffen.click();
-        this.website.sendKeys(_testListing.Website);
-        this.continue4.click();
-        this.continue5.click();
-        this.continue6.click();
-        this.addfile.click();
-        this.selimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\linkedinimage.jpg");
-        this.inputimages2.sendKeys("Breeder picture");
-        this.inputbreeder.click();
+        wait.until(ExpectedConditions.elementToBeClickable(continue3)).click();
+        kenname.sendKeys(_testListing.Kenname);
+        weblink.sendKeys(_testListing.Weblink);
+        descken.sendKeys(_testListing.Descken);
+        breedsince.sendKeys(_testListing.Breedsince);
+        wait.until(ExpectedConditions.elementToBeClickable(ibreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(optaffen)).click();
+        website.sendKeys(_testListing.Website);
+        wait.until(ExpectedConditions.elementToBeClickable(continue4)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(continue5)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(continue6)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(addfile)).click();
+        selimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\linkedinimage.jpg");
+        inputimages2.sendKeys("Breeder picture");
+        wait.until(ExpectedConditions.elementToBeClickable(inputbreeder)).click();
         sleep(2000);
-        this.selbreederimages.click();
-        this.saveimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(selbreederimages)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(saveimages)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(closediag2));
-        this.closediag2.click();
+        wait.until(ExpectedConditions.elementToBeClickable(closediag2)).click();
         wait.until(ExpectedConditions.elementToBeClickable(continue7));
-        this.continue7.click();
-        this.sucesslisting.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(continue7)).click();
+        wait.until(ExpectedConditions.visibilityOf(sucesslisting));
 
 
     }
     /*Create listing*/
     public void CreaListing(Listing _testListing) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
-        this.findapuppy.click();
-        this.crealist.click();
-        this.creanewlit.click();
-        this.userName.sendKeys(_testListing.Email);
-        this.passwordlog.sendKeys(_testListing.Password);
-        this.ingresar.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(crealist)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(creanewlit)).click();
+        userName.sendKeys(_testListing.Email);
+        passwordlog.sendKeys(_testListing.Password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
         wait.until(ExpectedConditions.elementToBeClickable(manageMyListings));
-        //this.logged.isDisplayed();
-        this.manageMyListings.click();
+        //wait.until(ExpectedConditions.visibilityOf(logged));
+        wait.until(ExpectedConditions.elementToBeClickable(manageMyListings)).click();
         wait.until(ExpectedConditions.elementToBeClickable(createLitterListing));
-        this.createLitterListing.click();
-        this.litternumber.sendKeys(_testListing.LitNum);
-        this.damnumber.sendKeys(_testListing.DamRegNum);
-        this.damdate.sendKeys(_testListing.DamCertDate);
-        this.creabutton.click();
-        this.creditcard.sendKeys("4111111111111111");
-        this.expdate.sendKeys(_testListing.ExpDate);
-        this.cvv.sendKeys(_testListing.CVV);
-        this.firstname2.sendKeys(_testListing.FirstName);
-        this.lastname2.sendKeys(_testListing.LastName);
-        this.billaddress.sendKeys(_testListing.Address);
-        this.billzip.click();
-        this.billzip2.sendKeys(_testListing.ZIP);
+        wait.until(ExpectedConditions.elementToBeClickable(createLitterListing)).click();
+        litternumber.sendKeys(_testListing.LitNum);
+        damnumber.sendKeys(_testListing.DamRegNum);
+        damdate.sendKeys(_testListing.DamCertDate);
+        wait.until(ExpectedConditions.elementToBeClickable(creabutton)).click();
+        creditcard.sendKeys("4111111111111111");
+        expdate.sendKeys(_testListing.ExpDate);
+        cvv.sendKeys(_testListing.CVV);
+        firstname2.sendKeys(_testListing.FirstName);
+        lastname2.sendKeys(_testListing.LastName);
+        billaddress.sendKeys(_testListing.Address);
+        wait.until(ExpectedConditions.elementToBeClickable(billzip)).click();
+        billzip2.sendKeys(_testListing.ZIP);
         wait.until(ExpectedConditions.visibilityOf(city));
-        this.coupon.isDisplayed();
-        this.state.isDisplayed();
-        this.phone.sendKeys(_testListing.Phone);
-        this.summary.isDisplayed();
+        wait.until(ExpectedConditions.visibilityOf(coupon));
+        wait.until(ExpectedConditions.visibilityOf(state));
+        phone.sendKeys(_testListing.Phone);
+        wait.until(ExpectedConditions.visibilityOf(summary));
         wait.until(ExpectedConditions.elementToBeClickable(purchnow));
-        this.purchnow.click();
-        this.variety.click();
-        this.variety2.click();
-        this.listdesc.sendKeys(_testListing.Desc);
-        this.litternum.isDisplayed();
-        this.litterdob.isDisplayed();
-        this.males.isDisplayed();
-        this.females.isDisplayed();
-        this.price.sendKeys(_testListing.Price);
-        this.healthvacc.sendKeys(_testListing.Healthvac);
-        this.textimportant.isDisplayed();
-        this.firstcheck.click();
-        this.firstchecktext.isDisplayed();
-        this.secondcheck.click();
-        this.secondchecktext.isDisplayed();
-        this.thirdcheck.click();
-        this.thirdchecktext.isDisplayed();
-        this.fourcheck.click();
-        this.fourcheck2.isDisplayed();
-        this.fivecheck.click();
-        this.fivecheck2.isDisplayed();
-        this.continue2.click();
-        this.addfile.isDisplayed();
-        this.addfile.click();
+        wait.until(ExpectedConditions.elementToBeClickable(purchnow)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(variety)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(variety2)).click();
+        listdesc.sendKeys(_testListing.Desc);
+        wait.until(ExpectedConditions.visibilityOf(litternum));
+        wait.until(ExpectedConditions.visibilityOf(litterdob));
+        wait.until(ExpectedConditions.visibilityOf(males));
+        wait.until(ExpectedConditions.visibilityOf(females));
+        price.sendKeys(_testListing.Price);
+        healthvacc.sendKeys(_testListing.Healthvac);
+        wait.until(ExpectedConditions.visibilityOf(textimportant));
+        wait.until(ExpectedConditions.elementToBeClickable(firstcheck)).click();
+        wait.until(ExpectedConditions.visibilityOf(firstchecktext));
+        wait.until(ExpectedConditions.elementToBeClickable(secondcheck)).click();
+        wait.until(ExpectedConditions.visibilityOf(secondchecktext));
+        wait.until(ExpectedConditions.elementToBeClickable(thirdcheck)).click();
+        wait.until(ExpectedConditions.visibilityOf(thirdchecktext));
+        wait.until(ExpectedConditions.elementToBeClickable(fourcheck)).click();
+        wait.until(ExpectedConditions.visibilityOf(fourcheck2));
+        wait.until(ExpectedConditions.elementToBeClickable(fivecheck)).click();
+        wait.until(ExpectedConditions.visibilityOf(fivecheck2));
+        wait.until(ExpectedConditions.elementToBeClickable(continue2)).click();
+        wait.until(ExpectedConditions.visibilityOf(addfile));
+        wait.until(ExpectedConditions.elementToBeClickable(addfile)).click();
         wait.until(ExpectedConditions.visibilityOf(addphovid));
-        this.uploadmess.isDisplayed();
-        this.youtu2.isDisplayed();
-        this.youtu2.sendKeys(_testListing.Youtube);
-        this.youtu2.sendKeys(ENTER);
-        this.contyou.click();
+        wait.until(ExpectedConditions.visibilityOf(uploadmess));
+        wait.until(ExpectedConditions.visibilityOf(youtu2));
+        youtu2.sendKeys(_testListing.Youtube);
+        youtu2.sendKeys(ENTER);
+        wait.until(ExpectedConditions.elementToBeClickable(contyou)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(closediag));
-        this.closediag.click();
+        wait.until(ExpectedConditions.elementToBeClickable(closediag)).click();
         wait.until(ExpectedConditions.elementToBeClickable(addfile));
-        this.addfile.click();
-        this.selimages.sendKeys("/Users/sebastian.viquez/Documents/NYCATS-QA-branch-A/src/test/java/Resources/image.png");
-        this.inputimages.sendKeys("Breed picture");
-        this.saveimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(addfile)).click();
+        selimages.sendKeys("/Users/sebastian.viquez/Documents/NYCATS-QA-branch-A/src/test/java/Resources/image.png");
+        inputimages.sendKeys("Breed picture");
+        wait.until(ExpectedConditions.elementToBeClickable(saveimages)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(closediag));
-        this.closediag.click();
+        wait.until(ExpectedConditions.elementToBeClickable(closediag)).click();
         wait.until(ExpectedConditions.elementToBeClickable(continue3));
-        this.continue3.click();
-        this.kenname.sendKeys(_testListing.Kenname);
-        this.weblink.sendKeys(_testListing.Weblink);
-        this.descken.sendKeys(_testListing.Descken);
-        this.breedsince.sendKeys(_testListing.Breedsince);
-        this.ibreed.click();
-        this.optaffen.click();
-        this.website.sendKeys(_testListing.Website);
-        this.continue4.click();
-        this.continue5.click();
-        this.continue6.click();
-        this.addfile.click();
-        this.selimages.sendKeys("/Users/sebastian.viquez/Documents/NYCATS-QA-branch-A/src/test/java/Resources/image.png");
-        this.inputimages2.sendKeys("Breeder picture");
-        this.inputbreeder.click();
-        this.selbreederimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(continue3)).click();
+        kenname.sendKeys(_testListing.Kenname);
+        weblink.sendKeys(_testListing.Weblink);
+        descken.sendKeys(_testListing.Descken);
+        breedsince.sendKeys(_testListing.Breedsince);
+        wait.until(ExpectedConditions.elementToBeClickable(ibreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(optaffen)).click();
+        website.sendKeys(_testListing.Website);
+        wait.until(ExpectedConditions.elementToBeClickable(continue4)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(continue5)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(continue6)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(addfile)).click();
+        selimages.sendKeys("/Users/sebastian.viquez/Documents/NYCATS-QA-branch-A/src/test/java/Resources/image.png");
+        inputimages2.sendKeys("Breeder picture");
+        wait.until(ExpectedConditions.elementToBeClickable(inputbreeder)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selbreederimages)).click();
         sleep(2000);
-        this.saveimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(saveimages)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(closediag2));
-        this.closediag2.click();
+        wait.until(ExpectedConditions.elementToBeClickable(closediag2)).click();
         wait.until(ExpectedConditions.elementToBeClickable(continue7));
-        this.continue7.click();
-        this.sucesslisting.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(continue7)).click();
+        wait.until(ExpectedConditions.visibilityOf(sucesslisting));
 
 
     }
     /*Purchase Suscription*/
     public void PurchaseSubs(Subscription _testSubscription) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
-        this.findapuppy.click();
-        this.crealist.click();
-        this.purchsubs.click();
-        this.userName.sendKeys(_testSubscription.Email);
-        this.passwordlog.sendKeys(_testSubscription.Password);
-        this.ingresar.click();
-        this.logged.isDisplayed();
-        this.purchsubs.click();
-        this.monthplan.isDisplayed();
-        this.monthplanbut.isDisplayed();
-        this.annualplan.isDisplayed();
-        this.annualplanbut.click();
-        this.creditcard.sendKeys("4111111111111111");
-        this.expdate.sendKeys(_testSubscription.ExpDate);
-        this.cvv.sendKeys(_testSubscription.CVV);
-        this.firstname2.sendKeys(_testSubscription.FirstName);
-        this.lastname2.sendKeys(_testSubscription.LastName);
-        this.billaddress.sendKeys(_testSubscription.Address);
-        this.billzip.click();
-        this.billzip2.sendKeys(_testSubscription.ZIP);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(crealist)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(purchsubs)).click();
+        userName.sendKeys(_testSubscription.Email);
+        passwordlog.sendKeys(_testSubscription.Password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        wait.until(ExpectedConditions.visibilityOf(logged));
+        wait.until(ExpectedConditions.elementToBeClickable(purchsubs)).click();
+        wait.until(ExpectedConditions.visibilityOf(monthplan));
+        wait.until(ExpectedConditions.visibilityOf(monthplanbut));
+        wait.until(ExpectedConditions.visibilityOf(annualplan));
+        wait.until(ExpectedConditions.elementToBeClickable(annualplanbut)).click();
+        creditcard.sendKeys("4111111111111111");
+        expdate.sendKeys(_testSubscription.ExpDate);
+        cvv.sendKeys(_testSubscription.CVV);
+        firstname2.sendKeys(_testSubscription.FirstName);
+        lastname2.sendKeys(_testSubscription.LastName);
+        billaddress.sendKeys(_testSubscription.Address);
+        wait.until(ExpectedConditions.elementToBeClickable(billzip)).click();
+        billzip2.sendKeys(_testSubscription.ZIP);
         wait.until(ExpectedConditions.visibilityOf(city));
-        this.coupon.isDisplayed();
-        this.state.isDisplayed();
-        this.phone.sendKeys(_testSubscription.Phone);
-        this.summary.isDisplayed();
+        wait.until(ExpectedConditions.visibilityOf(coupon));
+        wait.until(ExpectedConditions.visibilityOf(state));
+        phone.sendKeys(_testSubscription.Phone);
+        wait.until(ExpectedConditions.visibilityOf(summary));
         wait.until(ExpectedConditions.elementToBeClickable(purchnowsub));
-        this.purchnowsub.click();
+        wait.until(ExpectedConditions.elementToBeClickable(purchnowsub)).click();
         wait.until(ExpectedConditions.visibilityOf(kenname));
-        this.kenname.sendKeys(_testSubscription.Kenname);
-        this.weblink.sendKeys(_testSubscription.Weblink);
-        this.descken.sendKeys(_testSubscription.Descken);
-        this.breedsince.sendKeys(_testSubscription.Breedsince);
-        this.ibreed.click();
-        this.optaffen.click();
-        this.website.sendKeys(_testSubscription.Website);
-        this.continue4.click();
+        kenname.sendKeys(_testSubscription.Kenname);
+        weblink.sendKeys(_testSubscription.Weblink);
+        descken.sendKeys(_testSubscription.Descken);
+        breedsince.sendKeys(_testSubscription.Breedsince);
+        wait.until(ExpectedConditions.elementToBeClickable(ibreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(optaffen)).click();
+        website.sendKeys(_testSubscription.Website);
+        wait.until(ExpectedConditions.elementToBeClickable(continue4)).click();
         wait.until(ExpectedConditions.visibilityOf(billaddress2));
-        this.billaddress2.sendKeys(_testSubscription.Address2);
-        this.billzipsub.click();
-        this.billzip2.sendKeys(_testSubscription.ZIP2);
-        this.city.isDisplayed();
-        this.state.isDisplayed();
-        this.billaddress2.click();
+        billaddress2.sendKeys(_testSubscription.Address2);
+        wait.until(ExpectedConditions.elementToBeClickable(billzipsub)).click();
+        billzip2.sendKeys(_testSubscription.ZIP2);
+        wait.until(ExpectedConditions.visibilityOf(city));
+        wait.until(ExpectedConditions.visibilityOf(state));
+        wait.until(ExpectedConditions.elementToBeClickable(billaddress2)).click();
         wait.until(ExpectedConditions.elementToBeClickable(continue5));
-        this.continue5.click();
+        wait.until(ExpectedConditions.elementToBeClickable(continue5)).click();
         wait.until(ExpectedConditions.elementToBeClickable(continue6));
-        this.continue6.click();
-        this.addfile.click();
-        this.selimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\linkedinimage.jpg");
-        this.inputimages2.sendKeys("Breeder picture");
-        this.inputbreeder.click();
-        this.selbreederimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(continue6)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(addfile)).click();
+        selimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\linkedinimage.jpg");
+        inputimages2.sendKeys("Breeder picture");
+        wait.until(ExpectedConditions.elementToBeClickable(inputbreeder)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selbreederimages)).click();
         sleep(2000);
-        this.saveimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(saveimages)).click();
         wait.until(ExpectedConditions.elementToBeClickable(closediag2));
-        this.closediag2.click();
+        wait.until(ExpectedConditions.elementToBeClickable(closediag2)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(continue7));
-        this.continue7.click();
-        this.successsubsc.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(continue7)).click();
+        wait.until(ExpectedConditions.visibilityOf(successsubsc));
 
 
 
@@ -2387,160 +2423,160 @@ public class Puppies {
     /*Purchase Monthly Subscription*/
     public void PurchaseSubsMonth(Subscription _testSubscription) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.puppies.click();
-        this.findapuppy.click();
-        this.crealist.click();
-        this.purchsubs.click();
-        this.userName.sendKeys(_testSubscription.Email);
-        this.passwordlog.sendKeys(_testSubscription.Password);
-        this.ingresar.click();
-        this.logged.isDisplayed();
-        this.purchsubs.click();
-        this.monthplan.isDisplayed();
-        this.monthplanbut.isDisplayed();
-        this.annualplan.isDisplayed();
-        this.monthplanbut.click();
-        this.creditcard.sendKeys("4111111111111111");
-        this.expdate.sendKeys(_testSubscription.ExpDate);
-        this.cvv.sendKeys(_testSubscription.CVV);
-        this.firstname2.sendKeys(_testSubscription.FirstName);
-        this.lastname2.sendKeys(_testSubscription.LastName);
-        this.billaddress.sendKeys(_testSubscription.Address);
-        this.billzip.click();
-        this.billzip2.sendKeys(_testSubscription.ZIP);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(crealist)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(purchsubs)).click();
+        userName.sendKeys(_testSubscription.Email);
+        passwordlog.sendKeys(_testSubscription.Password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        wait.until(ExpectedConditions.visibilityOf(logged));
+        wait.until(ExpectedConditions.elementToBeClickable(purchsubs)).click();
+        wait.until(ExpectedConditions.visibilityOf(monthplan));
+        wait.until(ExpectedConditions.visibilityOf(monthplanbut));
+        wait.until(ExpectedConditions.visibilityOf(annualplan));
+        wait.until(ExpectedConditions.elementToBeClickable(monthplanbut)).click();
+        creditcard.sendKeys("4111111111111111");
+        expdate.sendKeys(_testSubscription.ExpDate);
+        cvv.sendKeys(_testSubscription.CVV);
+        firstname2.sendKeys(_testSubscription.FirstName);
+        lastname2.sendKeys(_testSubscription.LastName);
+        billaddress.sendKeys(_testSubscription.Address);
+        wait.until(ExpectedConditions.elementToBeClickable(billzip)).click();
+        billzip2.sendKeys(_testSubscription.ZIP);
         wait.until(ExpectedConditions.visibilityOf(city));
-        this.coupon.isDisplayed();
-        this.state.isDisplayed();
-        this.phone.sendKeys(_testSubscription.Phone);
-        this.summary.isDisplayed();
+        wait.until(ExpectedConditions.visibilityOf(coupon));
+        wait.until(ExpectedConditions.visibilityOf(state));
+        phone.sendKeys(_testSubscription.Phone);
+        wait.until(ExpectedConditions.visibilityOf(summary));
         wait.until(ExpectedConditions.elementToBeClickable(purchnowsub));
-        this.purchnowsub.click();
+        wait.until(ExpectedConditions.elementToBeClickable(purchnowsub)).click();
         wait.until(ExpectedConditions.visibilityOf(kenname));
-        this.kenname.sendKeys(_testSubscription.Kenname);
-        this.weblink.sendKeys(_testSubscription.Weblink);
-        this.descken.sendKeys(_testSubscription.Descken);
-        this.breedsince.sendKeys(_testSubscription.Breedsince);
-        this.ibreed.click();
-        this.optaffen.click();
-        this.website.sendKeys(_testSubscription.Website);
-        this.continue4.click();
+        kenname.sendKeys(_testSubscription.Kenname);
+        weblink.sendKeys(_testSubscription.Weblink);
+        descken.sendKeys(_testSubscription.Descken);
+        breedsince.sendKeys(_testSubscription.Breedsince);
+        wait.until(ExpectedConditions.elementToBeClickable(ibreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(optaffen)).click();
+        website.sendKeys(_testSubscription.Website);
+        wait.until(ExpectedConditions.elementToBeClickable(continue4)).click();
         wait.until(ExpectedConditions.visibilityOf(billaddress2));
-        this.billaddress2.sendKeys(_testSubscription.Address2);
-        this.billzipsub.click();
-        this.billzip2.sendKeys(_testSubscription.ZIP2);
-        this.city.isDisplayed();
-        this.state.isDisplayed();
-        this.billaddress2.click();
+        billaddress2.sendKeys(_testSubscription.Address2);
+        wait.until(ExpectedConditions.elementToBeClickable(billzipsub)).click();
+        billzip2.sendKeys(_testSubscription.ZIP2);
+        wait.until(ExpectedConditions.visibilityOf(city));
+        wait.until(ExpectedConditions.visibilityOf(state));
+        wait.until(ExpectedConditions.elementToBeClickable(billaddress2)).click();
         wait.until(ExpectedConditions.elementToBeClickable(continue5));
-        this.continue5.click();
+        wait.until(ExpectedConditions.elementToBeClickable(continue5)).click();
         wait.until(ExpectedConditions.elementToBeClickable(continue6));
-        this.continue6.click();
-        this.addfile.click();
-        this.selimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\linkedinimage.jpg");
-        this.inputimages2.sendKeys("Breeder picture");
-        this.inputbreeder.click();
-        this.selbreederimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(continue6)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(addfile)).click();
+        selimages.sendKeys("C:\\Users\\Jonathan Blanco\\Pictures\\linkedinimage.jpg");
+        inputimages2.sendKeys("Breeder picture");
+        wait.until(ExpectedConditions.elementToBeClickable(inputbreeder)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selbreederimages)).click();
         sleep(2000);
-        this.saveimages.click();
+        wait.until(ExpectedConditions.elementToBeClickable(saveimages)).click();
         wait.until(ExpectedConditions.elementToBeClickable(closediag2));
-        this.closediag2.click();
+        wait.until(ExpectedConditions.elementToBeClickable(closediag2)).click();
         sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(continue7));
-        this.continue7.click();
-        this.successsubsc.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(continue7)).click();
+        wait.until(ExpectedConditions.visibilityOf(successsubsc));
 
 
     }
     /*Check Breeder Dashboard elements*/
     public void VerifiyDashboard(User _testUser)  {
 
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.dashhome.isDisplayed();
-        this.dashmessenger.isDisplayed();
-        this.dashmanmypag.isDisplayed();
-        this.dashmanmylist.isDisplayed();
-        this.dashquestion.isDisplayed();
-        this.dashaccount.isDisplayed();
-        this.dashmypage.isDisplayed();
-        this.profperf.isDisplayed();
-        this.namedash.isDisplayed();
-        this.joinedin.isDisplayed();
-        this.status.isDisplayed();
-        this.changePlan.isDisplayed(); //check this plan with new user
-        this.editdash.isDisplayed();
-        this.profileviews.isDisplayed();
-        this.totalinquiries.isDisplayed();
-        //this.purchmarksub.isDisplayed(); //Removing these because account already has a subscription
-        //this.monthlydash.isDisplayed();
-        //this.yeardash.isDisplayed();
-        this.publishedlist.isDisplayed(); //FIX THIS LOCATOR
-        this.editListingButton.isDisplayed();
-        this.seealllist.isDisplayed();
-        this.createanewlisting.isDisplayed();
-        this.usersadmin.isDisplayed();
-        this.activeadmin.isDisplayed();
-        this.newadmin.isDisplayed();
-        this.addadmin.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.visibilityOf(dashhome));
+        wait.until(ExpectedConditions.visibilityOf(dashmessenger));
+        wait.until(ExpectedConditions.visibilityOf(dashmanmypag));
+        wait.until(ExpectedConditions.visibilityOf(dashmanmylist));
+        wait.until(ExpectedConditions.visibilityOf(dashquestion));
+        wait.until(ExpectedConditions.visibilityOf(dashaccount));
+        wait.until(ExpectedConditions.visibilityOf(dashmypage));
+        wait.until(ExpectedConditions.visibilityOf(profperf));
+        wait.until(ExpectedConditions.visibilityOf(namedash));
+        wait.until(ExpectedConditions.visibilityOf(joinedin));
+        wait.until(ExpectedConditions.visibilityOf(status));
+        wait.until(ExpectedConditions.visibilityOf(changePlan)); //check this plan with new user
+        wait.until(ExpectedConditions.visibilityOf(editdash));
+        wait.until(ExpectedConditions.visibilityOf(profileviews));
+        wait.until(ExpectedConditions.visibilityOf(totalinquiries));
+        //wait.until(ExpectedConditions.visibilityOf(purchmarksub)); //Removing these because account already has a subscription
+        //wait.until(ExpectedConditions.visibilityOf(monthlydash));
+        //wait.until(ExpectedConditions.visibilityOf(yeardash));
+        wait.until(ExpectedConditions.visibilityOf(publishedlist)); //FIX THIS LOCATOR
+        wait.until(ExpectedConditions.visibilityOf(editListingButton));
+        wait.until(ExpectedConditions.visibilityOf(seealllist));
+        wait.until(ExpectedConditions.visibilityOf(createanewlisting));
+        wait.until(ExpectedConditions.visibilityOf(usersadmin));
+        wait.until(ExpectedConditions.visibilityOf(activeadmin));
+        wait.until(ExpectedConditions.visibilityOf(newadmin));
+        wait.until(ExpectedConditions.visibilityOf(addadmin));
 
 
     }
     /*Check Messenger elements*/
     public void VerifiyMessenger(User _testUser)  {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        //this.dashbreed.click();
-        this.messengertab.click();
-        this.imgmess.isDisplayed();
-        this.usermess.isDisplayed();
-        this.convchannel.isDisplayed();
-        this.otheruserconv.click();
-        this.imgothuser.isDisplayed();
-        this.conversation.isDisplayed();
+        //wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(messengertab)).click();
+        wait.until(ExpectedConditions.visibilityOf(imgmess));
+        wait.until(ExpectedConditions.visibilityOf(usermess));
+        wait.until(ExpectedConditions.visibilityOf(convchannel));
+        wait.until(ExpectedConditions.elementToBeClickable(otheruserconv)).click();
+        wait.until(ExpectedConditions.visibilityOf(imgothuser));
+        wait.until(ExpectedConditions.visibilityOf(conversation));
         wait.until(ExpectedConditions.elementToBeClickable(messmenu));
-        this.messmenu.click();
-        this.messquestion.isDisplayed();
-        this.messblock.isDisplayed();
-        this.delconv.isDisplayed();
-        this.messupfile.isDisplayed();
-        this.messemoji.isDisplayed();
-        this.messtextarea.isDisplayed();
-        this.responsemess.isDisplayed();
-        this.sentmess.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(messmenu)).click();
+        wait.until(ExpectedConditions.visibilityOf(messquestion));
+        wait.until(ExpectedConditions.visibilityOf(messblock));
+        wait.until(ExpectedConditions.visibilityOf(delconv));
+        wait.until(ExpectedConditions.visibilityOf(messupfile));
+        wait.until(ExpectedConditions.visibilityOf(messemoji));
+        wait.until(ExpectedConditions.visibilityOf(messtextarea));
+        wait.until(ExpectedConditions.visibilityOf(responsemess));
+        wait.until(ExpectedConditions.visibilityOf(sentmess));
 
     }
 
        //Sends message to breeder account from Findpuppy's page
         public void messageBreeder(User _testUser){
 
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.puppies.click();
-        this.findapuppy.click();
-        this.findpupformbut.click();
-        this.SERPResult.click(); //check on this find the respn why its not clicking
-        this.messageBreederButton.click();
-
-        //
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(SERPResult)).click(); //check on this find the respn why its not clicking
+        wait.until(ExpectedConditions.elementToBeClickable(messageBreederButton)).click();
 
         }
 
@@ -2548,91 +2584,94 @@ public class Puppies {
     /*Check ManageMyPage elements*/
     public void VerifiyManmypage(User _testUser)  {
 
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashmanmypag.click();
-        this.profileman.isDisplayed();
-        this.contactman.isDisplayed(); //change this locator
-        this.tellusman.isDisplayed();
-        this.phvidman.isDisplayed();
-        this.yourbreedprof.isDisplayed();
-        this.kennameman.isDisplayed();
-        this.weblinkman.isDisplayed();
-        this.descripman.isDisplayed();
-        this.breedsinceman.isDisplayed();
-        this.breedman.isDisplayed();
-        this.websiteman.isDisplayed();
-        this.backtoacct.isDisplayed();
-        this.savebutman.click();
-        this.contactman.click();
-        this.continfoman.isDisplayed();
-        this.fullnameman.isDisplayed();
-        this.addressman.isDisplayed();
-        this.zipman.isDisplayed();
-        this.cityman.isDisplayed();
-        this.stateman.isDisplayed();
-        this.phoneman.isDisplayed();
-        this.emailman.isDisplayed();
-        this.savebutman2.click();
-        this.tellusman.click();
-        this.tellusmoreman.isDisplayed();
-        this.nationalclubCheckBox.isDisplayed();
-        this.nationalclubCheckBox.click();
-        this.nationalclubman.isDisplayed();
-        this.specialtyCheckBox.isDisplayed();
-        this.specialtyCheckBox.click();
-        this.specialtyman.isDisplayed();
-        this.licensedCheckBox.isDisplayed();
-        this.licensedCheckBox.click();
-        this.licensedman.isDisplayed();
-        this.mydogsmanCheckBox.isDisplayed();
-        this.mydogsmanCheckBox.click();
-        this.mydogsman.isDisplayed();
-        this.savebutman3.click();
-        this.phvidman.click();
-        this.dragDropFileIcon.isDisplayed();
-        this.ContinueButton.isDisplayed();
-        this.backToMyAccount.isDisplayed();
-        this.AddYouTubeLinksInput.isDisplayed();
-        this.AddYouTubeLinksButton.isDisplayed();
-        this.ContinueButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(dashmanmypag));
+        wait.until(ExpectedConditions.elementToBeClickable(dashmanmypag)).click();
+        wait.until(ExpectedConditions.visibilityOf(profileman));
+        wait.until(ExpectedConditions.visibilityOf(contactman));
+        wait.until(ExpectedConditions.visibilityOf(tellusman));
+        wait.until(ExpectedConditions.visibilityOf(phvidman));
+        wait.until(ExpectedConditions.visibilityOf(yourbreedprof));
+        wait.until(ExpectedConditions.visibilityOf(kennameman));
+        wait.until(ExpectedConditions.visibilityOf(weblinkman));
+        wait.until(ExpectedConditions.visibilityOf(descripman));
+        wait.until(ExpectedConditions.visibilityOf(breedsinceman));
+        wait.until(ExpectedConditions.visibilityOf(breedman));
+        wait.until(ExpectedConditions.visibilityOf(websiteman));
+        wait.until(ExpectedConditions.visibilityOf(backtoacct));
+        wait.until(ExpectedConditions.elementToBeClickable(savebutman)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(contactman)).click();
+        wait.until(ExpectedConditions.visibilityOf(continfoman));
+        wait.until(ExpectedConditions.visibilityOf(fullnameman));
+        wait.until(ExpectedConditions.visibilityOf(addressman));
+        wait.until(ExpectedConditions.visibilityOf(zipman));
+        wait.until(ExpectedConditions.visibilityOf(cityman));
+        wait.until(ExpectedConditions.visibilityOf(stateman));
+        wait.until(ExpectedConditions.visibilityOf(phoneman));
+        wait.until(ExpectedConditions.visibilityOf(emailman));
+        wait.until(ExpectedConditions.elementToBeClickable(savebutman2)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(tellusman)).click();
+        wait.until(ExpectedConditions.visibilityOf(tellusmoreman));
+        wait.until(ExpectedConditions.visibilityOf(nationalclubCheckBox));
+        wait.until(ExpectedConditions.elementToBeClickable(nationalclubCheckBox)).click();
+        wait.until(ExpectedConditions.visibilityOf(nationalclubman));
+        wait.until(ExpectedConditions.visibilityOf(specialtyCheckBox));
+        wait.until(ExpectedConditions.elementToBeClickable(specialtyCheckBox)).click();
+        wait.until(ExpectedConditions.visibilityOf(specialtyman));
+        wait.until(ExpectedConditions.visibilityOf(licensedCheckBox));
+        wait.until(ExpectedConditions.elementToBeClickable(licensedCheckBox)).click();
+        wait.until(ExpectedConditions.visibilityOf(licensedman));
+        wait.until(ExpectedConditions.visibilityOf(mydogsmanCheckBox));
+        wait.until(ExpectedConditions.elementToBeClickable(mydogsmanCheckBox)).click();
+        wait.until(ExpectedConditions.visibilityOf(mydogsman));
+        wait.until(ExpectedConditions.elementToBeClickable(savebutman3)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(phvidman)).click();
+        wait.until(ExpectedConditions.visibilityOf(dragDropFileIcon));
+        wait.until(ExpectedConditions.visibilityOf(ContinueButton));
+        wait.until(ExpectedConditions.visibilityOf(backToMyAccount));
+        wait.until(ExpectedConditions.visibilityOf(AddYouTubeLinksInput));
+        wait.until(ExpectedConditions.visibilityOf(AddYouTubeLinksButton));
+        wait.until(ExpectedConditions.elementToBeClickable(ContinueButton)).click();
 
 
     }
     /*Check ManageMy List elements*/
     public void VerifiyManmylisting(User _testUser)  {
 
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashmanmylist.click();
-        this.upgrto.isDisplayed(); //This won't show if you already have an annual plan
-        this.crealitterbutton.isDisplayed();
-        this.namelitter.isDisplayed();
-        this.publishedlitter.isDisplayed();
-        this.unpublishedlitter.isDisplayed();
-        this.expiredlitter.isDisplayed();
-        this.comingsoon.isDisplayed();
-        this.dayslitter.isDisplayed();
-        this.litterpicture.isDisplayed();
-        this.litterheader.isDisplayed();
-        this.editlitter.click(); //this is expected to fail if the listing moves from current DOM location.
-        this.viewlisting.isDisplayed();
-        this.editlisting.isDisplayed();
-        //this.editListingButton.isDisplayed();
-        this.unpublishlisting.isDisplayed();
-        this.moreinfolisting.click();
-        this.infolisting.isDisplayed();
-        this.lasteditedlist.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(dashmanmylistFromUserDropdown)).click();
+        //wait.until(ExpectedConditions.visibilityOf(upgrto)); //This won't show if you already have an annual plan
+        wait.until(ExpectedConditions.visibilityOf(crealitterbutton));
+        wait.until(ExpectedConditions.visibilityOf(namelitter));
+        wait.until(ExpectedConditions.visibilityOf(publishedlitter));
+        wait.until(ExpectedConditions.visibilityOf(unpublishedlitter));
+        wait.until(ExpectedConditions.visibilityOf(expiredlitter));
+        wait.until(ExpectedConditions.visibilityOf(comingsoon));
+        wait.until(ExpectedConditions.visibilityOf(dayslitter));
+        wait.until(ExpectedConditions.visibilityOf(litterpicture));
+        wait.until(ExpectedConditions.visibilityOf(litterheader));
+        wait.until(ExpectedConditions.elementToBeClickable(editlitter)).click(); //this is expected to fail if the listing moves from current DOM location.
+        wait.until(ExpectedConditions.visibilityOf(viewlisting));
+        wait.until(ExpectedConditions.visibilityOf(editlisting));
+        //wait.until(ExpectedConditions.visibilityOf(editListingButton));
+        wait.until(ExpectedConditions.visibilityOf(unpublishlisting));
+        wait.until(ExpectedConditions.elementToBeClickable(moreinfolisting)).click();
+        wait.until(ExpectedConditions.visibilityOf(infolisting));
+        wait.until(ExpectedConditions.visibilityOf(lasteditedlist));
 
 
 
@@ -2642,45 +2681,46 @@ public class Puppies {
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.urlContains("https://stage.marketplace.akc.org/breeder/"));
 
     }
     /*Check BuyerQuestionnaire elements*/
     public void VerifiyMyBuyerQuest(User _testUser)  {
 
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.dashquestion.click();
-        this.mybuyerheader.isDisplayed(); //check this
-        this.mybuyertext.isDisplayed();
-        this.allbreedscheck.isDisplayed();
-        this.allbreedtext.isDisplayed();
-        this.spebreedscheck.isDisplayed();
-        this.spebreedtext.isDisplayed();
-        this.publiccheck.isDisplayed();
-        this.publictext.isDisplayed();
-        this.questintro.isDisplayed();
-        this.introtext.isDisplayed();
-        this.introBrief.isDisplayed();
-        this.addquestionbut.isDisplayed();
-        this.addquestionbut.click();
-        //this.questions.isDisplayed();
-        this.typequestiontext.isDisplayed();
-        this.typequestion.isDisplayed();
-        this.movequestion.isDisplayed();
-        this.closequestion.isDisplayed();
-        this.messagetext.isDisplayed();
-        this.messagearea.isDisplayed();
-        this.requiredcheck.isDisplayed();
-        this.requiredtext.isDisplayed();
-        this.savequestion.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(dashquestion)).click();
+        wait.until(ExpectedConditions.visibilityOf(mybuyerheader)); //check this
+        wait.until(ExpectedConditions.visibilityOf(mybuyertext));
+        wait.until(ExpectedConditions.visibilityOf(allbreedscheck));
+        wait.until(ExpectedConditions.visibilityOf(allbreedtext));
+        wait.until(ExpectedConditions.visibilityOf(spebreedscheck));
+        wait.until(ExpectedConditions.visibilityOf(spebreedtext));
+        wait.until(ExpectedConditions.visibilityOf(publiccheck));
+        wait.until(ExpectedConditions.visibilityOf(publictext));
+        wait.until(ExpectedConditions.visibilityOf(questintro));
+        wait.until(ExpectedConditions.visibilityOf(introtext));
+        wait.until(ExpectedConditions.visibilityOf(introBrief));
+        wait.until(ExpectedConditions.visibilityOf(addquestionbut));
+        wait.until(ExpectedConditions.elementToBeClickable(addquestionbut)).click();
+        //wait.until(ExpectedConditions.visibilityOf(questions));
+        wait.until(ExpectedConditions.visibilityOf(typequestiontext));
+        wait.until(ExpectedConditions.visibilityOf(typequestion));
+        wait.until(ExpectedConditions.visibilityOf(movequestion));
+        wait.until(ExpectedConditions.visibilityOf(closequestion));
+        wait.until(ExpectedConditions.visibilityOf(messagetext));
+        wait.until(ExpectedConditions.visibilityOf(messagearea));
+        wait.until(ExpectedConditions.visibilityOf(requiredcheck));
+        wait.until(ExpectedConditions.visibilityOf(requiredtext));
+        wait.until(ExpectedConditions.visibilityOf(savequestion));
 
 
 
@@ -2688,99 +2728,101 @@ public class Puppies {
     /*Check MyAccount elements*/
     public void VerifiyMyAcoount(User _testUser)  {
 
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.dashaccount.click();
-        this.changepassheader.isDisplayed(); //There is an issue on stage when going to Dashboard > Account menu
-        this.changepasstext.isDisplayed();
-        //this.oldpassword.isDisplayed(); //update this one
-        //this.newpassword.isDisplayed();
-        //this.confirmpassword.isDisplayed();
-        //this.changepassbut.isDisplayed();
-        //this.paymethods.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(dashaccount)).click();
+        wait.until(ExpectedConditions.visibilityOf(changepassheader));
+        wait.until(ExpectedConditions.visibilityOf(changepasstext));
+        wait.until(ExpectedConditions.visibilityOf(oldpassword)); //update this one
+        wait.until(ExpectedConditions.visibilityOf(newpassword));
+        wait.until(ExpectedConditions.visibilityOf(confirmpassword));
+        wait.until(ExpectedConditions.visibilityOf(changepassbut));
+        wait.until(ExpectedConditions.visibilityOf(paymethods));
 
     }
     /*Check MyPage elements*/
     public void VerifiyMyPage(User _testUser)  {
 
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashbreed.click();
-        this.dashmypage.click();
+        wait.until(ExpectedConditions.elementToBeClickable(dashbreed)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(dashmypage)).click();
         validmypage();
     }
 
     public void ResourcesForGettingPupAboutPage(){  //Fix this test
 
-        this.puppies.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(resourcesForGettingPup));
-        this.resourcesForGettingPup.click();
-        this.RFGPAbout.isDisplayed();
-        this.RFGPReadyForAPup.isDisplayed();
-        this.RFGPCChossingBreed.isDisplayed();
-        this.RFGPCQuestionsBreeder.isDisplayed();
-        this.RFGPCPuppyCheckList.isDisplayed();
-        this.RFGPCFindPuppyButton.isDisplayed();
-        this.RFGPCQuestionsAskBreeder.isDisplayed();
-        this.RFGPCAKCBreederOfMerit.isDisplayed();
-        this.RFGPCAKCBredWithHEART.isDisplayed();
-        this.RFGPCNationalBreedClubMember.isDisplayed();
-        this.RFGPCCanineCollege.isDisplayed();
-        this.RFGPCKennelInspectionsLearnMore.isDisplayed();
-        this.RFGPCDNAProfiling.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(resourcesForGettingPup)).click();
+        wait.until(ExpectedConditions.visibilityOf(RFGPAbout));
+        wait.until(ExpectedConditions.visibilityOf(RFGPReadyForAPup));
+        wait.until(ExpectedConditions.visibilityOf(RFGPCChossingBreed));
+        wait.until(ExpectedConditions.visibilityOf(RFGPCQuestionsBreeder));
+        wait.until(ExpectedConditions.visibilityOf(RFGPCPuppyCheckList));
+        wait.until(ExpectedConditions.visibilityOf(RFGPCFindPuppyButton));
+        wait.until(ExpectedConditions.visibilityOf(RFGPCQuestionsAskBreeder));
+        wait.until(ExpectedConditions.visibilityOf(RFGPCAKCBreederOfMerit));
+        wait.until(ExpectedConditions.visibilityOf(RFGPCAKCBredWithHEART));
+        wait.until(ExpectedConditions.visibilityOf(RFGPCNationalBreedClubMember));
+        wait.until(ExpectedConditions.visibilityOf(RFGPCCanineCollege));
+        wait.until(ExpectedConditions.visibilityOf(RFGPCKennelInspectionsLearnMore));
+        wait.until(ExpectedConditions.visibilityOf(RFGPCDNAProfiling));
 
     }
 
     public void VerifyTellUsMore(User _testUser) {
 
-        this.iconsignin.click();
-        this.userName.sendKeys(_testUser.username);
-        this.passwordlog.sendKeys(_testUser.password);
-        this.ingresar.click();
-        Actions action = new Actions(this.driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys(_testUser.username);
+        passwordlog.sendKeys(_testUser.password);
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
+        Actions action = new Actions(driver);
         action.moveToElement(logged).perform();
         action.moveToElement(logged).click();
-        this.dashmanmypag.click();
-        this.tellusman.click();
-        this.NoToRegPappers.click();
-        this.YesToRegPappers.click();
-        this.savebutman3.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(dashmanmypag)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(tellusman)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(NoToRegPappers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(YesToRegPappers)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(savebutman3)).click();
         wait.until(ExpectedConditions.elementToBeClickable(NoToRegPappers));
-        //this.NoToRegPappers.click();
-        //this.TellUsWhyInput.click();
-        //this.TellUsWhyInput.sendKeys("123456789");
+        //wait.until(ExpectedConditions.elementToBeClickable(NoToRegPappers)).click();
+        //wait.until(ExpectedConditions.elementToBeClickable(TellUsWhyInput)).click();
+        //TellUsWhyInput.sendKeys("123456789");
         //wait.until(ExpectedConditions.elementToBeClickable(savebutman3));
-        //this.savebutman3.click();
+        //wait.until(ExpectedConditions.elementToBeClickable(savebutman3)).click();
 
     }
 
     public void CheckAlertMe() throws InterruptedException {
 
-        this.iconsignin.click();
-        this.userName.sendKeys("sxv+5@akc.org");
-        this.password.sendKeys("CypresHill2*");
-        this.ingresar.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        userName.sendKeys("sxv+5@akc.org");
+        password.sendKeys("CypresHill2*");
+        wait.until(ExpectedConditions.elementToBeClickable(ingresar)).click();
         sleep(4000);
-        this.puppies.click();
-        this.findapuppy.click();
-        this.breedform.click();
-        this.affens.click();
-        this.findpupformbut.click();
-        this.topbannealert.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(puppies)).click(); //fix this
+        wait.until(ExpectedConditions.elementToBeClickable(findapuppy)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(breedform)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(affens)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(findpupformbut)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(topbannealert)).click();
         wait.until(ExpectedConditions.elementToBeClickable(SaveSearchConfirmation));
 
     }

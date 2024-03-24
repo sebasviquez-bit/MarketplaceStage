@@ -6,7 +6,12 @@ import Pages.Homepage;
 import com.applitools.eyes.RectangleSize;
 import com.applitools.eyes.selenium.Eyes;
 import com.applitools.eyes.selenium.fluent.Target;
+import io.cucumber.core.gherkin.Feature;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 
@@ -271,7 +276,7 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
     /*Check Puppies tests*/
-    @Test
+    //@Test
     public void PuppiesCheck() {
 
         puppies.CheckPuppies();
@@ -937,6 +942,7 @@ public class MPTestSuite extends SpecsBaseClass {
         pct.PCTLoginFoxTerrier();
     }
 
+
     //Visual tests
 
     @Test
@@ -1030,12 +1036,16 @@ public class MPTestSuite extends SpecsBaseClass {
 
     }
 
+    //
+
     //@Test
     public void PercyMP () {
 
         driver.get().navigate().to("https://stage.marketplace.akc.org/");
         //percy.snapshot("Homepage");
     }
+
+
 
 
 

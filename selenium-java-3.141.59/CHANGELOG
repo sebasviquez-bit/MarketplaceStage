@@ -212,7 +212,7 @@ v3.7.0
 * Simulate some w3c Actions commands using the old APIs. This allows a
   local end that only speaks the JSON Wire Protocol to use
   "Actions.moveTo" when communicating with a W3C compliant remote
-  end. Apparently, people need this.
+  end. Apparently, people need
 * More fluent APIs in `*Options` classes.
 * Moving some safari config options from `SafariOptions` to the
   `SafariDriverService`.
@@ -2047,7 +2047,7 @@ Project:
 WebDriver:
   * JRE dependency upped to Java 6.
   * IE driver now uses the IEDriverServer. You may need to download
-    this. Set the "useLegacyInternalServer" to boolean true if you
+     Set the "useLegacyInternalServer" to boolean true if you
     need the old behaviour.
   * Standardized colour values returned from getCssValue are
     normalized to RGBA.

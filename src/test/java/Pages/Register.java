@@ -1,40 +1,42 @@
 package Pages;
 
 import Helpers.BrowserFactory;
-import Helpers.DriverHelper;
+
 import Model.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Register {
 
-    @FindBy(xpath = "//html/body/main/div/div/div[2]/div[2]/div/div[1]/div[1]/a/span")
+    @FindBy(css = "#react-root > div.Styled__Wrapper-sc-rxlt93-0.buCIDb > div.Styled__Wrapper-sc-rvwmv6-0.gffKrQ > div.Styled__Right-sc-rvwmv6-3.jzQSQV > div > div > div.header-icon-container.user-menu > a > span")
     WebElement iconsignin;
 
     @FindBy(css = "#gigya-login-form > div:nth-child(3) > div.gigya-layout-row.gigya-layout-row-login-create-account > a")
     WebElement CreateAccount;
 
-    @FindBy(xpath = "//*[@id='gigya-register-form']/div[1]/div[5]/div[2]/input")
+    @FindBy(css = "#gigya-register-form > div:nth-child(1) > div:nth-child(7) > div.gigya-composite-control.gigya-composite-control-password > input")
     WebElement password2;
 
-    @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[1]/div[4]/div[1]/input")
+    @FindBy(css = "#gigya-register-form > div:nth-child(1) > div:nth-child(6) > div.gigya-composite-control.gigya-composite-control-textbox > input")
     WebElement firstName;
 
-    @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[1]/div[5]/div[1]/input")
+    @FindBy(css = "#gigya-register-form > div:nth-child(1) > div:nth-child(7) > div.gigya-composite-control.gigya-composite-control-textbox > input")
     WebElement lastName;
 
-    @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[1]/div[3]/input")
+    @FindBy(css = "#gigya-register-form > div:nth-child(1) > div:nth-child(5) > input")
     WebElement userName;
 
-    @FindBy(xpath = "//*[@id='gigya-register-form']/div[1]/div[4]/div[2]/input")
+    @FindBy(css = "#gigya-register-form > div:nth-child(1) > div:nth-child(6) > div.gigya-composite-control.gigya-composite-control-password > input")
     WebElement password1;
 
-    @FindBy(xpath = "//html/body/div[2]/div[2]/div[2]/div/form/div[5]/div/input")
+    @FindBy(css = "#gigya-register-form > div:nth-child(5) > div > input")
     WebElement registrarse;
 
-    DriverHelper driverHelper;
+
     //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
@@ -44,24 +46,26 @@ public class Register {
     // Initalize WebDriver*/
     public Register(WebDriver _driver){
 
-        //this.driverFactory = new DriverFactory();
-        this.browserFactory = new BrowserFactory();
-        this.driver = _driver;
-        //this.driverHelper = _driveHelper;
+        //driverFactory = new DriverFactory();
+        browserFactory = new BrowserFactory();
+        driver = _driver;
+        //driverHelper = _driveHelper;
         PageFactory.initElements(driver,this);
     }
 
     // Register user*/
     public void registerUser(User _testUser)  {
-        this.iconsignin.click();
-        this.CreateAccount.click();
-        this.userName.sendKeys(_testUser.username);
-        this.firstName.sendKeys(_testUser.firstName);
-        this.lastName.sendKeys(_testUser.lastName);
-        this.password1.sendKeys(_testUser.password1);
-        this.password2.sendKeys(_testUser.password2);
-        this.registrarse.click();
-        this.iconsignin.isDisplayed();
+
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(iconsignin)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(CreateAccount)).click();
+        userName.sendKeys(_testUser.username);
+        firstName.sendKeys(_testUser.firstName);
+        lastName.sendKeys(_testUser.lastName);
+        password1.sendKeys(_testUser.password1);
+        password2.sendKeys(_testUser.password2);
+        wait.until(ExpectedConditions.elementToBeClickable(registrarse)).click();
+        wait.until(ExpectedConditions.visibilityOf(iconsignin));
     }
 
 }

@@ -13,16 +13,16 @@ public class User {
 
     /*Fill User Login and Register*/
     public User(String firstName, String lastName, String username, String password1, String password2){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.password1 = password1;
-        this.password2 = password2;
+        firstName = firstName;
+        lastName = lastName;
+        username = username;
+        password1 = password1;
+        password2 = password2;
     }
 
     public User(String username, String password){
-        this.username = username;
-        this.password = password;
+        username = username;
+        password = password;
     }
 
 }

@@ -1,11 +1,13 @@
 package Pages;
 
 import Helpers.BrowserFactory;
-import Helpers.DriverHelper;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ListMarketplace {
 
@@ -32,7 +34,7 @@ public class ListMarketplace {
 
 
 
-    DriverHelper driverHelper;
+
     //DriverFactory driverFactory;
     BrowserFactory browserFactory;
 
@@ -40,42 +42,44 @@ public class ListMarketplace {
     /*Initialize WebDriver*/
     public ListMarketplace(WebDriver _driver) {
 
-        //this.driverFactory = new DriverFactory();
-        this.browserFactory = new BrowserFactory();
-        this.driver = _driver;
+        //driverFactory = new DriverFactory();
+        browserFactory = new BrowserFactory();
+        driver = _driver;
         PageFactory.initElements(driver, this);
     }
 
     /*Check ListMarketplace menu*/
     public void CheckListMarketplace(){
 
-        this.listmarket.click();
-        this.creabreedlist.isDisplayed();
-        this.creagroomlist.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(listmarket)).click();
+        wait.until(ExpectedConditions.visibilityOf(creabreedlist));
+        wait.until(ExpectedConditions.visibilityOf(creagroomlist));
     }
 
     public void CheckListMarketplace1(){
 
-        this.listmarket.click();
-        this.creabreedlist.click();
-        this.creabreedlistpage.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(listmarket)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(creabreedlist)).click();
+        wait.until(ExpectedConditions.visibilityOf(creabreedlistpage));
     }
 
     public void CheckListMarketplace2(){
 
-        this.listmarket.click();
-        this.creagroomlist.click();
-        this.creagroomlistpage.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(listmarket)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(creagroomlist)).click();
+        wait.until(ExpectedConditions.visibilityOf(creagroomlistpage));
     }
 
     public void CheckListMarketplace3(){
 
-        this.listmarket.click();
-        this.creatrainlist.click();
-        this.creatrainlistpage.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(listmarket)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(creatrainlist)).click();
+        wait.until(ExpectedConditions.visibilityOf(creatrainlistpage));
     }
-
-
 
 
 }

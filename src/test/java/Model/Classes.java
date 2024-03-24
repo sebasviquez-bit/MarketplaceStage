@@ -24,23 +24,23 @@ public class Classes {
     /*Fill Trainer Classes*/
     public Classes(String Email, String Password, String CreditCard, String ExpDate, String CVV, String FirstName, String LastName, String Street, String ZIP, String BusinessPhone, String Businessname, String Weblink, String Aboutme, String Businesssince, String BusinessEmail, String Philosophy, String Other){
 
-        this.Email=Email;
-        this.Password=Password;
-        this.CreditCard=CreditCard;
-        this.ExpDate=ExpDate;
-        this.CVV=CVV;
-        this.FirstName=FirstName;
-        this.LastName=LastName;
-        this.Street=Street;
-        this.ZIP=ZIP;
-        this.BusinessPhone=BusinessPhone;
-        this.Businessname=Businessname;
-        this.Weblink=Weblink;
-        this.Aboutme=Aboutme;
-        this.Businesssince=Businesssince;
-        this.BusinessEmail=BusinessEmail;
-        this.Philosophy=Philosophy;
-        this.Other=Other;
+        Email=Email;
+        Password=Password;
+        CreditCard=CreditCard;
+        ExpDate=ExpDate;
+        CVV=CVV;
+        FirstName=FirstName;
+        LastName=LastName;
+        Street=Street;
+        ZIP=ZIP;
+        BusinessPhone=BusinessPhone;
+        Businessname=Businessname;
+        Weblink=Weblink;
+        Aboutme=Aboutme;
+        Businesssince=Businesssince;
+        BusinessEmail=BusinessEmail;
+        Philosophy=Philosophy;
+        Other=Other;
 
     }
 }

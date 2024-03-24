@@ -1,7 +1,6 @@
 package Pages;
 
 import Helpers.BrowserFactory;
-import Helpers.DriverHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,28 +23,28 @@ public class PCT {
 
     @FindBy(css = "#react-root > div > header > div.main-content > div.user-options > a")
     WebElement Logout;
-    //
 
-    DriverHelper driverHelper;
+
+    //DriverHelper driverHelper;
     BrowserFactory browserFactory;
 
     WebDriver driver;
 
     public PCT(WebDriver _driver) {
 
-        //this.driverFactory = new DriverFactory();
-        this.browserFactory = new BrowserFactory();
-        this.driver = _driver;
+        //driverFactory = new DriverFactory();
+        browserFactory = new BrowserFactory();
+        driver = _driver;
         PageFactory.initElements(driver, this);
     }
 
     public void PCTLoginGermanPinscher(String sPassword) {
 
         driver.navigate().to("https://stage.marketplace.akc.org/parent-club-tool/116/german-pinscher/");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(Password));
-        this.Password.sendKeys(sPassword);
-        this.LoginButton.click();
+        Password.sendKeys(sPassword);
+        wait.until(ExpectedConditions.elementToBeClickable(LoginButton)).click();
         wait.until(ExpectedConditions.urlContains("/parent-club-tool/116/german-pinscher/member-management"));
         wait.until(ExpectedConditions.visibilityOf(BreederTableRow));
 
@@ -54,13 +53,17 @@ public class PCT {
     public void PCTLoginFoxTerrier() {
 
         driver.navigate().to("https://stage.marketplace.akc.org/parent-club-tool/228/smooth-fox-terrier/");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(Password));
-        this.Password.sendKeys("bf3ee843e45b");
-        this.LoginButton.click();
+        Password.sendKeys("bf3ee843e45b");
+        wait.until(ExpectedConditions.elementToBeClickable(LoginButton)).click();
         wait.until(ExpectedConditions.urlContains("/parent-club-tool/228/smooth-fox-terrier/member-management"));
-        this.Logout.click();
+        wait.until(ExpectedConditions.elementToBeClickable(Logout)).click();
 
     }
+
+
+
+
 
 }
